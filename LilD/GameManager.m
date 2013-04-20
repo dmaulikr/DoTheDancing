@@ -8,6 +8,8 @@
 
 #import "GameManager.h"
 #import "MainMenuScene.h"
+#import "DanceMoveSelectionScene.h"
+#import "DanceMovePracticeScene.h"
 #import "GameScene.h"
 
 @interface GameManager()
@@ -115,6 +117,12 @@ static GameManager *_sharedGameManager = nil;   // singleton
             break;
         case kSceneTypeMainMenu:
             result = @"kSceneTypeMainMenu";
+            break;
+        case kSceneTypeDanceMoveSelection:
+            result = @"kSceneTypeDanceMoveSelection";
+            break;
+        case kSceneTypeDanceMovePractice:
+            result = @"kSceneTypeDanceMovePractice";
             break;
         case kSceneTypeGame:
             result = @"kSceneTypeGame";
@@ -291,6 +299,12 @@ static GameManager *_sharedGameManager = nil;   // singleton
     switch (sceneID) {
         case kSceneTypeMainMenu:
             sceneToRun = [MainMenuScene node];
+            break;
+        case kSceneTypeDanceMoveSelection:
+            sceneToRun = [DanceMoveSelectionScene node];
+            break;
+        case kSceneTypeDanceMovePractice:
+            sceneToRun = [DanceMovePracticeScene node];
             break;
         case kSceneTypeGame:
             sceneToRun = [GameScene node];
