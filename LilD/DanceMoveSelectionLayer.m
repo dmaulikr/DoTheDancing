@@ -30,7 +30,7 @@
 
 -(void)setUpListOfDanceMoves {
     CCMenuItemLabel *bernieButton = [CCMenuItemLabel itemWithLabel:[CCLabelTTF labelWithString:@"The Bernie" fontName:@"Helvetica" fontSize:28] block:^(id sender) {
-        [[GameManager sharedGameManager] runSceneWithID:kSceneTypeDanceMovePractice];
+        [[GameManager sharedGameManager] runSceneWithID:kSceneTypeDanceMoveInstructions];
     }];
     bernieButton.anchorPoint = ccp(0, 0.5);
     bernieButton.position = ccp(self.screenSize.width * 0.05, self.screenSize.height * 0.9);

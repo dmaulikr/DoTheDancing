@@ -1,22 +1,22 @@
 //
-//  DanceMovePracticeLayer.m
+//  DanceMoveInstructionsLayer.m
 //  LilD
 //
 //  Created by Michael Gao on 4/19/13.
 //
 //
 
-#import "DanceMovePracticeInstructionsLayer.h"
+#import "DanceMoveInstructionsLayer.h"
 #import "GameManager.h"
 #import "MusicConstants.h"
 
-@interface DanceMovePracticeInstructionsLayer()
+@interface DanceMoveInstructionsLayer()
 
 @property (nonatomic) CGSize screenSize;
 
 @end
 
-@implementation DanceMovePracticeInstructionsLayer
+@implementation DanceMoveInstructionsLayer
 
 -(id)init {
     self = [super init];
@@ -42,10 +42,10 @@
 
 -(void)displayMenu {
     CCMenuItemLabel *danceNowLabel = [CCMenuItemLabel itemWithLabel:[CCLabelTTF labelWithString:@"Try it out!" fontName:@"Helvetica" fontSize:28] block:^(id sender) {
-        [self.delegate segueToDanceLayer];
+        [[GameManager sharedGameManager] runSceneWithID:kSceneTypeDanceMoveDance];
     }];
     danceNowLabel.position = ccp(self.screenSize.width * 0.5, self.screenSize.height * 0.1);
-
+    
     CCMenu *menu = [CCMenu menuWithItems:danceNowLabel, nil];
     menu.position = ccp(0, 0);
     

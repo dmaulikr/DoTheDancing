@@ -33,7 +33,7 @@
 }
 
 -(void)playGameScene {
-    [[GameManager sharedGameManager] runSceneWithID:kSceneTypeGame];
+    [[GameManager sharedGameManager] runSceneWithID:kSceneTypeDanceMoveSelection];
 }
 
 -(void)showSettings {

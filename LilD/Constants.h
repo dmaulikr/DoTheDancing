@@ -10,11 +10,12 @@
 #define chinAndCheeksTemplate_Constants_h
 
 typedef enum {
-    kSceneTypeNone = 0,
+    kSceneTypeNone = -1,
     kSceneTypeMainMenu,
     kSceneTypeDanceMoveSelection,
-    kSceneTypeDanceMovePractice,
-    kSceneTypeGame
+    kSceneTypeDanceMoveInstructions,
+    kSceneTypeDanceMoveDance,
+    kSceneTypeDanceMoveResults
 } SceneTypes;
 
 typedef enum {

@@ -9,8 +9,9 @@
 #import "GameManager.h"
 #import "MainMenuScene.h"
 #import "DanceMoveSelectionScene.h"
-#import "DanceMovePracticeScene.h"
-#import "GameScene.h"
+#import "DanceMoveInstructionsScene.h"
+#import "DanceMoveDanceScene.h"
+#import "DanceMoveResultsScene.h"
 
 @interface GameManager()
 
@@ -52,10 +53,16 @@ static GameManager *_sharedGameManager = nil;   // singleton
         _isMusicOn = YES;
         _isSoundEffectsOn = YES;
         _currentScene = kSceneTypeNone;
-        _score = 0;
         _hasAudioBeenInitialized = NO;
         _soundEngine = nil;
         _managerSoundState = kAudioManagerUninitialized;
+        
+        // individual dance moves practice
+        _danceMove1Correct = NO;
+        _danceMove2Correct = NO;
+        _danceMove3Correct = NO;
+        _danceMove4Correct = NO;
+        _danceMove5Correct = NO;
     }
     
     return self;
@@ -83,6 +90,12 @@ static GameManager *_sharedGameManager = nil;   // singleton
         }
         [self.soundEngine preloadBackgroundMusic:trackFileName];
         [self.soundEngine playBackgroundMusic:trackFileName loop:YES];
+    }
+}
+
+-(void)stopBackgroundTrack {
+    if (self.managerSoundState == kAudioManagerReady) {
+        [self.soundEngine stopBackgroundMusic];
     }
 }
 
@@ -121,11 +134,14 @@ static GameManager *_sharedGameManager = nil;   // singleton
         case kSceneTypeDanceMoveSelection:
             result = @"kSceneTypeDanceMoveSelection";
             break;
-        case kSceneTypeDanceMovePractice:
-            result = @"kSceneTypeDanceMovePractice";
+        case kSceneTypeDanceMoveInstructions:
+            result = @"kSceneTypeDanceMoveInstructions";
             break;
-        case kSceneTypeGame:
-            result = @"kSceneTypeGame";
+        case kSceneTypeDanceMoveDance:
+            result = @"kSceneTypeDanceMoveDance";
+            break;
+        case kSceneTypeDanceMoveResults:
+            result = @"kSceneTypeDanceMoveResults";
             break;
         default:
             [NSException raise:NSGenericException format:@"Unexpected SceneType."];
@@ -303,11 +319,14 @@ static GameManager *_sharedGameManager = nil;   // singleton
         case kSceneTypeDanceMoveSelection:
             sceneToRun = [DanceMoveSelectionScene node];
             break;
-        case kSceneTypeDanceMovePractice:
-            sceneToRun = [DanceMovePracticeScene node];
+        case kSceneTypeDanceMoveInstructions:
+            sceneToRun = [DanceMoveInstructionsScene node];
             break;
-        case kSceneTypeGame:
-            sceneToRun = [GameScene node];
+        case kSceneTypeDanceMoveDance:
+            sceneToRun = [DanceMoveDanceScene node];
+            break;
+        case kSceneTypeDanceMoveResults:
+            sceneToRun = [DanceMoveResultsScene node];
             break;
         default:
             CCLOG(@"Unknown sceneID, cannot run scene");
@@ -333,6 +352,14 @@ static GameManager *_sharedGameManager = nil;   // singleton
 //    [self performSelectorInBackground:@selector(unloadAudioForSceneWithID:) withObject:[NSNumber numberWithInt:oldScene]];
     
     self.currentScene = sceneID;
+}
+
+-(void)resetForDanceMovePractice {
+    self.danceMove1Correct = NO;
+    self.danceMove2Correct = NO;
+    self.danceMove3Correct = NO;
+    self.danceMove4Correct = NO;
+    self.danceMove5Correct = NO;
 }
 
 @end
