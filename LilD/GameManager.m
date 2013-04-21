@@ -7,6 +7,7 @@
 //
 
 #import "GameManager.h"
+#import "TestMotionScene.h"
 #import "MainMenuScene.h"
 #import "DanceMoveSelectionScene.h"
 #import "DanceMoveInstructionsScene.h"
@@ -58,6 +59,7 @@ static GameManager *_sharedGameManager = nil;   // singleton
         _managerSoundState = kAudioManagerUninitialized;
         
         // individual dance moves practice
+        _individualDanceMove = nil;
         _danceMove1Correct = NO;
         _danceMove2Correct = NO;
         _danceMove3Correct = NO;
@@ -127,6 +129,9 @@ static GameManager *_sharedGameManager = nil;   // singleton
     switch(sceneID) {
         case kSceneTypeNone:
             result = @"kSceneTypeNone";
+            break;
+        case kSceneTypeTestMotion:
+            result = @"kSceneTypeTestMotion";
             break;
         case kSceneTypeMainMenu:
             result = @"kSceneTypeMainMenu";
@@ -315,6 +320,9 @@ static GameManager *_sharedGameManager = nil;   // singleton
     switch (sceneID) {
         case kSceneTypeMainMenu:
             sceneToRun = [MainMenuScene node];
+            break;
+        case kSceneTypeTestMotion:
+            sceneToRun = [TestMotionScene node];
             break;
         case kSceneTypeDanceMoveSelection:
             sceneToRun = [DanceMoveSelectionScene node];

@@ -8,11 +8,12 @@
 
 #import "DanceMoveInstructionsLayer.h"
 #import "GameManager.h"
-#import "MusicConstants.h"
+#import "DanceMove.h"
 
 @interface DanceMoveInstructionsLayer()
 
 @property (nonatomic) CGSize screenSize;
+@property (nonatomic, strong) DanceMove *danceMove;
 
 @end
 
@@ -22,6 +23,7 @@
     self = [super init];
     if (self != nil) {
         self.screenSize = [CCDirector sharedDirector].winSize;
+        self.danceMove = [GameManager sharedGameManager].individualDanceMove;
         
         [self displayInstructions];
         [self displayMenu];
@@ -31,13 +33,13 @@
 }
 
 -(void)displayInstructions {
-    CCLabelTTF *instructions = [CCLabelTTF labelWithString:@"Instructions for The Bernie" fontName:@"Helvetica" fontSize:24];
+    CCLabelTTF *instructions = [CCLabelTTF labelWithString:[NSString stringWithFormat:@"Instructions for %@", self.danceMove.name] fontName:@"Helvetica" fontSize:24];
     instructions.position = ccp(self.screenSize.width * 0.5, self.screenSize.height * 0.9);
     
     [self addChild:instructions];
     
     // play song
-    [[GameManager sharedGameManager] playBackgroundTrack:kBernieSong];
+    [[GameManager sharedGameManager] playBackgroundTrack:self.danceMove.trackName];
 }
 
 -(void)displayMenu {

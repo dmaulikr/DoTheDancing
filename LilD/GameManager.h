@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 #import "Constants.h"
 #import "SimpleAudioEngine.h"
+#import "DanceMove.h"
 
 @interface GameManager : NSObject
 
@@ -19,6 +20,7 @@
 @property (nonatomic, strong) NSMutableDictionary *soundEffectsState;
 
 // individual dance moves practice
+@property (nonatomic, strong) DanceMove *individualDanceMove;
 @property (nonatomic) BOOL danceMove1Correct;
 @property (nonatomic) BOOL danceMove2Correct;
 @property (nonatomic) BOOL danceMove3Correct;

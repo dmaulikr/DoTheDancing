@@ -6,15 +6,15 @@
 //
 //
 
-#import "GameScene.h"
-#import "GameLayer.h"
+#import "TestMotionScene.h"
+#import "TestMotionLayer.h"
 
-@implementation GameScene
+@implementation TestMotionScene
 
 -(id)init {
     self = [super init];
     if (self != nil) {
-        GameLayer *gameLayer = [GameLayer node];
+        TestMotionLayer *gameLayer = [TestMotionLayer node];
         [self addChild:gameLayer];
     }
     

@@ -6,11 +6,11 @@
 //
 //
 
-#import "GameLayer.h"
+#import "TestMotionLayer.h"
 #include <CoreMotion/CoreMotion.h>
 #import <CoreFoundation/CoreFoundation.h>
 
-@interface GameLayer ()
+@interface TestMotionLayer ()
 
 @property (nonatomic) CGSize screenSize;
 
@@ -29,12 +29,11 @@
 
 @end
 
-@implementation GameLayer
+@implementation TestMotionLayer
 
 -(id)init {
     self = [super init];
     if (self != nil) {
-#warning -- ONLY HANDLING RIGHT-HANDED MODE
         CCLOG(@"GameLayer->init");
         self.screenSize = [CCDirector sharedDirector].winSize;
         

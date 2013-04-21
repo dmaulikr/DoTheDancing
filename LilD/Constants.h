@@ -11,12 +11,21 @@
 
 typedef enum {
     kSceneTypeNone = -1,
+    kSceneTypeTestMotion,
     kSceneTypeMainMenu,
     kSceneTypeDanceMoveSelection,
     kSceneTypeDanceMoveInstructions,
     kSceneTypeDanceMoveDance,
     kSceneTypeDanceMoveResults
 } SceneTypes;
+
+typedef enum {
+    kDanceMoveNone = -1,
+    kDanceMoveBernie,
+    kDanceMoveNum
+} DanceMoves;
+
+#define kDanceMoveBernieName @"The Bernie"
 
 typedef enum {
     kCharacterStateNone = 0,

@@ -8,6 +8,6 @@
 
 #import "CCScene.h"
 
-@interface GameScene : CCScene
+@interface TestMotionScene : CCScene
 
 @end

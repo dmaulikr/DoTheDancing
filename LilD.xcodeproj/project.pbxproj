@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C40E6FB11723BF560091D716 /* DanceMoves.plist in Resources */ = {isa = PBXBuildFile; fileRef = C40E6FB01723BF560091D716 /* DanceMoves.plist */; };
+		C40E6FB41723C3F90091D716 /* DanceMove.m in Sources */ = {isa = PBXBuildFile; fileRef = C40E6FB31723C3F90091D716 /* DanceMove.m */; };
+		C40E6FB71723C46F0091D716 /* DanceMoveBernie.m in Sources */ = {isa = PBXBuildFile; fileRef = C40E6FB61723C46F0091D716 /* DanceMoveBernie.m */; };
 		C425AC1C1721FF9C008FE344 /* DanceMoveSelectionScene.m in Sources */ = {isa = PBXBuildFile; fileRef = C425AC1B1721FF9C008FE344 /* DanceMoveSelectionScene.m */; };
 		C425AC1F1721FFA4008FE344 /* DanceMoveSelectionLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = C425AC1E1721FFA4008FE344 /* DanceMoveSelectionLayer.m */; };
 		C425AC2917220985008FE344 /* Moving_Like_Bernie.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = C425AC2817220985008FE344 /* Moving_Like_Bernie.mp3 */; };
@@ -16,8 +19,8 @@
 		C425AC3E17221E24008FE344 /* DanceMoveDanceLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = C425AC3D17221E24008FE344 /* DanceMoveDanceLayer.m */; };
 		C425AC4217223E93008FE344 /* DanceMoveResultsScene.m in Sources */ = {isa = PBXBuildFile; fileRef = C425AC4117223E93008FE344 /* DanceMoveResultsScene.m */; };
 		C425AC4517223E9C008FE344 /* DanceMoveResultsLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = C425AC4417223E9C008FE344 /* DanceMoveResultsLayer.m */; };
-		C447906716D520BD00A64CC7 /* GameScene.m in Sources */ = {isa = PBXBuildFile; fileRef = C447906616D520BD00A64CC7 /* GameScene.m */; };
-		C447906A16D520C400A64CC7 /* GameLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = C447906916D520C400A64CC7 /* GameLayer.m */; };
+		C447906716D520BD00A64CC7 /* TestMotionScene.m in Sources */ = {isa = PBXBuildFile; fileRef = C447906616D520BD00A64CC7 /* TestMotionScene.m */; };
+		C447906A16D520C400A64CC7 /* TestMotionLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = C447906916D520C400A64CC7 /* TestMotionLayer.m */; };
 		C4514FB1165882960073A119 /* GameManager.m in Sources */ = {isa = PBXBuildFile; fileRef = C4514FB0165882960073A119 /* GameManager.m */; };
 		C4514FB6165889C00073A119 /* SoundEffects.plist in Resources */ = {isa = PBXBuildFile; fileRef = C4514FB5165889C00073A119 /* SoundEffects.plist */; };
 		C4514FB916588A150073A119 /* MainMenuScene.m in Sources */ = {isa = PBXBuildFile; fileRef = C4514FB816588A150073A119 /* MainMenuScene.m */; };
@@ -31,7 +34,6 @@
 		C4514FDB16588CB90073A119 /* mainmenu_art-hd.pvr.ccz in Resources */ = {isa = PBXBuildFile; fileRef = C4514FD716588CB90073A119 /* mainmenu_art-hd.pvr.ccz */; };
 		C4514FDC16588CB90073A119 /* mainmenu_art.plist in Resources */ = {isa = PBXBuildFile; fileRef = C4514FD816588CB90073A119 /* mainmenu_art.plist */; };
 		C4514FDD16588CB90073A119 /* mainmenu_art.pvr.ccz in Resources */ = {isa = PBXBuildFile; fileRef = C4514FD916588CB90073A119 /* mainmenu_art.pvr.ccz */; };
-		C4514FE0165891EE0073A119 /* GameObject.m in Sources */ = {isa = PBXBuildFile; fileRef = C4514FDF165891EE0073A119 /* GameObject.m */; };
 		C46322451720F6C4007E39D5 /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C46322441720F6C4007E39D5 /* CoreMotion.framework */; };
 		C46D83F61667001000C6529A /* libFlurry.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C46D83F51667001000C6529A /* libFlurry.a */; };
 		C46D83F91667007800C6529A /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C46D83F81667007800C6529A /* SystemConfiguration.framework */; };
@@ -295,12 +297,16 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		C40E6FB01723BF560091D716 /* DanceMoves.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = DanceMoves.plist; sourceTree = "<group>"; };
+		C40E6FB21723C3F90091D716 /* DanceMove.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DanceMove.h; sourceTree = "<group>"; };
+		C40E6FB31723C3F90091D716 /* DanceMove.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DanceMove.m; sourceTree = "<group>"; };
+		C40E6FB51723C46F0091D716 /* DanceMoveBernie.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DanceMoveBernie.h; sourceTree = "<group>"; };
+		C40E6FB61723C46F0091D716 /* DanceMoveBernie.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DanceMoveBernie.m; sourceTree = "<group>"; };
 		C425AC1A1721FF9C008FE344 /* DanceMoveSelectionScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DanceMoveSelectionScene.h; sourceTree = "<group>"; };
 		C425AC1B1721FF9C008FE344 /* DanceMoveSelectionScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DanceMoveSelectionScene.m; sourceTree = "<group>"; };
 		C425AC1D1721FFA4008FE344 /* DanceMoveSelectionLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DanceMoveSelectionLayer.h; sourceTree = "<group>"; };
 		C425AC1E1721FFA4008FE344 /* DanceMoveSelectionLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DanceMoveSelectionLayer.m; sourceTree = "<group>"; };
 		C425AC2817220985008FE344 /* Moving_Like_Bernie.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Moving_Like_Bernie.mp3; sourceTree = "<group>"; };
-		C425AC2A172209C7008FE344 /* MusicConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MusicConstants.h; sourceTree = "<group>"; };
 		C425AC3317221DFE008FE344 /* DanceMoveInstructionsLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DanceMoveInstructionsLayer.h; sourceTree = "<group>"; };
 		C425AC3417221DFE008FE344 /* DanceMoveInstructionsLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DanceMoveInstructionsLayer.m; sourceTree = "<group>"; };
 		C425AC3617221E0D008FE344 /* DanceMoveInstructionsScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DanceMoveInstructionsScene.h; sourceTree = "<group>"; };
@@ -313,10 +319,10 @@
 		C425AC4117223E93008FE344 /* DanceMoveResultsScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DanceMoveResultsScene.m; sourceTree = "<group>"; };
 		C425AC4317223E9C008FE344 /* DanceMoveResultsLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DanceMoveResultsLayer.h; sourceTree = "<group>"; };
 		C425AC4417223E9C008FE344 /* DanceMoveResultsLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DanceMoveResultsLayer.m; sourceTree = "<group>"; };
-		C447906516D520BD00A64CC7 /* GameScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameScene.h; sourceTree = "<group>"; };
-		C447906616D520BD00A64CC7 /* GameScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameScene.m; sourceTree = "<group>"; };
-		C447906816D520C300A64CC7 /* GameLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameLayer.h; sourceTree = "<group>"; };
-		C447906916D520C400A64CC7 /* GameLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameLayer.m; sourceTree = "<group>"; };
+		C447906516D520BD00A64CC7 /* TestMotionScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestMotionScene.h; sourceTree = "<group>"; };
+		C447906616D520BD00A64CC7 /* TestMotionScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestMotionScene.m; sourceTree = "<group>"; };
+		C447906816D520C300A64CC7 /* TestMotionLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestMotionLayer.h; sourceTree = "<group>"; };
+		C447906916D520C400A64CC7 /* TestMotionLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestMotionLayer.m; sourceTree = "<group>"; };
 		C4514FAF165882960073A119 /* GameManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameManager.h; sourceTree = "<group>"; };
 		C4514FB0165882960073A119 /* GameManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameManager.m; sourceTree = "<group>"; };
 		C4514FB3165886470073A119 /* Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
@@ -335,8 +341,6 @@
 		C4514FD716588CB90073A119 /* mainmenu_art-hd.pvr.ccz */ = {isa = PBXFileReference; lastKnownFileType = file; path = "mainmenu_art-hd.pvr.ccz"; sourceTree = "<group>"; };
 		C4514FD816588CB90073A119 /* mainmenu_art.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = mainmenu_art.plist; sourceTree = "<group>"; };
 		C4514FD916588CB90073A119 /* mainmenu_art.pvr.ccz */ = {isa = PBXFileReference; lastKnownFileType = file; path = mainmenu_art.pvr.ccz; sourceTree = "<group>"; };
-		C4514FDE165891EE0073A119 /* GameObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameObject.h; sourceTree = "<group>"; };
-		C4514FDF165891EE0073A119 /* GameObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameObject.m; sourceTree = "<group>"; };
 		C46322441720F6C4007E39D5 /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = System/Library/Frameworks/CoreMotion.framework; sourceTree = SDKROOT; };
 		C46D83F41667001000C6529A /* Flurry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Flurry.h; sourceTree = "<group>"; };
 		C46D83F51667001000C6529A /* libFlurry.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libFlurry.a; sourceTree = "<group>"; };
@@ -693,15 +697,15 @@
 			name = DanceMoveResults;
 			sourceTree = "<group>";
 		};
-		C447906416D520B000A64CC7 /* Game */ = {
+		C447906416D520B000A64CC7 /* TestMotion */ = {
 			isa = PBXGroup;
 			children = (
-				C447906516D520BD00A64CC7 /* GameScene.h */,
-				C447906616D520BD00A64CC7 /* GameScene.m */,
-				C447906816D520C300A64CC7 /* GameLayer.h */,
-				C447906916D520C400A64CC7 /* GameLayer.m */,
+				C447906516D520BD00A64CC7 /* TestMotionScene.h */,
+				C447906616D520BD00A64CC7 /* TestMotionScene.m */,
+				C447906816D520C300A64CC7 /* TestMotionLayer.h */,
+				C447906916D520C400A64CC7 /* TestMotionLayer.m */,
 			);
-			name = Game;
+			name = TestMotion;
 			sourceTree = "<group>";
 		};
 		C4514FBD16588B700073A119 /* mainmenu_art */ = {
@@ -785,7 +789,7 @@
 				C47F72B716DF90030006EEFB /* CCTouchDownMenu.h */,
 				C47F72B816DF90030006EEFB /* CCTouchDownMenu.m */,
 				C4993D2416576C46008187A8 /* Scenes */,
-				C4993D2616576C92008187A8 /* GameObjects */,
+				C4993D2616576C92008187A8 /* DanceMoves */,
 				C4993D2716576C9F008187A8 /* Constants */,
 				C4993D2816576CA4008187A8 /* Singletons */,
 			);
@@ -795,12 +799,12 @@
 		C4993D2416576C46008187A8 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				C447906416D520B000A64CC7 /* TestMotion */,
 				C4993D2516576C70008187A8 /* MainMenu */,
 				C425AC191721FF69008FE344 /* DanceMoveSelection */,
 				C425AC2E17221DC8008FE344 /* DanceMoveInstructions */,
 				C425AC2F17221DCE008FE344 /* DanceMoveDance */,
 				C425AC3F17223C33008FE344 /* DanceMoveResults */,
-				C447906416D520B000A64CC7 /* Game */,
 			);
 			name = Scenes;
 			sourceTree = "<group>";
@@ -816,13 +820,15 @@
 			name = MainMenu;
 			sourceTree = "<group>";
 		};
-		C4993D2616576C92008187A8 /* GameObjects */ = {
+		C4993D2616576C92008187A8 /* DanceMoves */ = {
 			isa = PBXGroup;
 			children = (
-				C4514FDE165891EE0073A119 /* GameObject.h */,
-				C4514FDF165891EE0073A119 /* GameObject.m */,
+				C40E6FB21723C3F90091D716 /* DanceMove.h */,
+				C40E6FB31723C3F90091D716 /* DanceMove.m */,
+				C40E6FB51723C46F0091D716 /* DanceMoveBernie.h */,
+				C40E6FB61723C46F0091D716 /* DanceMoveBernie.m */,
 			);
-			name = GameObjects;
+			name = DanceMoves;
 			sourceTree = "<group>";
 		};
 		C4993D2716576C9F008187A8 /* Constants */ = {
@@ -830,7 +836,6 @@
 			children = (
 				C4514FB3165886470073A119 /* Constants.h */,
 				C4514FB4165886900073A119 /* CommonProtocols.h */,
-				C425AC2A172209C7008FE344 /* MusicConstants.h */,
 			);
 			name = Constants;
 			sourceTree = "<group>";
@@ -850,6 +855,7 @@
 			isa = PBXGroup;
 			children = (
 				C4514FB5165889C00073A119 /* SoundEffects.plist */,
+				C40E6FB01723BF560091D716 /* DanceMoves.plist */,
 			);
 			name = Plists;
 			sourceTree = "<group>";
@@ -1519,6 +1525,7 @@
 				C47F72AE16DF8DEC0006EEFB /* Default@2x~iphone.png in Resources */,
 				C47F72AF16DF8DEC0006EEFB /* Default~ipad.png in Resources */,
 				C425AC2917220985008FE344 /* Moving_Like_Bernie.mp3 in Resources */,
+				C40E6FB11723BF560091D716 /* DanceMoves.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1534,9 +1541,8 @@
 				C4514FB1165882960073A119 /* GameManager.m in Sources */,
 				C4514FB916588A150073A119 /* MainMenuScene.m in Sources */,
 				C4514FBC16588A350073A119 /* MainMenuLayer.m in Sources */,
-				C4514FE0165891EE0073A119 /* GameObject.m in Sources */,
-				C447906716D520BD00A64CC7 /* GameScene.m in Sources */,
-				C447906A16D520C400A64CC7 /* GameLayer.m in Sources */,
+				C447906716D520BD00A64CC7 /* TestMotionScene.m in Sources */,
+				C447906A16D520C400A64CC7 /* TestMotionLayer.m in Sources */,
 				C47F72B916DF90030006EEFB /* CCTouchDownMenu.m in Sources */,
 				C425AC1C1721FF9C008FE344 /* DanceMoveSelectionScene.m in Sources */,
 				C425AC1F1721FFA4008FE344 /* DanceMoveSelectionLayer.m in Sources */,
@@ -1546,6 +1552,8 @@
 				C425AC3E17221E24008FE344 /* DanceMoveDanceLayer.m in Sources */,
 				C425AC4217223E93008FE344 /* DanceMoveResultsScene.m in Sources */,
 				C425AC4517223E9C008FE344 /* DanceMoveResultsLayer.m in Sources */,
+				C40E6FB41723C3F90091D716 /* DanceMove.m in Sources */,
+				C40E6FB71723C46F0091D716 /* DanceMoveBernie.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

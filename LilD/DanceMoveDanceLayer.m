@@ -8,21 +8,18 @@
 
 #import "DanceMoveDanceLayer.h"
 #import "GameManager.h"
-#import "MusicConstants.h"
 #include <CoreMotion/CoreMotion.h>
 #import <CoreFoundation/CoreFoundation.h>
+#import "DanceMove.h"
 
 @interface DanceMoveDanceLayer()
 
 @property (nonatomic) CGSize screenSize;
 @property (nonatomic) CGFloat elapsedTime;
+@property (nonatomic, strong) DanceMove *danceMove;
 
 // motion detection
 @property (nonatomic, strong) CMMotionManager *motionManager;
-//@property (nonatomic, strong) CCLabelTTF *yawLabel;
-//@property (nonatomic, strong) CCLabelTTF *pitchLabel;
-//@property (nonatomic, strong) CCLabelTTF *rollLabel;
-//@property (nonatomic, strong) CCLabelTTF *userAccelerationLabel;
 
 // temp bernie detection
 @property (nonatomic) BOOL bernie1Detected;
@@ -40,6 +37,7 @@
     self = [super init];
     if (self != nil) {
         self.screenSize = [CCDirector sharedDirector].winSize;
+        self.danceMove = [GameManager sharedGameManager].individualDanceMove;
         
         // temp bernie init
         self.bernie1Detected = NO;
@@ -58,8 +56,7 @@
     return self;
 }
 
--(void) onExit {
-    CCLOG(@"GameLayer->onExit");
+-(void)onExit {
     [self.motionManager stopDeviceMotionUpdates];
     [super onExit];
 }
@@ -71,7 +68,7 @@
     [self addChild:placeholder];
     
     // play track
-    [[GameManager sharedGameManager] playBackgroundTrack:kBernieSong];
+    [[GameManager sharedGameManager] playBackgroundTrack:self.danceMove.trackName];
 }
 
 -(void)initMotionManager {
@@ -152,20 +149,6 @@
     float pitch = (float)(CC_RADIANS_TO_DEGREES(self.motionManager.deviceMotion.attitude.pitch));
     float roll = (float)(CC_RADIANS_TO_DEGREES(self.motionManager.deviceMotion.attitude.roll)); // roll is +90 (right-handed) and -90 (left-handed) when perpendicular to ground in landscape mode
     CMAcceleration totalAcceleration = self.motionManager.deviceMotion.userAcceleration;
-    //    CMAcceleration gravity = self.motionManager.deviceMotion.gravity;
-    //    CMAcceleration onlyUserAcceleration;
-    //    onlyUserAcceleration.x = totalAcceleration.x - gravity.x;
-    //    onlyUserAcceleration.y = totalAcceleration.y - gravity.y;
-    //    onlyUserAcceleration.z = totalAcceleration.z - gravity.z;
-    
-    // convert the degrees value to float and use Math function to round the value
-    //    self.yawLabel.string = [NSString stringWithFormat:@"Yaw: %.0f", yaw];
-    //    self.pitchLabel.string = [NSString stringWithFormat:@"Pitch: %.0f", pitch];
-    //    self.rollLabel.string = [NSString stringWithFormat:@"Roll: %.0f", roll];
-    //    self.userAccelerationLabel.string = [NSString stringWithFormat:@"User acceleration: (%.2f, %.2f, %.2f)", userAcceleration.x, userAcceleration.y, userAcceleration.z];
-    //    if (fabs(totalAcceleration.x) > 0.1 && fabs(totalAcceleration.y) > 0.1 && fabs(totalAcceleration.z) > 0.1) {
-    //        CCLOG(@"User acceleration: (%.2f, %.2f, %.2f)", totalAcceleration.x, totalAcceleration.y, totalAcceleration.z);
-    //    }
     
     if (self.shouldDetectBernie && pitch < -20 && pitch > -80) {
         if (!self.bernie1Detected && (totalAcceleration.z > 0.3)) {

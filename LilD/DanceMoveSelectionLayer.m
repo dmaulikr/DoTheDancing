@@ -8,6 +8,7 @@
 
 #import "DanceMoveSelectionLayer.h"
 #import "GameManager.h"
+#import "DanceMoveBernie.h"
 
 @interface DanceMoveSelectionLayer()
 
@@ -22,6 +23,8 @@
     if (self != nil) {
         self.screenSize = [CCDirector sharedDirector].winSize;
         
+        // set individual dance move to nil
+        [GameManager sharedGameManager].individualDanceMove = nil;
         [self setUpListOfDanceMoves];
     }
     
@@ -29,7 +32,9 @@
 }
 
 -(void)setUpListOfDanceMoves {
-    CCMenuItemLabel *bernieButton = [CCMenuItemLabel itemWithLabel:[CCLabelTTF labelWithString:@"The Bernie" fontName:@"Helvetica" fontSize:28] block:^(id sender) {
+    CCMenuItemLabel *bernieButton = [CCMenuItemLabel itemWithLabel:[CCLabelTTF labelWithString:kDanceMoveBernieName fontName:@"Helvetica" fontSize:28] block:^(id sender) {
+        // create bernie object and pass to instructions class
+        [GameManager sharedGameManager].individualDanceMove = [[DanceMoveBernie alloc] init];
         [[GameManager sharedGameManager] runSceneWithID:kSceneTypeDanceMoveInstructions];
     }];
     bernieButton.anchorPoint = ccp(0, 0.5);

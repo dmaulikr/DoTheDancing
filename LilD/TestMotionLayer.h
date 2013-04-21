@@ -8,6 +8,6 @@
 
 #import "CCLayer.h"
 
-@interface GameLayer : CCLayer
+@interface TestMotionLayer : CCLayer
 
 @end
