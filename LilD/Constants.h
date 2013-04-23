@@ -15,6 +15,7 @@ typedef enum {
     kSceneTypeMainMenu,
     kSceneTypeDanceMoveSelection,
     kSceneTypeDanceMoveInstructions,
+    kSceneTypeDanceMoveSeeInAction,
     kSceneTypeDanceMoveDance,
     kSceneTypeDanceMoveResults
 } SceneTypes;

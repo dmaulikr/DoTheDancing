@@ -11,6 +11,7 @@
 #import "MainMenuScene.h"
 #import "DanceMoveSelectionScene.h"
 #import "DanceMoveInstructionsScene.h"
+#import "DanceMoveSeeInActionScene.h"
 #import "DanceMoveDanceScene.h"
 #import "DanceMoveResultsScene.h"
 
@@ -137,6 +138,9 @@ static GameManager *_sharedGameManager = nil;   // singleton
             break;
         case kSceneTypeDanceMoveInstructions:
             result = @"kSceneTypeDanceMoveInstructions";
+            break;
+        case kSceneTypeDanceMoveSeeInAction:
+            result = @"kSceneTypeDanceMoveSeeInAction";
             break;
         case kSceneTypeDanceMoveDance:
             result = @"kSceneTypeDanceMoveDance";
@@ -325,6 +329,9 @@ static GameManager *_sharedGameManager = nil;   // singleton
             break;
         case kSceneTypeDanceMoveInstructions:
             sceneToRun = [DanceMoveInstructionsScene node];
+            break;
+        case kSceneTypeDanceMoveSeeInAction:
+            sceneToRun = [DanceMoveSeeInActionScene node];
             break;
         case kSceneTypeDanceMoveDance:
             sceneToRun = [DanceMoveDanceScene node];

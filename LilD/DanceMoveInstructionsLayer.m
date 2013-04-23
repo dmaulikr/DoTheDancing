@@ -23,6 +23,12 @@
 @property (nonatomic, strong) CCSprite *illustration;
 @property (nonatomic, strong) CCLabelBMFont *stepCountLabel;
 @property (nonatomic, strong) CCLabelBMFont *instructionsLabel;
+@property (nonatomic, strong) CCMenuItemSprite *leftArrowButton;
+@property (nonatomic, strong) CCMenuItemSprite *rightArrowButton;
+
+// swipe gesture recognizer
+@property (nonatomic, strong) UISwipeGestureRecognizer *swipeLeftRecognizer;
+@property (nonatomic, strong) UISwipeGestureRecognizer *swipeRightRecognizer;
 
 @end
 
@@ -80,7 +86,20 @@
     self.illustration.position = ccp(self.screenSize.width * 0.5, self.screenSize.height - self.self.topBannerBg.contentSize.height);
     [self.batchNode addChild:self.illustration];
     
-    // TODO: if first step is an animation, run animation
+    // check for animation
+    NSArray *currentIllustrations = self.danceMove.illustrationsForSteps[0];
+    if (currentIllustrations.count > 1) {
+        // animations!
+        CCAnimation *animation = [CCAnimation animation];
+        animation.restoreOriginalFrame = YES;
+        animation.delayPerUnit = [self.danceMove.delayForIllustrationAnimations[0] floatValue];
+        for (NSString *frameName in currentIllustrations) {
+            [animation addSpriteFrame:[[CCSpriteFrameCache sharedSpriteFrameCache] spriteFrameByName:frameName]];
+        }
+        
+        id action = [CCRepeatForever actionWithAction:[CCAnimate actionWithAnimation:animation]];
+        [self.illustration runAction:action];
+    }
 }
 
 -(void)displayInitInstructions {
@@ -130,43 +149,19 @@
     // only add arrows if there are more than 1 step
     if (self.danceMove.numSteps > 1) {
         
-        __block CCMenuItemSprite *leftArrowButton = [CCMenuItemSprite itemWithNormalSprite:[CCSprite spriteWithSpriteFrameName:@"instructions_arrow.png"] selectedSprite:nil];
-        leftArrowButton.rotation = 180;
-        leftArrowButton.opacity = 100;      // initialized in disabled mode
-        leftArrowButton.position = ccp(self.screenSize.width * 0.1, self.illustration.position.y - self.illustration.contentSize.height*0.5);
-        
-        __block CCMenuItemSprite *rightArrowButton = [CCMenuItemSprite itemWithNormalSprite:[CCSprite spriteWithSpriteFrameName:@"instructions_arrow.png"] selectedSprite:nil];
-        rightArrowButton.position = ccp(self.screenSize.width * 0.9, leftArrowButton.position.y);
-        
-        [leftArrowButton setBlock:^(id sender) {
-            // enabled only if current step > 1
-            if (self.currentShownStep > 1) {
-                self.currentShownStep--;
-                rightArrowButton.opacity = 255;
-                
-                if (self.currentShownStep == 1) {
-                    [(CCMenuItemSprite*)sender setOpacity:100];
-                }
-                
-                [self updateInstructionsForNewStep];
-            }
+        self.leftArrowButton = [CCMenuItemSprite itemWithNormalSprite:[CCSprite spriteWithSpriteFrameName:@"instructions_arrow.png"] selectedSprite:nil block:^(id sender) {
+            [self showPreviousStep];
         }];
+        self.leftArrowButton.rotation = 180;
+        self.leftArrowButton.opacity = 100;      // initialized in disabled mode
+        self.leftArrowButton.position = ccp(self.screenSize.width * 0.1, self.illustration.position.y - self.illustration.contentSize.height*0.5);
         
-        [rightArrowButton setBlock:^(id sender) {
-            // enabled only if current step < totalSteps
-            if (self.currentShownStep < self.danceMove.numSteps) {
-                self.currentShownStep++;
-                leftArrowButton.opacity = 255;
-                
-                if (self.currentShownStep == self.danceMove.numSteps) {
-                    [(CCMenuItemSprite*)sender setOpacity:100];
-                }
-                
-                [self updateInstructionsForNewStep];
-            }
+        self.rightArrowButton = [CCMenuItemSprite itemWithNormalSprite:[CCSprite spriteWithSpriteFrameName:@"instructions_arrow.png"] selectedSprite:nil block:^(id sender) {
+            [self showNextStep];
         }];
+        self.rightArrowButton.position = ccp(self.screenSize.width * 0.9, self.leftArrowButton.position.y);
         
-        CCTouchDownMenu *menu = [CCTouchDownMenu menuWithItems:leftArrowButton, rightArrowButton, nil];
+        CCTouchDownMenu *menu = [CCTouchDownMenu menuWithItems:self.leftArrowButton, self.rightArrowButton, nil];
         menu.position = ccp(0, 0);
         [self addChild:menu];
     }
@@ -211,6 +206,58 @@
     } else {
         // static illustraton
         self.illustration.displayFrame = [[CCSpriteFrameCache sharedSpriteFrameCache] spriteFrameByName:currentIllustrations[0]];
+    }
+    
+    // update step count
+    self.stepCountLabel.string = [NSString stringWithFormat:@"Step %i", self.currentShownStep];
+    
+    // update instructions
+    self.instructionsLabel.string = self.danceMove.instructionsForSteps[self.currentShownStep-1];
+}
+
+-(void)onEnter {
+    [super onEnter];
+    self.swipeLeftRecognizer = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(showNextStep)];
+    self.swipeLeftRecognizer.direction = UISwipeGestureRecognizerDirectionLeft;
+    [[CCDirector sharedDirector].view addGestureRecognizer:self.swipeLeftRecognizer];
+    
+    self.swipeRightRecognizer = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(showPreviousStep)];
+    self.swipeRightRecognizer.direction = UISwipeGestureRecognizerDirectionRight;
+    [[CCDirector sharedDirector].view addGestureRecognizer:self.swipeRightRecognizer];
+}
+
+-(void)onExit {
+    [[CCDirector sharedDirector].view removeGestureRecognizer:self.swipeLeftRecognizer];
+    [[CCDirector sharedDirector].view removeGestureRecognizer:self.swipeRightRecognizer];
+    self.swipeLeftRecognizer = nil;
+    self.swipeRightRecognizer = nil;
+    [super onExit];
+}
+
+-(void)showPreviousStep {
+    // enabled only if current step > 1
+    if (self.currentShownStep > 1) {
+        self.currentShownStep--;
+        self.rightArrowButton.opacity = 255;
+        
+        if (self.currentShownStep == 1) {
+            self.leftArrowButton.opacity = 100;
+        }
+        
+        [self updateInstructionsForNewStep];
+    }
+}
+
+-(void)showNextStep {
+    if (self.currentShownStep < self.danceMove.numSteps) {
+        self.currentShownStep++;
+        self.leftArrowButton.opacity = 255;
+        
+        if (self.currentShownStep == self.danceMove.numSteps) {
+            self.rightArrowButton.opacity = 100;
+        }
+        
+        [self updateInstructionsForNewStep];
     }
 }
 

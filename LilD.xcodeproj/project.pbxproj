@@ -65,6 +65,8 @@
 		C4853D641726643700E958D2 /* adobeCaslonPro-bolditalic_21-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = C4853D621726643700E958D2 /* adobeCaslonPro-bolditalic_21-hd.png */; };
 		C4853D671726644000E958D2 /* economica_41-hd.fnt in Resources */ = {isa = PBXBuildFile; fileRef = C4853D651726644000E958D2 /* economica_41-hd.fnt */; };
 		C4853D681726644000E958D2 /* economica_41-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = C4853D661726644000E958D2 /* economica_41-hd.png */; };
+		C498CCF51727396B00A2A0A8 /* DanceMoveSeeInActionScene.m in Sources */ = {isa = PBXBuildFile; fileRef = C498CCF41727396B00A2A0A8 /* DanceMoveSeeInActionScene.m */; };
+		C498CCF81727397300A2A0A8 /* DanceMoveSeeInActionLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = C498CCF71727397300A2A0A8 /* DanceMoveSeeInActionLayer.m */; };
 		DC0864B815BD8CE60044A820 /* CCNode+Debug.h in Headers */ = {isa = PBXBuildFile; fileRef = DC0864B515BD8CE60044A820 /* CCNode+Debug.h */; };
 		DC0864B915BD8CE60044A820 /* CCNode+Debug.m in Sources */ = {isa = PBXBuildFile; fileRef = DC0864B615BD8CE60044A820 /* CCNode+Debug.m */; };
 		DC0864BA15BD8CE60044A820 /* ccCArray.m in Sources */ = {isa = PBXBuildFile; fileRef = DC0864B715BD8CE60044A820 /* ccCArray.m */; };
@@ -399,6 +401,10 @@
 		C4853D7117266E3F00E958D2 /* instructions_button_try2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = instructions_button_try2.png; path = "iPhone Retina/instructions_button_try2.png"; sourceTree = "<group>"; };
 		C4853D7217266E3F00E958D2 /* instructions_line.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = instructions_line.png; path = "iPhone Retina/instructions_line.png"; sourceTree = "<group>"; };
 		C4853D7317266E3F00E958D2 /* instructions_top_banner.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = instructions_top_banner.png; path = "iPhone Retina/instructions_top_banner.png"; sourceTree = "<group>"; };
+		C498CCF31727396B00A2A0A8 /* DanceMoveSeeInActionScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DanceMoveSeeInActionScene.h; sourceTree = "<group>"; };
+		C498CCF41727396B00A2A0A8 /* DanceMoveSeeInActionScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DanceMoveSeeInActionScene.m; sourceTree = "<group>"; };
+		C498CCF61727397300A2A0A8 /* DanceMoveSeeInActionLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DanceMoveSeeInActionLayer.h; sourceTree = "<group>"; };
+		C498CCF71727397300A2A0A8 /* DanceMoveSeeInActionLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DanceMoveSeeInActionLayer.m; sourceTree = "<group>"; };
 		DC0864B515BD8CE60044A820 /* CCNode+Debug.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CCNode+Debug.h"; sourceTree = "<group>"; };
 		DC0864B615BD8CE60044A820 /* CCNode+Debug.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CCNode+Debug.m"; sourceTree = "<group>"; };
 		DC0864B715BD8CE60044A820 /* ccCArray.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ccCArray.m; sourceTree = "<group>"; };
@@ -813,6 +819,17 @@
 			name = instructions;
 			sourceTree = "<group>";
 		};
+		C498CCF21727394F00A2A0A8 /* DanceMoveSeeInAction */ = {
+			isa = PBXGroup;
+			children = (
+				C498CCF31727396B00A2A0A8 /* DanceMoveSeeInActionScene.h */,
+				C498CCF41727396B00A2A0A8 /* DanceMoveSeeInActionScene.m */,
+				C498CCF61727397300A2A0A8 /* DanceMoveSeeInActionLayer.h */,
+				C498CCF71727397300A2A0A8 /* DanceMoveSeeInActionLayer.m */,
+			);
+			name = DanceMoveSeeInAction;
+			sourceTree = "<group>";
+		};
 		C4993D1F16576C28008187A8 /* Assets */ = {
 			isa = PBXGroup;
 			children = (
@@ -862,6 +879,7 @@
 				C4993D2516576C70008187A8 /* MainMenu */,
 				C425AC191721FF69008FE344 /* DanceMoveSelection */,
 				C425AC2E17221DC8008FE344 /* DanceMoveInstructions */,
+				C498CCF21727394F00A2A0A8 /* DanceMoveSeeInAction */,
 				C425AC2F17221DCE008FE344 /* DanceMoveDance */,
 				C425AC3F17223C33008FE344 /* DanceMoveResults */,
 			);
@@ -1638,6 +1656,8 @@
 				C40E6FB41723C3F90091D716 /* DanceMove.m in Sources */,
 				C40E6FB71723C46F0091D716 /* DanceMoveBernie.m in Sources */,
 				C4853D3C1725CA8500E958D2 /* MotionRequirements.m in Sources */,
+				C498CCF51727396B00A2A0A8 /* DanceMoveSeeInActionScene.m in Sources */,
+				C498CCF81727397300A2A0A8 /* DanceMoveSeeInActionLayer.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
