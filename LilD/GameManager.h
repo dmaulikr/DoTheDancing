@@ -21,11 +21,7 @@
 
 // individual dance moves practice
 @property (nonatomic, strong) DanceMove *individualDanceMove;
-@property (nonatomic) BOOL danceMove1Correct;
-@property (nonatomic) BOOL danceMove2Correct;
-@property (nonatomic) BOOL danceMove3Correct;
-@property (nonatomic) BOOL danceMove4Correct;
-@property (nonatomic) BOOL danceMove5Correct;
+@property (nonatomic, strong) NSMutableArray *danceMoveIterationResults;
 
 +(GameManager*)sharedGameManager;
 -(void)runSceneWithID:(SceneTypes)sceneID;

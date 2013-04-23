@@ -12,7 +12,6 @@
 		C40E6FB71723C46F0091D716 /* DanceMoveBernie.m in Sources */ = {isa = PBXBuildFile; fileRef = C40E6FB61723C46F0091D716 /* DanceMoveBernie.m */; };
 		C425AC1C1721FF9C008FE344 /* DanceMoveSelectionScene.m in Sources */ = {isa = PBXBuildFile; fileRef = C425AC1B1721FF9C008FE344 /* DanceMoveSelectionScene.m */; };
 		C425AC1F1721FFA4008FE344 /* DanceMoveSelectionLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = C425AC1E1721FFA4008FE344 /* DanceMoveSelectionLayer.m */; };
-		C425AC2917220985008FE344 /* Moving_Like_Bernie.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = C425AC2817220985008FE344 /* Moving_Like_Bernie.mp3 */; };
 		C425AC3517221DFE008FE344 /* DanceMoveInstructionsLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = C425AC3417221DFE008FE344 /* DanceMoveInstructionsLayer.m */; };
 		C425AC3817221E0D008FE344 /* DanceMoveInstructionsScene.m in Sources */ = {isa = PBXBuildFile; fileRef = C425AC3717221E0D008FE344 /* DanceMoveInstructionsScene.m */; };
 		C425AC3B17221E16008FE344 /* DanceMoveDanceScene.m in Sources */ = {isa = PBXBuildFile; fileRef = C425AC3A17221E16008FE344 /* DanceMoveDanceScene.m */; };
@@ -52,6 +51,10 @@
 		C47F72AE16DF8DEC0006EEFB /* Default@2x~iphone.png in Resources */ = {isa = PBXBuildFile; fileRef = C47F72AA16DF8DEC0006EEFB /* Default@2x~iphone.png */; };
 		C47F72AF16DF8DEC0006EEFB /* Default~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = C47F72AB16DF8DEC0006EEFB /* Default~ipad.png */; };
 		C47F72B916DF90030006EEFB /* CCTouchDownMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = C47F72B816DF90030006EEFB /* CCTouchDownMenu.m */; };
+		C4853D3C1725CA8500E958D2 /* MotionRequirements.m in Sources */ = {isa = PBXBuildFile; fileRef = C4853D3B1725CA8500E958D2 /* MotionRequirements.m */; };
+		C4853D3E172605C200E958D2 /* the_bernie.caf in Resources */ = {isa = PBXBuildFile; fileRef = C4853D3D172605C200E958D2 /* the_bernie.caf */; };
+		C4853D4117262D6200E958D2 /* spritesheet-hd.plist in Resources */ = {isa = PBXBuildFile; fileRef = C4853D3F17262D6200E958D2 /* spritesheet-hd.plist */; };
+		C4853D4217262D6200E958D2 /* spritesheet-hd.pvr.ccz in Resources */ = {isa = PBXBuildFile; fileRef = C4853D4017262D6200E958D2 /* spritesheet-hd.pvr.ccz */; };
 		DC0864B815BD8CE60044A820 /* CCNode+Debug.h in Headers */ = {isa = PBXBuildFile; fileRef = DC0864B515BD8CE60044A820 /* CCNode+Debug.h */; };
 		DC0864B915BD8CE60044A820 /* CCNode+Debug.m in Sources */ = {isa = PBXBuildFile; fileRef = DC0864B615BD8CE60044A820 /* CCNode+Debug.m */; };
 		DC0864BA15BD8CE60044A820 /* ccCArray.m in Sources */ = {isa = PBXBuildFile; fileRef = DC0864B715BD8CE60044A820 /* ccCArray.m */; };
@@ -306,7 +309,6 @@
 		C425AC1B1721FF9C008FE344 /* DanceMoveSelectionScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DanceMoveSelectionScene.m; sourceTree = "<group>"; };
 		C425AC1D1721FFA4008FE344 /* DanceMoveSelectionLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DanceMoveSelectionLayer.h; sourceTree = "<group>"; };
 		C425AC1E1721FFA4008FE344 /* DanceMoveSelectionLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DanceMoveSelectionLayer.m; sourceTree = "<group>"; };
-		C425AC2817220985008FE344 /* Moving_Like_Bernie.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Moving_Like_Bernie.mp3; sourceTree = "<group>"; };
 		C425AC3317221DFE008FE344 /* DanceMoveInstructionsLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DanceMoveInstructionsLayer.h; sourceTree = "<group>"; };
 		C425AC3417221DFE008FE344 /* DanceMoveInstructionsLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DanceMoveInstructionsLayer.m; sourceTree = "<group>"; };
 		C425AC3617221E0D008FE344 /* DanceMoveInstructionsScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DanceMoveInstructionsScene.h; sourceTree = "<group>"; };
@@ -361,6 +363,11 @@
 		C47F72AB16DF8DEC0006EEFB /* Default~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default~ipad.png"; sourceTree = "<group>"; };
 		C47F72B716DF90030006EEFB /* CCTouchDownMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCTouchDownMenu.h; sourceTree = "<group>"; };
 		C47F72B816DF90030006EEFB /* CCTouchDownMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCTouchDownMenu.m; sourceTree = "<group>"; };
+		C4853D3A1725CA8500E958D2 /* MotionRequirements.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MotionRequirements.h; sourceTree = "<group>"; };
+		C4853D3B1725CA8500E958D2 /* MotionRequirements.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MotionRequirements.m; sourceTree = "<group>"; };
+		C4853D3D172605C200E958D2 /* the_bernie.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = the_bernie.caf; sourceTree = "<group>"; };
+		C4853D3F17262D6200E958D2 /* spritesheet-hd.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "spritesheet-hd.plist"; sourceTree = "<group>"; };
+		C4853D4017262D6200E958D2 /* spritesheet-hd.pvr.ccz */ = {isa = PBXFileReference; lastKnownFileType = file; path = "spritesheet-hd.pvr.ccz"; sourceTree = "<group>"; };
 		DC0864B515BD8CE60044A820 /* CCNode+Debug.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CCNode+Debug.h"; sourceTree = "<group>"; };
 		DC0864B615BD8CE60044A820 /* CCNode+Debug.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CCNode+Debug.m"; sourceTree = "<group>"; };
 		DC0864B715BD8CE60044A820 /* ccCArray.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ccCArray.m; sourceTree = "<group>"; };
@@ -659,7 +666,7 @@
 		C425AC2717220979008FE344 /* Music */ = {
 			isa = PBXGroup;
 			children = (
-				C425AC2817220985008FE344 /* Moving_Like_Bernie.mp3 */,
+				C4853D3D172605C200E958D2 /* the_bernie.caf */,
 			);
 			name = Music;
 			sourceTree = "<group>";
@@ -775,6 +782,8 @@
 		C4993D2216576C28008187A8 /* SpriteSheets */ = {
 			isa = PBXGroup;
 			children = (
+				C4853D3F17262D6200E958D2 /* spritesheet-hd.plist */,
+				C4853D4017262D6200E958D2 /* spritesheet-hd.pvr.ccz */,
 				C4514FD616588CB90073A119 /* mainmenu_art-hd.plist */,
 				C4514FD716588CB90073A119 /* mainmenu_art-hd.pvr.ccz */,
 				C4514FD816588CB90073A119 /* mainmenu_art.plist */,
@@ -825,6 +834,8 @@
 			children = (
 				C40E6FB21723C3F90091D716 /* DanceMove.h */,
 				C40E6FB31723C3F90091D716 /* DanceMove.m */,
+				C4853D3A1725CA8500E958D2 /* MotionRequirements.h */,
+				C4853D3B1725CA8500E958D2 /* MotionRequirements.m */,
 				C40E6FB51723C46F0091D716 /* DanceMoveBernie.h */,
 				C40E6FB61723C46F0091D716 /* DanceMoveBernie.m */,
 			);
@@ -1524,8 +1535,10 @@
 				C47F72AD16DF8DEC0006EEFB /* Default@2x~ipad.png in Resources */,
 				C47F72AE16DF8DEC0006EEFB /* Default@2x~iphone.png in Resources */,
 				C47F72AF16DF8DEC0006EEFB /* Default~ipad.png in Resources */,
-				C425AC2917220985008FE344 /* Moving_Like_Bernie.mp3 in Resources */,
 				C40E6FB11723BF560091D716 /* DanceMoves.plist in Resources */,
+				C4853D3E172605C200E958D2 /* the_bernie.caf in Resources */,
+				C4853D4117262D6200E958D2 /* spritesheet-hd.plist in Resources */,
+				C4853D4217262D6200E958D2 /* spritesheet-hd.pvr.ccz in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1554,6 +1567,7 @@
 				C425AC4517223E9C008FE344 /* DanceMoveResultsLayer.m in Sources */,
 				C40E6FB41723C3F90091D716 /* DanceMove.m in Sources */,
 				C40E6FB71723C46F0091D716 /* DanceMoveBernie.m in Sources */,
+				C4853D3C1725CA8500E958D2 /* MotionRequirements.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

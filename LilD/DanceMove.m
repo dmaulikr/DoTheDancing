@@ -16,6 +16,10 @@
         self.danceMoveType = kDanceMoveNone;
         self.name = nil;
         self.trackName = nil;
+        self.numSteps = 0;
+        self.stepsArray = nil;
+        self.numIndividualIterations = 0;
+        self.timePerIteration = 0;
     }
     
     return self;

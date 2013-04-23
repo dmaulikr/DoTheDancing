@@ -34,60 +34,25 @@
     resultsLabel.position = ccp(self.screenSize.width * 0.5, self.screenSize.height * 0.9);
     [self addChild:resultsLabel];
     
-    // display results for 5 attempts
-    CCLabelTTF *danceMove1Title = [CCLabelTTF labelWithString:@"1" fontName:@"Helvetica" fontSize:24];
-    CCLabelTTF *danceMove2Title = [CCLabelTTF labelWithString:@"2" fontName:@"Helvetica" fontSize:24];
-    CCLabelTTF *danceMove3Title = [CCLabelTTF labelWithString:@"3" fontName:@"Helvetica" fontSize:24];
-    CCLabelTTF *danceMove4Title = [CCLabelTTF labelWithString:@"4" fontName:@"Helvetica" fontSize:24];
-    CCLabelTTF *danceMove5Title = [CCLabelTTF labelWithString:@"5" fontName:@"Helvetica" fontSize:24];
+    int numIterations = [GameManager sharedGameManager].individualDanceMove.numIndividualIterations;
+    CGFloat resultPadding = self.screenSize.width / (float)numIterations;
+    CGPoint currentTitlePosition = ccp(resultPadding - resultPadding/2, self.screenSize.height * 0.5);
     
-    danceMove1Title.position = ccp(self.screenSize.width * 0.17, self.screenSize.height * 0.5);
-    danceMove2Title.position = ccp(self.screenSize.width * 0.34, danceMove1Title.position.y);
-    danceMove3Title.position = ccp(self.screenSize.width * 0.51, danceMove1Title.position.y);
-    danceMove4Title.position = ccp(self.screenSize.width * 0.68, danceMove1Title.position.y);
-    danceMove5Title.position = ccp(self.screenSize.width * 0.85, danceMove1Title.position.y);
-    
-    CCLabelTTF *danceMove1Result = [CCLabelTTF labelWithString:@"Yes" fontName:@"Helvetica" fontSize:24];
-    CCLabelTTF *danceMove2Result = [CCLabelTTF labelWithString:@"Yes" fontName:@"Helvetica" fontSize:24];
-    CCLabelTTF *danceMove3Result = [CCLabelTTF labelWithString:@"Yes" fontName:@"Helvetica" fontSize:24];
-    CCLabelTTF *danceMove4Result = [CCLabelTTF labelWithString:@"Yes" fontName:@"Helvetica" fontSize:24];
-    CCLabelTTF *danceMove5Result = [CCLabelTTF labelWithString:@"Yes" fontName:@"Helvetica" fontSize:24];
-    
-    GameManager *gm = [GameManager sharedGameManager];
-    
-    if (!gm.danceMove1Correct) {
-        danceMove1Result.string = @"No";
+    for (int i=0; i<numIterations; i++) {
+        CCLabelTTF *danceMoveTitle = [CCLabelTTF labelWithString:[NSString stringWithFormat:@"%i", i+1] fontName:@"Helvetica" fontSize:24];
+        danceMoveTitle.position = currentTitlePosition;
+        
+        CCLabelTTF *danceMoveResult = [CCLabelTTF labelWithString:@"Yes" fontName:@"Helvetica" fontSize:24];
+        if ([[GameManager sharedGameManager].danceMoveIterationResults[i] boolValue] == NO) {
+            danceMoveResult.string = @"No";
+        }
+        danceMoveResult.position = ccp(currentTitlePosition.x, currentTitlePosition.y - self.screenSize.height * 0.1);
+        
+        currentTitlePosition = ccp(currentTitlePosition.x + resultPadding, currentTitlePosition.y);
+        
+        [self addChild:danceMoveTitle];
+        [self addChild:danceMoveResult];
     }
-    if (!gm.danceMove2Correct) {
-        danceMove2Result.string = @"No";
-    }
-    if (!gm.danceMove3Correct) {
-        danceMove3Result.string = @"No";
-    }
-    if (!gm.danceMove4Correct) {
-        danceMove4Result.string = @"No";
-    }
-    if (!gm.danceMove5Correct) {
-        danceMove5Result.string = @"No";
-    }
-    
-    danceMove1Result.position = ccp(danceMove1Title.position.x, self.screenSize.height * 0.4);
-    danceMove2Result.position = ccp(danceMove2Title.position.x, self.screenSize.height * 0.4);
-    danceMove3Result.position = ccp(danceMove3Title.position.x, self.screenSize.height * 0.4);
-    danceMove4Result.position = ccp(danceMove4Title.position.x, self.screenSize.height * 0.4);
-    danceMove5Result.position = ccp(danceMove5Title.position.x, self.screenSize.height * 0.4);
-    
-    [self addChild:danceMove1Title];
-    [self addChild:danceMove2Title];
-    [self addChild:danceMove3Title];
-    [self addChild:danceMove4Title];
-    [self addChild:danceMove5Title];
-    
-    [self addChild:danceMove1Result];
-    [self addChild:danceMove2Result];
-    [self addChild:danceMove3Result];
-    [self addChild:danceMove4Result];
-    [self addChild:danceMove5Result];
 }
 
 -(void)addMenu {

@@ -27,6 +27,19 @@ typedef enum {
 
 #define kDanceMoveBernieName @"The Bernie"
 
+#define kYawMin -400.0
+#define kYawMax 400.0
+#define kPitchMin -400.0
+#define kPitchMax 400.0
+#define kRollMin -400.0
+#define kRollMax 400.0
+#define kAccelerationXMin -1000.0
+#define kAccelerationXMax 1000.0
+#define kAccelerationYMin -1000.0
+#define kAccelerationYMax 1000.0
+#define kAccelerationZMin -1000.0
+#define kAccelerationZMax 1000.0
+
 typedef enum {
     kCharacterStateNone = 0,
     kCharacterStateIdle

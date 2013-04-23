@@ -60,11 +60,7 @@ static GameManager *_sharedGameManager = nil;   // singleton
         
         // individual dance moves practice
         _individualDanceMove = nil;
-        _danceMove1Correct = NO;
-        _danceMove2Correct = NO;
-        _danceMove3Correct = NO;
-        _danceMove4Correct = NO;
-        _danceMove5Correct = NO;
+        _danceMoveIterationResults = nil;
     }
     
     return self;
@@ -363,11 +359,10 @@ static GameManager *_sharedGameManager = nil;   // singleton
 }
 
 -(void)resetForDanceMovePractice {
-    self.danceMove1Correct = NO;
-    self.danceMove2Correct = NO;
-    self.danceMove3Correct = NO;
-    self.danceMove4Correct = NO;
-    self.danceMove5Correct = NO;
+    self.danceMoveIterationResults = [NSMutableArray arrayWithCapacity:self.individualDanceMove.numIndividualIterations];
+    for (int i=0; i<self.individualDanceMove.numIndividualIterations; i++) {
+        self.danceMoveIterationResults[i] = [NSNumber numberWithBool:NO];
+    }
 }
 
 @end
