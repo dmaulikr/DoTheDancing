@@ -21,6 +21,9 @@
         
         self.numIndividualIterations = 4;
         self.timePerIteration = 3.0;
+        
+        [self setUpIllustrations];
+        [self setUpInstructions];
     }
     
     return self;
@@ -64,6 +67,23 @@
     NSArray *step2Array = [NSArray arrayWithObjects:step2_1, step2_2, step2_3, step2_4, nil];
     
     self.stepsArray = [NSArray arrayWithObjects:step1Array, step2Array, nil];
+}
+
+-(void)setUpIllustrations {
+    NSArray *step1Illustrations = [NSArray arrayWithObject:@"instructions_bernie2.png"];
+    NSArray *step2Illustrations = [NSArray arrayWithObjects:@"instructions_bernie1.png", @"instructions_bernie2.png", @"instructions_bernie3.png", @"instructions_bernie2.png", nil];
+    
+    self.illustrationsForSteps = [NSArray arrayWithObjects:step1Illustrations, step2Illustrations, nil];
+    
+    // set up delay for animations
+    self.delayForIllustrationAnimations = [NSArray arrayWithObjects:[NSNumber numberWithFloat:0], [NSNumber numberWithFloat:0.165], nil];
+}
+
+-(void)setUpInstructions {
+    NSString *step1 = @"Drop arms & hold your head back\nlike a nosebleed coming through.";
+    NSString *step2 = @"Twist your arms like curly fries.";
+    
+    self.instructionsForSteps = [NSArray arrayWithObjects:step1, step2, nil];
 }
 
 @end

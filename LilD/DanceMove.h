@@ -19,5 +19,8 @@
 @property (nonatomic, strong) NSArray *stepsArray;
 @property (nonatomic) NSInteger numIndividualIterations;
 @property (nonatomic) CGFloat timePerIteration;         // eventually change to time per step
+@property (nonatomic, strong) NSArray *illustrationsForSteps;
+@property (nonatomic, strong) NSArray *delayForIllustrationAnimations;
+@property (nonatomic, strong) NSArray *instructionsForSteps;
 
 @end

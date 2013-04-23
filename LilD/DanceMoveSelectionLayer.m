@@ -21,6 +21,9 @@
 -(id)init {
     self = [super init];
     if (self != nil) {
+        // load texture atlas
+        [[CCSpriteFrameCache sharedSpriteFrameCache] addSpriteFramesWithFile:@"spritesheet.plist"];
+        
         self.screenSize = [CCDirector sharedDirector].winSize;
         
         // set individual dance move to nil
