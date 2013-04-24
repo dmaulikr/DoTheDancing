@@ -19,11 +19,15 @@
         
         [self setUpMotionRequirements];
         
-        self.numIndividualIterations = 4;
-        self.timePerIteration = 3.0;
+        self.numIndividualIterations = 3;
+        self.timePerIteration = 5;
+        self.timePerSteps = [NSArray arrayWithObjects:[NSNumber numberWithFloat:2], [NSNumber numberWithFloat:3], nil];
         
         [self setUpIllustrations];
         [self setUpInstructions];
+        
+        self.timeToStartCountdown = 2.3;
+        self.delayForCountdown = 0.7;
     }
     
     return self;

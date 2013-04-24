@@ -168,19 +168,27 @@
 }
 
 -(void)displayMenu {
-    CCMenuItemSprite *seeInActionButton = [CCMenuItemSprite itemWithNormalSprite:[CCSprite spriteWithSpriteFrameName:@"instructions_button_action1.png"] selectedSprite:[CCSprite spriteWithSpriteFrameName:@"instructions_button_action2.png"] block:^(id sender) {
-        
+    CCMenuItemSprite *backButton = [CCMenuItemSprite itemWithNormalSprite:[CCSprite spriteWithSpriteFrameName:@"instructions_button_back1.png"] selectedSprite:[CCSprite spriteWithSpriteFrameName:@"instructions_button_back2.png"] block:^(id sender) {
+        [[GameManager sharedGameManager] stopBackgroundTrack];
+        [[GameManager sharedGameManager] runSceneWithID:kSceneTypeDanceMoveSelection];
     }];
-    seeInActionButton.anchorPoint = ccp(1, 0);
-    seeInActionButton.position = ccp(self.screenSize.width * 0.545, self.screenSize.height * 0.02);
+    backButton.anchorPoint = ccp(0, 0);
+    backButton.position = ccp(self.screenSize.width * 0.09, self.screenSize.height * 0.02);
+    
+    CCMenuItemSprite *seeInActionButton = [CCMenuItemSprite itemWithNormalSprite:[CCSprite spriteWithSpriteFrameName:@"instructions_button_action1.png"] selectedSprite:[CCSprite spriteWithSpriteFrameName:@"instructions_button_action2.png"] block:^(id sender) {
+        [[GameManager sharedGameManager] stopBackgroundTrack];
+        [[GameManager sharedGameManager] runSceneWithID:kSceneTypeDanceMoveSeeInAction];
+    }];
+    seeInActionButton.anchorPoint = ccp(0.5, 0);
+    seeInActionButton.position = ccp(self.screenSize.width * 0.445, backButton.position.y);
     
     CCMenuItemSprite *tryItOutButton = [CCMenuItemSprite itemWithNormalSprite:[CCSprite spriteWithSpriteFrameName:@"instructions_button_try1.png"] selectedSprite:[CCSprite spriteWithSpriteFrameName:@"instructions_button_try2.png"] block:^(id sender) {
         
     }];
-    tryItOutButton.anchorPoint= ccp(0, 0);
-    tryItOutButton.position = ccp(self.screenSize.width * 0.52, seeInActionButton.position.y);
+    tryItOutButton.anchorPoint= ccp(1, 0);
+    tryItOutButton.position = ccp(self.screenSize.width * 0.91, seeInActionButton.position.y);
     
-    CCMenu *menu = [CCMenu menuWithItems:seeInActionButton, tryItOutButton ,nil];
+    CCMenu *menu = [CCMenu menuWithItems:backButton, seeInActionButton, tryItOutButton ,nil];
     menu.position = ccp(0, 0);
     [self addChild:menu];
 }

@@ -54,7 +54,8 @@
         self.currentDanceStep = 1;
         self.currentDancePart = 1;
         self.shouldDetectDanceMove = YES;
-        self.timeToMoveToNextIteration = 1 + self.danceMove.timePerIteration;
+        self.timeToMoveToNextIteration = 1; //temp
+//        self.timeToMoveToNextIteration = 1 + self.danceMove.timePerIteration;
         
         [[GameManager sharedGameManager] resetForDanceMovePractice];
         
@@ -164,7 +165,9 @@
 }
 
 -(void)moveToNextIteration {
-    self.timeToMoveToNextIteration = self.timeToMoveToNextIteration + self.danceMove.timePerIteration;
+//    self.timeToMoveToNextIteration = self.timeToMoveToNextIteration + self.danceMove.timePerIteration;
+    // temp
+    self.timeToMoveToNextIteration = self.timeToMoveToNextIteration + 3;
     self.currentDanceIteration++;
     self.currentDanceStep = 1;
     self.currentDancePart = 1;

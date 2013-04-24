@@ -26,7 +26,7 @@ typedef enum {
     kDanceMoveNum
 } DanceMoves;
 
-#define kDanceMoveBernieName @"The Bernie"
+#define kDanceMoveBernieName @"Bernie"
 
 #define kYawMin -400.0
 #define kYawMax 400.0

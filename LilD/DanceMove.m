@@ -20,9 +20,11 @@
         self.stepsArray = nil;
         self.numIndividualIterations = 0;
         self.timePerIteration = 0;
+        self.timePerSteps = nil;
         self.illustrationsForSteps = nil;
         self.delayForIllustrationAnimations = nil;
         self.instructionsForSteps = nil;
+        self.timeToStartCountdown = 0;
     }
     
     return self;
