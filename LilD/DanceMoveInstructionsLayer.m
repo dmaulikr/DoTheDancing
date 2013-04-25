@@ -183,7 +183,8 @@
     seeInActionButton.position = ccp(self.screenSize.width * 0.445, backButton.position.y);
     
     CCMenuItemSprite *tryItOutButton = [CCMenuItemSprite itemWithNormalSprite:[CCSprite spriteWithSpriteFrameName:@"instructions_button_try1.png"] selectedSprite:[CCSprite spriteWithSpriteFrameName:@"instructions_button_try2.png"] block:^(id sender) {
-        
+        [[GameManager sharedGameManager] stopBackgroundTrack];
+        [[GameManager sharedGameManager] runSceneWithID:kSceneTypeDanceMoveDance];
     }];
     tryItOutButton.anchorPoint= ccp(1, 0);
     tryItOutButton.position = ccp(self.screenSize.width * 0.91, seeInActionButton.position.y);

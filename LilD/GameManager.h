@@ -30,6 +30,5 @@
 -(void)stopSoundEffect:(ALuint)soundEffectID;
 -(void)playBackgroundTrack:(NSString*)trackFileName;
 -(void)stopBackgroundTrack;
--(void)resetForDanceMovePractice;
 
 @end

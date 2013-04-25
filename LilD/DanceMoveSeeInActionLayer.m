@@ -25,6 +25,7 @@
 //@property (nonatomic, strong) CCProgressTimer *currentIterationTimer;
 @property (nonatomic, strong) CCLabelBMFont *stepCountLabel;
 @property (nonatomic, strong) CCProgressTimer *stepTimer;
+@property (nonatomic, strong) CCMenu *endMenu;
 
 // illustration management
 @property (nonatomic) CGFloat countdownElapsedTime;
@@ -64,6 +65,7 @@
 //        [self displayMovesTimer];
         [self displayIllustration];
         [self addStepLabelAndTimer];
+        [self addMenu];
         
         // play background track
         [[GameManager sharedGameManager] playBackgroundTrack:self.danceMove.trackName];
@@ -210,6 +212,31 @@
     [self addChild:self.stepTimer];
 }
 
+-(void)addMenu {
+    CCMenuItemSprite *tryItOutButton = [CCMenuItemSprite itemWithNormalSprite:[CCSprite spriteWithSpriteFrameName:@"inaction_button_try1.png"] selectedSprite:[CCSprite spriteWithSpriteFrameName:@"inaction_button_try2.png"] block:^(id sender) {
+        [[GameManager sharedGameManager] stopBackgroundTrack];
+        [[GameManager sharedGameManager] runSceneWithID:kSceneTypeDanceMoveDance];
+    }];
+    tryItOutButton.position = ccp(self.screenSize.width * 0.5, self.screenSize.height * 0.72);
+    
+    CCMenuItemSprite *watchAgainButton = [CCMenuItemSprite itemWithNormalSprite:[CCSprite spriteWithSpriteFrameName:@"inaction_button_watchagain1.png"] selectedSprite:[CCSprite spriteWithSpriteFrameName:@"inaction_button_watchagain2.png"] block:^(id sender) {
+        [[GameManager sharedGameManager] stopBackgroundTrack];
+        [[GameManager sharedGameManager] runSceneWithID:kSceneTypeDanceMoveSeeInAction];
+    }];
+    watchAgainButton.position = ccp(self.screenSize.width * 0.5, self.screenSize.height * 0.60);
+    
+    CCMenuItemSprite *instructionsButton = [CCMenuItemSprite itemWithNormalSprite:[CCSprite spriteWithSpriteFrameName:@"inaction_button_instructions1.png"] selectedSprite:[CCSprite spriteWithSpriteFrameName:@"inaction_button_instructions2.png"] block:^(id sender) {
+        [[GameManager sharedGameManager] stopBackgroundTrack];
+        [[GameManager sharedGameManager] runSceneWithID:kSceneTypeDanceMoveInstructions];
+    }];
+    instructionsButton.position = ccp(self.screenSize.width * 0.5, self.screenSize.height * 0.48);
+    
+    self.endMenu = [CCMenu menuWithItems:tryItOutButton, watchAgainButton, instructionsButton, nil];
+    self.endMenu.position = ccp(0, 0);
+    self.endMenu.visible = NO;
+    [self addChild:self.endMenu];
+}
+
 -(void)checkToStartCountdown {
     if (self.countdownElapsedTime >= self.danceMove.timeToStartCountdown) {
         self.isCountdownActivated = YES;
@@ -240,15 +267,15 @@
     self.stepTimer.percentage = 100.0 - ((self.currentStepElapsedTime/self.timeToMoveToNextStep) * 100);
     
     if (self.currentIterationElapsedTime >= self.danceMove.timePerIteration) {
-        CCLOG(@"updateTimers: move on to next iteration");
         self.currentIterationElapsedTime = 0;
         self.currentStepElapsedTime = 0;
         if (self.currentIteration == self.danceMove.numIndividualIterations) {
             // end in action
-            self.movesCompletedCountLabel.string = [NSString stringWithFormat:@"%i", self.currentIteration];
-            [self unscheduleUpdate];
+            CCLOG(@"updateTimers: end in action");
+            [self endInAction];
         } else {
             // move on to next iteration
+            CCLOG(@"updateTimers: move on to next iteration");
             [self moveOnToNextIteration];
         }
     } else if (self.currentStepElapsedTime >= self.timeToMoveToNextStep) {
@@ -259,10 +286,23 @@
     }
 }
 
+-(void)endInAction {
+    [self updateIterationCountWithNum:self.currentIteration];
+    [self unscheduleUpdate];
+    
+    // remove illustration, step label, and step timer
+    [self.illustration removeFromParentAndCleanup:YES];
+    [self.stepCountLabel removeFromParentAndCleanup:YES];
+    [self.stepTimer removeFromParentAndCleanup:YES];
+    
+    // display menu
+    self.endMenu.visible = YES;
+}
+
 -(void)moveOnToNextIteration {
     self.currentIteration++;
     self.currentStep = 1;
-    self.movesCompletedCountLabel.string = [NSString stringWithFormat:@"%i", self.currentIteration-1];
+    [self updateIterationCountWithNum:self.currentIteration-1];
     self.stepCountLabel.string = @"Step 1";
     self.currentIterationElapsedTime = 0;
     self.currentStepElapsedTime = 0;
@@ -272,6 +312,14 @@
 //    self.currentIterationTimer = self.moveTimers[self.currentIteration-1];
     
     [self updateIllustrations];
+}
+
+-(void)updateIterationCountWithNum:(NSInteger)num {
+    self.movesCompletedCountLabel.string = [NSString stringWithFormat:@"%i", num];
+    // enlarge and shrink animation
+    self.movesCompletedCountLabel.scale = 2.5;
+    
+    [self.movesCompletedCountLabel runAction:[CCScaleTo actionWithDuration:0.2 scale:1.0]];
 }
 
 -(void)moveOnToNextStep {
@@ -310,17 +358,14 @@
 }
 
 -(void)update:(ccTime)delta {
-    // check to start countdown
-    if (self.isCountdownActivated == NO) {
-        self.countdownElapsedTime = self.countdownElapsedTime + delta;
-        [self checkToStartCountdown];
-    }
-    
     // update dance timer, illustrations
     if (self.isDanceActivated == YES) {
         self.currentStepElapsedTime = self.currentStepElapsedTime + delta;
         self.currentIterationElapsedTime = self.currentIterationElapsedTime + delta;
         [self updateTimers];
+    } else if (self.isCountdownActivated == NO) {
+        self.countdownElapsedTime = self.countdownElapsedTime + delta;
+        [self checkToStartCountdown];
     }
 }
 

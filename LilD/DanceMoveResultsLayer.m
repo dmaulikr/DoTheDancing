@@ -12,6 +12,11 @@
 @interface DanceMoveResultsLayer()
 
 @property (nonatomic) CGSize screenSize;
+//@property (nonatomic, strong) CCSpriteBatchNode *batchNode;
+@property (nonatomic, strong) DanceMove *danceMove;
+
+// sprite management
+@property (nonatomic, strong) CCSprite *topBannerBg;
 
 @end
 
@@ -21,55 +26,101 @@
     self = [super init];
     if (self != nil) {
         self.screenSize = [CCDirector sharedDirector].winSize;
+//        self.batchNode = [CCSpriteBatchNode batchNodeWithFile:@"spritesheet.pvr.ccz"];
+//        [self addChild:self.batchNode];
+        self.danceMove = [GameManager sharedGameManager].individualDanceMove;
         
-        [self showResults];
-        [self addMenu];
+        [self displayTopBar];
+        [self displayResults];
+        [self displayMenu];
     }
     
     return self;
 }
 
--(void)showResults {
-    CCLabelTTF *resultsLabel = [CCLabelTTF labelWithString:@"Results" fontName:@"Helvetica" fontSize:38];
-    resultsLabel.position = ccp(self.screenSize.width * 0.5, self.screenSize.height * 0.9);
-    [self addChild:resultsLabel];
+-(void)displayTopBar {
+    // top banner bg
+    self.topBannerBg = [CCSprite spriteWithSpriteFrameName:@"instructions_top_banner.png"];
+    self.topBannerBg.anchorPoint = ccp(0, 1);
+    self.topBannerBg.position = ccp(0, self.screenSize.height);
+    [self addChild:self.topBannerBg];
     
-    int numIterations = [GameManager sharedGameManager].individualDanceMove.numIndividualIterations;
-    CGFloat resultPadding = self.screenSize.width / (float)numIterations;
-    CGPoint currentTitlePosition = ccp(resultPadding - resultPadding/2, self.screenSize.height * 0.5);
+    // dance move name
+    CCLabelBMFont *danceNameLabel = [CCLabelBMFont labelWithString:self.danceMove.name fntFile:@"economica-bold_64.fnt"];
+    danceNameLabel.color = ccc3(249, 185, 56);
+    danceNameLabel.anchorPoint = ccp(1, 0.5);
+    danceNameLabel.position = ccp(self.screenSize.width * 0.5, self.topBannerBg.contentSize.height * 0.5);
+    [self.topBannerBg addChild:danceNameLabel];
     
-    for (int i=0; i<numIterations; i++) {
-        CCLabelTTF *danceMoveTitle = [CCLabelTTF labelWithString:[NSString stringWithFormat:@"%i", i+1] fontName:@"Helvetica" fontSize:24];
-        danceMoveTitle.position = currentTitlePosition;
+    // results label
+    CCLabelBMFont *resultsLabel = [CCLabelBMFont labelWithString:@"RESULTS" fntFile:@"economica-italic_33.fnt"];
+    resultsLabel.color = ccc3(249, 185, 56);
+    resultsLabel.anchorPoint = ccp(0, 0.5);
+    resultsLabel.position = ccp(self.screenSize.width * 0.57, self.topBannerBg.contentSize.height * 0.45);
+    [self.topBannerBg addChild:resultsLabel];
+}
+
+-(void)displayResults {
+    CGFloat positionY = self.screenSize.height * 0.81;
+    NSArray *results = [GameManager sharedGameManager].danceMoveIterationResults;
+    NSArray *currentIterationResults;
+    BOOL isIterationCorrect;
+    for (int i=0; i<results.count; i++) {
+        /* add move label */
+        CCSprite *moveLabelBg = [CCSprite spriteWithSpriteFrameName:@"results_cream_box.png"];
+        moveLabelBg.anchorPoint = ccp(1, 0.5);
+        moveLabelBg.position = ccp(self.screenSize.width * 0.54, positionY);
+        [self addChild:moveLabelBg];
         
-        CCLabelTTF *danceMoveResult = [CCLabelTTF labelWithString:@"Yes" fontName:@"Helvetica" fontSize:24];
-        if ([[GameManager sharedGameManager].danceMoveIterationResults[i] boolValue] == NO) {
-            danceMoveResult.string = @"No";
+        CCLabelBMFont *moveLabel = [CCLabelBMFont labelWithString:[NSString stringWithFormat:@"Move %i", i+1] fntFile:@"economica-bold_64.fnt"];
+        moveLabel.color = ccc3(56, 56, 56);
+        moveLabel.position = ccp(moveLabelBg.contentSize.width * 0.5, moveLabelBg.contentSize.height * 0.5);
+        [moveLabelBg addChild:moveLabel];
+        
+        /* add result */
+        CCSprite *resultBg = [CCSprite spriteWithSpriteFrameName:@"results_orange_box.png"];
+        resultBg.anchorPoint = ccp(0, 0.5);
+        resultBg.position = moveLabelBg.position;
+        [self addChild:resultBg];
+        
+        CCSprite *result;
+        currentIterationResults = results[i];
+        isIterationCorrect = YES;
+        for (NSNumber *stepResult in currentIterationResults) {
+            if ([stepResult boolValue] == NO) {
+                isIterationCorrect = NO;
+                break;
+            }
         }
-        danceMoveResult.position = ccp(currentTitlePosition.x, currentTitlePosition.y - self.screenSize.height * 0.1);
+        if (isIterationCorrect == YES) {
+            result = [CCSprite spriteWithSpriteFrameName:@"results_correct.png"];
+        } else {
+            result = [CCSprite spriteWithSpriteFrameName:@"results_incorrect.png"];
+        }
         
-        currentTitlePosition = ccp(currentTitlePosition.x + resultPadding, currentTitlePosition.y);
+        result.position = ccp(resultBg.contentSize.width * 0.5, resultBg.contentSize.height * 0.5);
+        [resultBg addChild:result];
         
-        [self addChild:danceMoveTitle];
-        [self addChild:danceMoveResult];
+        // update position y
+        positionY = positionY - resultBg.contentSize.height * 1.2;
     }
 }
 
--(void)addMenu {
-    CCMenuItemLabel *tryAgainButton = [CCMenuItemLabel itemWithLabel:[CCLabelTTF labelWithString:@"Try Again" fontName:@"Helvetica" fontSize:24] block:^(id sender) {
-        [[GameManager sharedGameManager] runSceneWithID:kSceneTypeDanceMoveInstructions];
-    }];
-    tryAgainButton.position = ccp(self.screenSize.width * 0.25, self.screenSize.height * 0.2);
-    
-    CCMenuItemLabel *mainMenuButton = [CCMenuItemLabel itemWithLabel:[CCLabelTTF labelWithString:@"Main Menu" fontName:@"Helvetica" fontSize:24] block:^(id sender) {
+-(void)displayMenu {
+    CCMenuItemSprite *mainMenuButton = [CCMenuItemSprite itemWithNormalSprite:[CCSprite spriteWithSpriteFrameName:@"results_button_mainmenu_left1.png"] selectedSprite:[CCSprite spriteWithSpriteFrameName:@"results_button_mainmenu_left2.png"] block:^(id sender) {
         [[GameManager sharedGameManager] runSceneWithID:kSceneTypeDanceMoveSelection];
     }];
-    mainMenuButton.position = ccp(self.screenSize.width * 0.75, tryAgainButton.position.y);
+    mainMenuButton.anchorPoint = ccp(1, 0);
+    mainMenuButton.position = ccp(self.screenSize.width * 0.545, self.screenSize.height * 0.02);
     
-    CCMenu *menu = [CCMenu menuWithItems:tryAgainButton, mainMenuButton, nil];
+    CCMenuItemSprite *tryAgainButton = [CCMenuItemSprite itemWithNormalSprite:[CCSprite spriteWithSpriteFrameName:@"results_button_tryagain1.png"] selectedSprite:[CCSprite spriteWithSpriteFrameName:@"results_button_tryagain2.png"] block:^(id sender) {
+        [[GameManager sharedGameManager] runSceneWithID:kSceneTypeDanceMoveInstructions];
+    }];
+    tryAgainButton.anchorPoint= ccp(0, 0);
+    tryAgainButton.position = ccp(self.screenSize.width * 0.52, mainMenuButton.position.y);
+    
+    CCMenu *menu = [CCMenu menuWithItems:mainMenuButton, tryAgainButton ,nil];
     menu.position = ccp(0, 0);
-    
-    [self addChild:menu];
-}
+    [self addChild:menu];}
 
 @end

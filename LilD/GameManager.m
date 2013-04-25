@@ -365,11 +365,4 @@ static GameManager *_sharedGameManager = nil;   // singleton
     self.currentScene = sceneID;
 }
 
--(void)resetForDanceMovePractice {
-    self.danceMoveIterationResults = [NSMutableArray arrayWithCapacity:self.individualDanceMove.numIndividualIterations];
-    for (int i=0; i<self.individualDanceMove.numIndividualIterations; i++) {
-        self.danceMoveIterationResults[i] = [NSNumber numberWithBool:NO];
-    }
-}
-
 @end

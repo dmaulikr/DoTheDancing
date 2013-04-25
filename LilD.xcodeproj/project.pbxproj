@@ -52,7 +52,6 @@
 		C47F72AF16DF8DEC0006EEFB /* Default~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = C47F72AB16DF8DEC0006EEFB /* Default~ipad.png */; };
 		C47F72B916DF90030006EEFB /* CCTouchDownMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = C47F72B816DF90030006EEFB /* CCTouchDownMenu.m */; };
 		C4853D3C1725CA8500E958D2 /* MotionRequirements.m in Sources */ = {isa = PBXBuildFile; fileRef = C4853D3B1725CA8500E958D2 /* MotionRequirements.m */; };
-		C4853D3E172605C200E958D2 /* the_bernie.caf in Resources */ = {isa = PBXBuildFile; fileRef = C4853D3D172605C200E958D2 /* the_bernie.caf */; };
 		C4853D4117262D6200E958D2 /* spritesheet-hd.plist in Resources */ = {isa = PBXBuildFile; fileRef = C4853D3F17262D6200E958D2 /* spritesheet-hd.plist */; };
 		C4853D4217262D6200E958D2 /* spritesheet-hd.pvr.ccz in Resources */ = {isa = PBXBuildFile; fileRef = C4853D4017262D6200E958D2 /* spritesheet-hd.pvr.ccz */; };
 		C4853D4F1726307400E958D2 /* economica-bold_64-hd.fnt in Resources */ = {isa = PBXBuildFile; fileRef = C4853D4D1726307400E958D2 /* economica-bold_64-hd.fnt */; };
@@ -65,6 +64,7 @@
 		C4853D641726643700E958D2 /* adobeCaslonPro-bolditalic_21-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = C4853D621726643700E958D2 /* adobeCaslonPro-bolditalic_21-hd.png */; };
 		C4853D671726644000E958D2 /* economica_41-hd.fnt in Resources */ = {isa = PBXBuildFile; fileRef = C4853D651726644000E958D2 /* economica_41-hd.fnt */; };
 		C4853D681726644000E958D2 /* economica_41-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = C4853D661726644000E958D2 /* economica_41-hd.png */; };
+		C4966F6017285D06002491F1 /* the_bernie.caf in Resources */ = {isa = PBXBuildFile; fileRef = C4966F5F17285D06002491F1 /* the_bernie.caf */; };
 		C498CCF51727396B00A2A0A8 /* DanceMoveSeeInActionScene.m in Sources */ = {isa = PBXBuildFile; fileRef = C498CCF41727396B00A2A0A8 /* DanceMoveSeeInActionScene.m */; };
 		C498CCF81727397300A2A0A8 /* DanceMoveSeeInActionLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = C498CCF71727397300A2A0A8 /* DanceMoveSeeInActionLayer.m */; };
 		C498CD02172744E300A2A0A8 /* economica-bold_40-hd.fnt in Resources */ = {isa = PBXBuildFile; fileRef = C498CD00172744E300A2A0A8 /* economica-bold_40-hd.fnt */; };
@@ -387,7 +387,6 @@
 		C47F72B816DF90030006EEFB /* CCTouchDownMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCTouchDownMenu.m; sourceTree = "<group>"; };
 		C4853D3A1725CA8500E958D2 /* MotionRequirements.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MotionRequirements.h; sourceTree = "<group>"; };
 		C4853D3B1725CA8500E958D2 /* MotionRequirements.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MotionRequirements.m; sourceTree = "<group>"; };
-		C4853D3D172605C200E958D2 /* the_bernie.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = the_bernie.caf; sourceTree = "<group>"; };
 		C4853D3F17262D6200E958D2 /* spritesheet-hd.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "spritesheet-hd.plist"; sourceTree = "<group>"; };
 		C4853D4017262D6200E958D2 /* spritesheet-hd.pvr.ccz */ = {isa = PBXFileReference; lastKnownFileType = file; path = "spritesheet-hd.pvr.ccz"; sourceTree = "<group>"; };
 		C4853D4D1726307400E958D2 /* economica-bold_64-hd.fnt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "economica-bold_64-hd.fnt"; sourceTree = "<group>"; };
@@ -400,6 +399,7 @@
 		C4853D621726643700E958D2 /* adobeCaslonPro-bolditalic_21-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "adobeCaslonPro-bolditalic_21-hd.png"; sourceTree = "<group>"; };
 		C4853D651726644000E958D2 /* economica_41-hd.fnt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "economica_41-hd.fnt"; sourceTree = "<group>"; };
 		C4853D661726644000E958D2 /* economica_41-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "economica_41-hd.png"; sourceTree = "<group>"; };
+		C4966F5F17285D06002491F1 /* the_bernie.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = the_bernie.caf; sourceTree = "<group>"; };
 		C498CCF31727396B00A2A0A8 /* DanceMoveSeeInActionScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DanceMoveSeeInActionScene.h; sourceTree = "<group>"; };
 		C498CCF41727396B00A2A0A8 /* DanceMoveSeeInActionScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DanceMoveSeeInActionScene.m; sourceTree = "<group>"; };
 		C498CCF61727397300A2A0A8 /* DanceMoveSeeInActionLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DanceMoveSeeInActionLayer.h; sourceTree = "<group>"; };
@@ -712,7 +712,7 @@
 		C425AC2717220979008FE344 /* Music */ = {
 			isa = PBXGroup;
 			children = (
-				C4853D3D172605C200E958D2 /* the_bernie.caf */,
+				C4966F5F17285D06002491F1 /* the_bernie.caf */,
 			);
 			name = Music;
 			sourceTree = "<group>";
@@ -1614,7 +1614,6 @@
 				C47F72AE16DF8DEC0006EEFB /* Default@2x~iphone.png in Resources */,
 				C47F72AF16DF8DEC0006EEFB /* Default~ipad.png in Resources */,
 				C40E6FB11723BF560091D716 /* DanceMoves.plist in Resources */,
-				C4853D3E172605C200E958D2 /* the_bernie.caf in Resources */,
 				C4853D4117262D6200E958D2 /* spritesheet-hd.plist in Resources */,
 				C4853D4217262D6200E958D2 /* spritesheet-hd.pvr.ccz in Resources */,
 				C4853D4F1726307400E958D2 /* economica-bold_64-hd.fnt in Resources */,
@@ -1637,6 +1636,7 @@
 				C498CD1117277C5B00A2A0A8 /* economica-bold_126-hd.png in Resources */,
 				C498CD1417277D0B00A2A0A8 /* economica-bold_102-hd.fnt in Resources */,
 				C498CD1517277D0B00A2A0A8 /* economica-bold_102-hd.png in Resources */,
+				C4966F6017285D06002491F1 /* the_bernie.caf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
