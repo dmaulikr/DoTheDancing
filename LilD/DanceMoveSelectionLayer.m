@@ -9,10 +9,15 @@
 #import "DanceMoveSelectionLayer.h"
 #import "GameManager.h"
 #import "DanceMoveBernie.h"
+#import "CCTouchDownMenu.h"
 
 @interface DanceMoveSelectionLayer()
 
 @property (nonatomic) CGSize screenSize;
+@property (nonatomic, strong) CCSpriteBatchNode *batchNode;
+
+// sprite management
+@property (nonatomic, strong) CCSprite *topBannerBg;
 
 @end
 
@@ -25,28 +30,149 @@
         [[CCSpriteFrameCache sharedSpriteFrameCache] addSpriteFramesWithFile:@"spritesheet.plist"];
         
         self.screenSize = [CCDirector sharedDirector].winSize;
+        self.batchNode = [CCSpriteBatchNode batchNodeWithFile:@"spritesheet.pvr.ccz"];
+        [self addChild:self.batchNode];
         
         // set individual dance move to nil
         [GameManager sharedGameManager].individualDanceMove = nil;
-        [self setUpListOfDanceMoves];
+        
+        [self displayTopBar];
+        [self displayDanceMoves];
+        [self displayPageLabels];
+        [self displayMenu];
     }
     
     return self;
 }
 
--(void)setUpListOfDanceMoves {
-    CCMenuItemLabel *bernieButton = [CCMenuItemLabel itemWithLabel:[CCLabelTTF labelWithString:kDanceMoveBernieName fontName:@"Helvetica" fontSize:28] block:^(id sender) {
-        // create bernie object and pass to instructions class
-        [GameManager sharedGameManager].individualDanceMove = [[DanceMoveBernie alloc] init];
-        [[GameManager sharedGameManager] runSceneWithID:kSceneTypeDanceMoveInstructions];
-    }];
-    bernieButton.anchorPoint = ccp(0, 0.5);
-    bernieButton.position = ccp(self.screenSize.width * 0.05, self.screenSize.height * 0.9);
+-(void)displayTopBar {
+    // top banner bg
+    self.topBannerBg = [CCSprite spriteWithSpriteFrameName:@"instructions_top_banner.png"];
+    self.topBannerBg.anchorPoint = ccp(0, 1);
+    self.topBannerBg.position = ccp(0, self.screenSize.height);
+    [self addChild:self.topBannerBg];
     
-    CCMenu *danceMovesMenu = [CCMenu menuWithItems:bernieButton, nil];
+    // dance move name
+    CCLabelBMFont *selectDanceLabel = [CCLabelBMFont labelWithString:@"Select Dance" fntFile:@"economica-bold_64.fnt"];
+    selectDanceLabel.color = ccc3(249, 185, 56);
+    selectDanceLabel.position = ccp(self.screenSize.width * 0.5, self.topBannerBg.contentSize.height * 0.5);
+    [self.topBannerBg addChild:selectDanceLabel];
+}
+
+-(void)displayDanceMoves {
+    /* bernie */
+    CCMenuItemSprite *bernieButton = [CCMenuItemSprite itemWithNormalSprite:[CCSprite spriteWithSpriteFrameName:@"instructions_bg.png"] selectedSprite:nil block:^(id sender) {
+        [self showInstructionsForDanceMove:kDanceMoveBernie];
+    }];
+    bernieButton.position = ccp(self.screenSize.width * 0.5, self.screenSize.height * 0.76);
+    
+    CCLabelBMFont *bernieLabel = [CCLabelBMFont labelWithString:@"Bernie" fntFile:@"economica-bold_62.fnt"];
+    bernieLabel.color = ccc3(56, 56, 56);
+    bernieLabel.position = ccp(bernieButton.contentSize.width * 0.5, bernieButton.contentSize.height * 0.82);
+    [bernieButton addChild:bernieLabel];
+    
+    CCSprite *bernieImage = [CCSprite spriteWithSpriteFrameName:@"select_dance_bernie.png"];
+    bernieImage.position = ccp(bernieButton.contentSize.width * 0.5, bernieButton.contentSize.height * 0.35);
+    [bernieButton addChild:bernieImage];
+    
+    /* peter griffin */
+    CCMenuItemSprite *peterGriffinButton = [CCMenuItemSprite itemWithNormalSprite:[CCSprite spriteWithSpriteFrameName:@"instructions_bg.png"] selectedSprite:nil block:^(id sender) {
+//        [self showInstructionsForDanceMove:kDanceMovePeterGriffin];
+    }];
+    peterGriffinButton.position = ccp(self.screenSize.width * 0.5, self.screenSize.height * 0.51);
+    
+    CCLabelBMFont *peterGriffinLabel = [CCLabelBMFont labelWithString:@"Peter Griffin" fntFile:@"economica-bold_62.fnt"];
+    peterGriffinLabel.color = ccc3(56, 56, 56);
+    peterGriffinLabel.position = ccp(bernieButton.contentSize.width * 0.5, bernieButton.contentSize.height * 0.82);
+    [peterGriffinButton addChild:peterGriffinLabel];
+    
+//    CCSprite *peterGriffinImage = [CCSprite spriteWithSpriteFrameName:@"select_dance_bernie.png"];
+//    peterGriffinImage.position = ccp(bernieButton.contentSize.width * 0.5, bernieButton.contentSize.height * 0.35);
+//    [peterGriffinButton addChild:peterGriffinImage];
+    
+    /* cat daddy */
+    CCMenuItemSprite *catDaddyButton = [CCMenuItemSprite itemWithNormalSprite:[CCSprite spriteWithSpriteFrameName:@"instructions_bg.png"] selectedSprite:nil block:^(id sender) {
+//        [self showInstructionsForDanceMove:kDanceMoveCatDaddy];
+    }];
+    catDaddyButton.position = ccp(self.screenSize.width * 0.5, self.screenSize.height * 0.26);
+    
+    CCLabelBMFont *catDaddyLabel = [CCLabelBMFont labelWithString:@"Cat Daddy" fntFile:@"economica-bold_62.fnt"];
+    catDaddyLabel.color = ccc3(56, 56, 56);
+    catDaddyLabel.position = ccp(bernieButton.contentSize.width * 0.5, bernieButton.contentSize.height * 0.82);
+    [catDaddyButton addChild:catDaddyLabel];
+    
+//    CCSprite *catDaddyImage = [CCSprite spriteWithSpriteFrameName:@"select_dance_bernie.png"];
+//    catDaddyImage.position = ccp(bernieButton.contentSize.width * 0.5, bernieButton.contentSize.height * 0.35);
+//    [catDaddyButton addChild:catDaddyImage];
+    
+    
+    // temporarily disable Peter Griffin & Cat Daddy
+    peterGriffinButton.opacity = 100;
+    peterGriffinLabel.opacity = 100;
+    catDaddyButton.opacity = 100;
+    catDaddyLabel.opacity = 100;
+    
+    CCMenu *danceMovesMenu = [CCTouchDownMenu menuWithItems:bernieButton, peterGriffinButton, catDaddyButton, nil];
     danceMovesMenu.position = ccp(0, 0);
     
     [self addChild:danceMovesMenu];
+}
+
+-(void)showInstructionsForDanceMove:(DanceMoves)danceMoveType {
+    if (danceMoveType != kDanceMoveNone) {
+        DanceMove *danceMove;
+        switch (danceMoveType) {
+            case kDanceMoveBernie:
+                danceMove = [[DanceMoveBernie alloc] init];
+                break;
+                
+            default:
+                CCLOG(@"showInstructionsForDanceMove: INVALID DANCE MOVE!");
+                break;
+        }
+        
+        [GameManager sharedGameManager].individualDanceMove = danceMove;
+        [[GameManager sharedGameManager] runSceneWithID:kSceneTypeDanceMoveInstructions];
+    }
+}
+
+-(void)displayPageLabels {
+    CCLabelBMFont *currentPageLabel = [CCLabelBMFont labelWithString:@"1" fntFile:@"economica-bold_62.fnt"];
+    currentPageLabel.color = ccc3(56, 56, 56);
+    currentPageLabel.position = ccp(self.screenSize.width * 0.39, self.screenSize.height * 0.08);
+    [self addChild:currentPageLabel];
+    
+    CCLabelBMFont *outOfLabel = [CCLabelBMFont labelWithString:@"out of" fntFile:@"adobeCaslonPro-bolditalic_38.fnt"];
+    outOfLabel.color = currentPageLabel.color;
+    outOfLabel.position = ccp(self.screenSize.width * 0.5, currentPageLabel.position.y);
+    [self addChild:outOfLabel];
+    
+    CCLabelBMFont *totalPageLabel = [CCLabelBMFont labelWithString:@"1" fntFile:@"economica-bold_62.fnt"];
+    totalPageLabel.color = currentPageLabel.color;
+    totalPageLabel.position = ccp(self.screenSize.width * 0.615, currentPageLabel.position.y);
+    [self addChild:totalPageLabel];
+}
+
+-(void)displayMenu {
+    CCMenuItemSprite *prevButton = [CCMenuItemSprite itemWithNormalSprite:[CCSprite spriteWithSpriteFrameName:@"select_dance_button_prev1.png"] selectedSprite:[CCSprite spriteWithSpriteFrameName:@"select_dance_button_prev2.png"] block:^(id sender) {
+        
+    }];
+    prevButton.position = ccp(self.screenSize.width * 0.185, self.screenSize.height * 0.08);
+    
+    CCMenuItemSprite *nextButton = [CCMenuItemSprite itemWithNormalSprite:[CCSprite spriteWithSpriteFrameName:@"select_dance_button_next1.png"] selectedSprite:[CCSprite spriteWithSpriteFrameName:@"select_dance_button_next2.png"] block:^(id sender) {
+        
+    }];
+    nextButton.position = ccp(self.screenSize.width * 0.815, prevButton.position.y);
+    
+    
+    // temporarily disable both buttons
+    prevButton.opacity = 100;
+    nextButton.opacity = 100;
+    
+    CCMenu *menu = [CCMenu menuWithItems:prevButton, nextButton, nil];
+    menu.position = ccp(0, 0);
+    
+    [self addChild:menu];
 }
 
 @end
