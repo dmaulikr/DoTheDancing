@@ -82,8 +82,12 @@
     // initial image: step 1, part 1
     NSArray *step1Illustrations = self.danceMove.illustrationsForSteps[0];
     self.illustration = [CCSprite spriteWithSpriteFrameName:step1Illustrations[0]];
-    self.illustration.anchorPoint = ccp(0.5, 1);
-    self.illustration.position = ccp(self.screenSize.width * 0.5, self.screenSize.height - self.self.topBannerBg.contentSize.height);
+    self.illustration.position = ccp(self.screenSize.width * 0.5, self.screenSize.height * 0.63);
+    
+    if (IS_IPHONE_4) {
+        self.illustration.scale = 0.75;
+    }
+    
     [self.batchNode addChild:self.illustration];
     
     // check for animation
@@ -143,6 +147,11 @@
     self.instructionsLabel.anchorPoint = ccp(0.5, 1);
     self.instructionsLabel.position = ccp(instructionsBg.contentSize.width * 0.5, instructionsBg.contentSize.height * 0.65);
     [instructionsBg addChild:self.instructionsLabel];
+    
+    if (IS_IPHONE_4) {
+        instructionsBg.scaleY = 0.95;
+        instructionsBg.position = ccp(instructionsBg.position.x, self.screenSize.height * 0.23);
+    }
 }
 
 -(void)displayTouchDownMenu {
@@ -154,7 +163,7 @@
         }];
         self.leftArrowButton.rotation = 180;
         self.leftArrowButton.opacity = 100;      // initialized in disabled mode
-        self.leftArrowButton.position = ccp(self.screenSize.width * 0.1, self.illustration.position.y - self.illustration.contentSize.height*0.5);
+        self.leftArrowButton.position = ccp(self.screenSize.width * 0.1, self.illustration.position.y);
         
         self.rightArrowButton = [CCMenuItemSprite itemWithNormalSprite:[CCSprite spriteWithSpriteFrameName:@"instructions_arrow.png"] selectedSprite:nil block:^(id sender) {
             [self showNextStep];

@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C40E43431729001C0017672A /* step1_alice.caf in Resources */ = {isa = PBXBuildFile; fileRef = C40E43411729001C0017672A /* step1_alice.caf */; };
+		C40E43441729001C0017672A /* step2_alice.caf in Resources */ = {isa = PBXBuildFile; fileRef = C40E43421729001C0017672A /* step2_alice.caf */; };
 		C40E6FB11723BF560091D716 /* DanceMoves.plist in Resources */ = {isa = PBXBuildFile; fileRef = C40E6FB01723BF560091D716 /* DanceMoves.plist */; };
 		C40E6FB41723C3F90091D716 /* DanceMove.m in Sources */ = {isa = PBXBuildFile; fileRef = C40E6FB31723C3F90091D716 /* DanceMove.m */; };
 		C40E6FB71723C46F0091D716 /* DanceMoveBernie.m in Sources */ = {isa = PBXBuildFile; fileRef = C40E6FB61723C46F0091D716 /* DanceMoveBernie.m */; };
@@ -18,21 +20,13 @@
 		C425AC3E17221E24008FE344 /* DanceMoveDanceLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = C425AC3D17221E24008FE344 /* DanceMoveDanceLayer.m */; };
 		C425AC4217223E93008FE344 /* DanceMoveResultsScene.m in Sources */ = {isa = PBXBuildFile; fileRef = C425AC4117223E93008FE344 /* DanceMoveResultsScene.m */; };
 		C425AC4517223E9C008FE344 /* DanceMoveResultsLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = C425AC4417223E9C008FE344 /* DanceMoveResultsLayer.m */; };
+		C42FEB84172A00D400B5DE03 /* MatchmakingServer.m in Sources */ = {isa = PBXBuildFile; fileRef = C42FEB83172A00D400B5DE03 /* MatchmakingServer.m */; };
 		C447906716D520BD00A64CC7 /* TestMotionScene.m in Sources */ = {isa = PBXBuildFile; fileRef = C447906616D520BD00A64CC7 /* TestMotionScene.m */; };
 		C447906A16D520C400A64CC7 /* TestMotionLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = C447906916D520C400A64CC7 /* TestMotionLayer.m */; };
 		C4514FB1165882960073A119 /* GameManager.m in Sources */ = {isa = PBXBuildFile; fileRef = C4514FB0165882960073A119 /* GameManager.m */; };
 		C4514FB6165889C00073A119 /* SoundEffects.plist in Resources */ = {isa = PBXBuildFile; fileRef = C4514FB5165889C00073A119 /* SoundEffects.plist */; };
 		C4514FB916588A150073A119 /* MainMenuScene.m in Sources */ = {isa = PBXBuildFile; fileRef = C4514FB816588A150073A119 /* MainMenuScene.m */; };
 		C4514FBC16588A350073A119 /* MainMenuLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = C4514FBB16588A350073A119 /* MainMenuLayer.m */; };
-		C4514FCA16588B700073A119 /* mainmenu_bg.png in Resources */ = {isa = PBXBuildFile; fileRef = C4514FBE16588B700073A119 /* mainmenu_bg.png */; };
-		C4514FCC16588B700073A119 /* mainmenu_button_settings.png in Resources */ = {isa = PBXBuildFile; fileRef = C4514FC016588B700073A119 /* mainmenu_button_settings.png */; };
-		C4514FCD16588B700073A119 /* mainmenu_button_settings_pressed.png in Resources */ = {isa = PBXBuildFile; fileRef = C4514FC116588B700073A119 /* mainmenu_button_settings_pressed.png */; };
-		C4514FCF16588B700073A119 /* mainmenu_button_start.png in Resources */ = {isa = PBXBuildFile; fileRef = C4514FC316588B700073A119 /* mainmenu_button_start.png */; };
-		C4514FD016588B700073A119 /* mainmenu_button_start_pressed.png in Resources */ = {isa = PBXBuildFile; fileRef = C4514FC416588B700073A119 /* mainmenu_button_start_pressed.png */; };
-		C4514FDA16588CB90073A119 /* mainmenu_art-hd.plist in Resources */ = {isa = PBXBuildFile; fileRef = C4514FD616588CB90073A119 /* mainmenu_art-hd.plist */; };
-		C4514FDB16588CB90073A119 /* mainmenu_art-hd.pvr.ccz in Resources */ = {isa = PBXBuildFile; fileRef = C4514FD716588CB90073A119 /* mainmenu_art-hd.pvr.ccz */; };
-		C4514FDC16588CB90073A119 /* mainmenu_art.plist in Resources */ = {isa = PBXBuildFile; fileRef = C4514FD816588CB90073A119 /* mainmenu_art.plist */; };
-		C4514FDD16588CB90073A119 /* mainmenu_art.pvr.ccz in Resources */ = {isa = PBXBuildFile; fileRef = C4514FD916588CB90073A119 /* mainmenu_art.pvr.ccz */; };
 		C46322451720F6C4007E39D5 /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C46322441720F6C4007E39D5 /* CoreMotion.framework */; };
 		C46D83F61667001000C6529A /* libFlurry.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C46D83F51667001000C6529A /* libFlurry.a */; };
 		C46D83F91667007800C6529A /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C46D83F81667007800C6529A /* SystemConfiguration.framework */; };
@@ -322,6 +316,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		C40E43411729001C0017672A /* step1_alice.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = step1_alice.caf; sourceTree = "<group>"; };
+		C40E43421729001C0017672A /* step2_alice.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = step2_alice.caf; sourceTree = "<group>"; };
 		C40E6FB01723BF560091D716 /* DanceMoves.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = DanceMoves.plist; sourceTree = "<group>"; };
 		C40E6FB21723C3F90091D716 /* DanceMove.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DanceMove.h; sourceTree = "<group>"; };
 		C40E6FB31723C3F90091D716 /* DanceMove.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DanceMove.m; sourceTree = "<group>"; };
@@ -343,6 +339,8 @@
 		C425AC4117223E93008FE344 /* DanceMoveResultsScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DanceMoveResultsScene.m; sourceTree = "<group>"; };
 		C425AC4317223E9C008FE344 /* DanceMoveResultsLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DanceMoveResultsLayer.h; sourceTree = "<group>"; };
 		C425AC4417223E9C008FE344 /* DanceMoveResultsLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DanceMoveResultsLayer.m; sourceTree = "<group>"; };
+		C42FEB82172A00D400B5DE03 /* MatchmakingServer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MatchmakingServer.h; sourceTree = "<group>"; };
+		C42FEB83172A00D400B5DE03 /* MatchmakingServer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MatchmakingServer.m; sourceTree = "<group>"; };
 		C447906516D520BD00A64CC7 /* TestMotionScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestMotionScene.h; sourceTree = "<group>"; };
 		C447906616D520BD00A64CC7 /* TestMotionScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestMotionScene.m; sourceTree = "<group>"; };
 		C447906816D520C300A64CC7 /* TestMotionLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestMotionLayer.h; sourceTree = "<group>"; };
@@ -356,15 +354,6 @@
 		C4514FB816588A150073A119 /* MainMenuScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainMenuScene.m; sourceTree = "<group>"; };
 		C4514FBA16588A350073A119 /* MainMenuLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainMenuLayer.h; sourceTree = "<group>"; };
 		C4514FBB16588A350073A119 /* MainMenuLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainMenuLayer.m; sourceTree = "<group>"; };
-		C4514FBE16588B700073A119 /* mainmenu_bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mainmenu_bg.png; sourceTree = "<group>"; };
-		C4514FC016588B700073A119 /* mainmenu_button_settings.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mainmenu_button_settings.png; sourceTree = "<group>"; };
-		C4514FC116588B700073A119 /* mainmenu_button_settings_pressed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mainmenu_button_settings_pressed.png; sourceTree = "<group>"; };
-		C4514FC316588B700073A119 /* mainmenu_button_start.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mainmenu_button_start.png; sourceTree = "<group>"; };
-		C4514FC416588B700073A119 /* mainmenu_button_start_pressed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mainmenu_button_start_pressed.png; sourceTree = "<group>"; };
-		C4514FD616588CB90073A119 /* mainmenu_art-hd.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "mainmenu_art-hd.plist"; sourceTree = "<group>"; };
-		C4514FD716588CB90073A119 /* mainmenu_art-hd.pvr.ccz */ = {isa = PBXFileReference; lastKnownFileType = file; path = "mainmenu_art-hd.pvr.ccz"; sourceTree = "<group>"; };
-		C4514FD816588CB90073A119 /* mainmenu_art.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = mainmenu_art.plist; sourceTree = "<group>"; };
-		C4514FD916588CB90073A119 /* mainmenu_art.pvr.ccz */ = {isa = PBXFileReference; lastKnownFileType = file; path = mainmenu_art.pvr.ccz; sourceTree = "<group>"; };
 		C46322441720F6C4007E39D5 /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = System/Library/Frameworks/CoreMotion.framework; sourceTree = SDKROOT; };
 		C46D83F41667001000C6529A /* Flurry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Flurry.h; sourceTree = "<group>"; };
 		C46D83F51667001000C6529A /* libFlurry.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libFlurry.a; sourceTree = "<group>"; };
@@ -417,7 +406,7 @@
 		DC0864B515BD8CE60044A820 /* CCNode+Debug.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CCNode+Debug.h"; sourceTree = "<group>"; };
 		DC0864B615BD8CE60044A820 /* CCNode+Debug.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CCNode+Debug.m"; sourceTree = "<group>"; };
 		DC0864B715BD8CE60044A820 /* ccCArray.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ccCArray.m; sourceTree = "<group>"; };
-		DC0C49F1154AB4DD00B4B727 /* LilD.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LilD.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		DC0C49F1154AB4DD00B4B727 /* DoTheDancing.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DoTheDancing.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DC0C49F5154AB4DD00B4B727 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		DC0C49F7154AB4DD00B4B727 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
 		DC0C49F9154AB4DD00B4B727 /* OpenAL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenAL.framework; path = System/Library/Frameworks/OpenAL.framework; sourceTree = SDKROOT; };
@@ -671,6 +660,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DC0C4A06154AB4DD00B4B727 /* GameKit.framework in Frameworks */,
 				C46322451720F6C4007E39D5 /* CoreMotion.framework in Frameworks */,
 				C46D83F91667007800C6529A /* SystemConfiguration.framework in Frameworks */,
 				DC0C4B92154AB57C00B4B727 /* libcocos2d-library.a in Frameworks */,
@@ -682,7 +672,6 @@
 				DC0C4A00154AB4DD00B4B727 /* UIKit.framework in Frameworks */,
 				DC0C4A02154AB4DD00B4B727 /* Foundation.framework in Frameworks */,
 				DC0C4A04154AB4DD00B4B727 /* CoreGraphics.framework in Frameworks */,
-				DC0C4A06154AB4DD00B4B727 /* GameKit.framework in Frameworks */,
 				C46D83F61667001000C6529A /* libFlurry.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -698,6 +687,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		C40E433A1728F37D0017672A /* SFX */ = {
+			isa = PBXGroup;
+			children = (
+				C40E43411729001C0017672A /* step1_alice.caf */,
+				C40E43421729001C0017672A /* step2_alice.caf */,
+			);
+			name = SFX;
+			sourceTree = "<group>";
+		};
 		C425AC191721FF69008FE344 /* DanceMoveSelection */ = {
 			isa = PBXGroup;
 			children = (
@@ -750,6 +748,15 @@
 			name = DanceMoveResults;
 			sourceTree = "<group>";
 		};
+		C42FEB81172A00BB00B5DE03 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				C42FEB82172A00D400B5DE03 /* MatchmakingServer.h */,
+				C42FEB83172A00D400B5DE03 /* MatchmakingServer.m */,
+			);
+			name = Networking;
+			sourceTree = "<group>";
+		};
 		C447906416D520B000A64CC7 /* TestMotion */ = {
 			isa = PBXGroup;
 			children = (
@@ -759,18 +766,6 @@
 				C447906916D520C400A64CC7 /* TestMotionLayer.m */,
 			);
 			name = TestMotion;
-			sourceTree = "<group>";
-		};
-		C4514FBD16588B700073A119 /* mainmenu_art */ = {
-			isa = PBXGroup;
-			children = (
-				C4514FBE16588B700073A119 /* mainmenu_bg.png */,
-				C4514FC016588B700073A119 /* mainmenu_button_settings.png */,
-				C4514FC116588B700073A119 /* mainmenu_button_settings_pressed.png */,
-				C4514FC316588B700073A119 /* mainmenu_button_start.png */,
-				C4514FC416588B700073A119 /* mainmenu_button_start_pressed.png */,
-			);
-			path = mainmenu_art;
 			sourceTree = "<group>";
 		};
 		C46D83F31667001000C6529A /* Flurry */ = {
@@ -824,7 +819,6 @@
 		C4993D1F16576C28008187A8 /* Assets */ = {
 			isa = PBXGroup;
 			children = (
-				C4514FBD16588B700073A119 /* mainmenu_art */,
 			);
 			path = Assets;
 			sourceTree = "<group>";
@@ -841,10 +835,6 @@
 			children = (
 				C4853D3F17262D6200E958D2 /* spritesheet-hd.plist */,
 				C4853D4017262D6200E958D2 /* spritesheet-hd.pvr.ccz */,
-				C4514FD616588CB90073A119 /* mainmenu_art-hd.plist */,
-				C4514FD716588CB90073A119 /* mainmenu_art-hd.pvr.ccz */,
-				C4514FD816588CB90073A119 /* mainmenu_art.plist */,
-				C4514FD916588CB90073A119 /* mainmenu_art.pvr.ccz */,
 			);
 			path = SpriteSheets;
 			sourceTree = "<group>";
@@ -856,6 +846,7 @@
 				C47F72B816DF90030006EEFB /* CCTouchDownMenu.m */,
 				C4993D2416576C46008187A8 /* Scenes */,
 				C4993D2616576C92008187A8 /* DanceMoves */,
+				C42FEB81172A00BB00B5DE03 /* Networking */,
 				C4993D2716576C9F008187A8 /* Constants */,
 				C4993D2816576CA4008187A8 /* Singletons */,
 			);
@@ -939,6 +930,7 @@
 		C4993D2C16576CDA008187A8 /* Sounds */ = {
 			isa = PBXGroup;
 			children = (
+				C40E433A1728F37D0017672A /* SFX */,
 				C425AC2717220979008FE344 /* Music */,
 			);
 			name = Sounds;
@@ -974,7 +966,7 @@
 		DC0C49E6154AB4DD00B4B727 = {
 			isa = PBXGroup;
 			children = (
-				DC0C4A07154AB4DD00B4B727 /* LilD */,
+				DC0C4A07154AB4DD00B4B727 /* DoTheDancing */,
 				DC0C49F4154AB4DD00B4B727 /* Frameworks */,
 				DC0C49F2154AB4DD00B4B727 /* Products */,
 			);
@@ -983,7 +975,7 @@
 		DC0C49F2154AB4DD00B4B727 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				DC0C49F1154AB4DD00B4B727 /* LilD.app */,
+				DC0C49F1154AB4DD00B4B727 /* DoTheDancing.app */,
 				DC0C4B87154AB55A00B4B727 /* libcocos2d-library.a */,
 			);
 			name = Products;
@@ -1007,7 +999,7 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		DC0C4A07154AB4DD00B4B727 /* LilD */ = {
+		DC0C4A07154AB4DD00B4B727 /* DoTheDancing */ = {
 			isa = PBXGroup;
 			children = (
 				C4993D2316576C39008187A8 /* Classes */,
@@ -1019,7 +1011,7 @@
 				DC0C4B74154AB4DF00B4B727 /* Supporting Files */,
 				C4993D2016576C28008187A8 /* Scripts */,
 			);
-			path = LilD;
+			path = DoTheDancing;
 			sourceTree = "<group>";
 		};
 		DC0C4A08154AB4DD00B4B727 /* Resources */ = {
@@ -1521,9 +1513,9 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		DC0C49F0154AB4DD00B4B727 /* LilD */ = {
+		DC0C49F0154AB4DD00B4B727 /* DoTheDancing */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = DC0C4B80154AB4DF00B4B727 /* Build configuration list for PBXNativeTarget "LilD" */;
+			buildConfigurationList = DC0C4B80154AB4DF00B4B727 /* Build configuration list for PBXNativeTarget "DoTheDancing" */;
 			buildPhases = (
 				DC0C49ED154AB4DD00B4B727 /* Sources */,
 				DC0C49EE154AB4DD00B4B727 /* Frameworks */,
@@ -1533,9 +1525,9 @@
 			);
 			dependencies = (
 			);
-			name = LilD;
-			productName = LilD;
-			productReference = DC0C49F1154AB4DD00B4B727 /* LilD.app */;
+			name = DoTheDancing;
+			productName = DoTheDancing;
+			productReference = DC0C49F1154AB4DD00B4B727 /* DoTheDancing.app */;
 			productType = "com.apple.product-type.application";
 		};
 		DC0C4B86154AB55A00B4B727 /* cocos2d-library */ = {
@@ -1563,7 +1555,7 @@
 			attributes = {
 				LastUpgradeCheck = 0460;
 			};
-			buildConfigurationList = DC0C49EB154AB4DD00B4B727 /* Build configuration list for PBXProject "LilD" */;
+			buildConfigurationList = DC0C49EB154AB4DD00B4B727 /* Build configuration list for PBXProject "DoTheDancing" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -1575,7 +1567,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				DC0C49F0154AB4DD00B4B727 /* LilD */,
+				DC0C49F0154AB4DD00B4B727 /* DoTheDancing */,
 				DC0C4B86154AB55A00B4B727 /* cocos2d-library */,
 			);
 		};
@@ -1590,15 +1582,6 @@
 				DC0C4A0E154AB4DD00B4B727 /* fps_images-hd.png in Resources */,
 				DC0C4A10154AB4DD00B4B727 /* fps_images-ipadhd.png in Resources */,
 				C4514FB6165889C00073A119 /* SoundEffects.plist in Resources */,
-				C4514FCA16588B700073A119 /* mainmenu_bg.png in Resources */,
-				C4514FCC16588B700073A119 /* mainmenu_button_settings.png in Resources */,
-				C4514FCD16588B700073A119 /* mainmenu_button_settings_pressed.png in Resources */,
-				C4514FCF16588B700073A119 /* mainmenu_button_start.png in Resources */,
-				C4514FD016588B700073A119 /* mainmenu_button_start_pressed.png in Resources */,
-				C4514FDA16588CB90073A119 /* mainmenu_art-hd.plist in Resources */,
-				C4514FDB16588CB90073A119 /* mainmenu_art-hd.pvr.ccz in Resources */,
-				C4514FDC16588CB90073A119 /* mainmenu_art.plist in Resources */,
-				C4514FDD16588CB90073A119 /* mainmenu_art.pvr.ccz in Resources */,
 				C47F729D16DF8DAA0006EEFB /* Icon-72.png in Resources */,
 				C47F729E16DF8DAA0006EEFB /* Icon-72@2x.png in Resources */,
 				C47F729F16DF8DAA0006EEFB /* Icon-Small-50.png in Resources */,
@@ -1637,6 +1620,8 @@
 				C498CD1417277D0B00A2A0A8 /* economica-bold_102-hd.fnt in Resources */,
 				C498CD1517277D0B00A2A0A8 /* economica-bold_102-hd.png in Resources */,
 				C4966F6017285D06002491F1 /* the_bernie.caf in Resources */,
+				C40E43431729001C0017672A /* step1_alice.caf in Resources */,
+				C40E43441729001C0017672A /* step2_alice.caf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1668,6 +1653,7 @@
 				C4853D3C1725CA8500E958D2 /* MotionRequirements.m in Sources */,
 				C498CCF51727396B00A2A0A8 /* DanceMoveSeeInActionScene.m in Sources */,
 				C498CCF81727397300A2A0A8 /* DanceMoveSeeInActionLayer.m in Sources */,
+				C42FEB84172A00D400B5DE03 /* MatchmakingServer.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1839,19 +1825,19 @@
 				COPY_PHASE_STRIP = NO;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = LilD/Prefix.pch;
-				HEADER_SEARCH_PATHS = "\"LilD/libs/kazmath/include\"";
-				INFOPLIST_FILE = LilD/Resources/Info.plist;
+				GCC_PREFIX_HEADER = DoTheDancing/Prefix.pch;
+				HEADER_SEARCH_PATHS = "\"DoTheDancing/libs/kazmath/include\"";
+				INFOPLIST_FILE = DoTheDancing/Resources/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"$(SRCROOT)/LilD/libs/Flurry\"",
+					"\"$(SRCROOT)/DoTheDancing/libs/Flurry\"",
 				);
 				OTHER_LDFLAGS = (
 					"-lz",
 					"-ObjC",
 				);
-				PRODUCT_NAME = LilD;
+				PRODUCT_NAME = DoTheDancing;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -1863,19 +1849,19 @@
 				CLANG_ENABLE_OBJC_ARC = YES;
 				COPY_PHASE_STRIP = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = LilD/Prefix.pch;
-				HEADER_SEARCH_PATHS = "\"LilD/libs/kazmath/include\"";
-				INFOPLIST_FILE = LilD/Resources/Info.plist;
+				GCC_PREFIX_HEADER = DoTheDancing/Prefix.pch;
+				HEADER_SEARCH_PATHS = "\"DoTheDancing/libs/kazmath/include\"";
+				INFOPLIST_FILE = DoTheDancing/Resources/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"$(SRCROOT)/LilD/libs/Flurry\"",
+					"\"$(SRCROOT)/DoTheDancing/libs/Flurry\"",
 				);
 				OTHER_LDFLAGS = (
 					"-lz",
 					"-ObjC",
 				);
-				PRODUCT_NAME = LilD;
+				PRODUCT_NAME = DoTheDancing;
 				VALIDATE_PRODUCT = YES;
 				WRAPPER_EXTENSION = app;
 			};
@@ -1893,7 +1879,7 @@
 					"$(inherited)",
 				);
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
-				HEADER_SEARCH_PATHS = "\"LilD/libs/kazmath/include\"";
+				HEADER_SEARCH_PATHS = "\"DoTheDancing/libs/kazmath/include\"";
 				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1908,7 +1894,7 @@
 				COPY_PHASE_STRIP = YES;
 				DSTROOT = /tmp/cocos2d_library.dst;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
-				HEADER_SEARCH_PATHS = "\"LilD/libs/kazmath/include\"";
+				HEADER_SEARCH_PATHS = "\"DoTheDancing/libs/kazmath/include\"";
 				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1920,7 +1906,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		DC0C49EB154AB4DD00B4B727 /* Build configuration list for PBXProject "LilD" */ = {
+		DC0C49EB154AB4DD00B4B727 /* Build configuration list for PBXProject "DoTheDancing" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				DC0C4B7E154AB4DF00B4B727 /* Debug */,
@@ -1929,7 +1915,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		DC0C4B80154AB4DF00B4B727 /* Build configuration list for PBXNativeTarget "LilD" */ = {
+		DC0C4B80154AB4DF00B4B727 /* Build configuration list for PBXNativeTarget "DoTheDancing" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				DC0C4B81154AB4DF00B4B727 /* Debug */,

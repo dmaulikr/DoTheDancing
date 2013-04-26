@@ -67,6 +67,31 @@ static GameManager *_sharedGameManager = nil;   // singleton
     return self;
 }
 
+-(void)preloadSoundEffects {
+    // Wait to make sure soundEngine is initialized
+    if ((self.managerSoundState != kAudioManagerReady) &&
+        (self.managerSoundState != kAudioManagerFailed)) {
+        
+        int waitCycles = 0;
+        while (waitCycles < AUDIO_MAX_WAITTIME) {
+            [NSThread sleepForTimeInterval:0.1f];
+            if ((self.managerSoundState == kAudioManagerReady) ||
+                (self.managerSoundState == kAudioManagerFailed)) {
+                break;
+            }
+            waitCycles = waitCycles + 1;
+        }
+    }
+    
+    if (self.managerSoundState == kAudioManagerReady) {
+        if ([self.soundEngine isBackgroundMusicPlaying]) {
+            [self.soundEngine stopBackgroundMusic];
+        }
+        [self.soundEngine preloadEffect:kStep1_SFX];
+        [self.soundEngine preloadEffect:kStep2_SFX];
+    }
+}
+
 -(void)playBackgroundTrack:(NSString*)trackFileName {
     // Wait to make sure soundEngine is initialized
     if ((self.managerSoundState != kAudioManagerReady) &&
@@ -104,22 +129,28 @@ static GameManager *_sharedGameManager = nil;   // singleton
     }
 }
 
--(ALuint)playSoundEffect:(NSString*)soundEffectKey {
-    ALuint soundID = 0;
+-(void)playSoundEffect:(NSString*)sfxFileName {
     if (self.managerSoundState == kAudioManagerReady) {
-        NSNumber *isSFXLoaded = [self.soundEffectsState objectForKey:soundEffectKey];
-        if ([isSFXLoaded boolValue] == SFX_LOADED) {
-            CCLOG(@"GameMgr: Playing SoundEffect: %@", soundEffectKey);
-            soundID = [self.soundEngine playEffect:[self.listOfSoundEffectFiles objectForKey:soundEffectKey]];
-        } else {
-            CCLOG(@"GameMgr: SoundEffect %@ is not loaded, cannot play.",soundEffectKey);
-        }
-    } else {
-        CCLOG(@"GameMgr: Sound Manager is not ready, cannot play %@", soundEffectKey);
+        [self.soundEngine playEffect:sfxFileName];
     }
-    
-    return soundID;
 }
+
+//-(ALuint)playSoundEffect:(NSString*)soundEffectKey {
+//    ALuint soundID = 0;
+//    if (self.managerSoundState == kAudioManagerReady) {
+//        NSNumber *isSFXLoaded = [self.soundEffectsState objectForKey:soundEffectKey];
+//        if ([isSFXLoaded boolValue] == SFX_LOADED) {
+//            CCLOG(@"GameMgr: Playing SoundEffect: %@", soundEffectKey);
+//            soundID = [self.soundEngine playEffect:[self.listOfSoundEffectFiles objectForKey:soundEffectKey]];
+//        } else {
+//            CCLOG(@"GameMgr: SoundEffect %@ is not loaded, cannot play.",soundEffectKey);
+//        }
+//    } else {
+//        CCLOG(@"GameMgr: Sound Manager is not ready, cannot play %@", soundEffectKey);
+//    }
+//    
+//    return soundID;
+//}
 
 - (NSString*)formatSceneTypeToString:(SceneTypes)sceneID {
     NSString *result = nil;

@@ -94,9 +94,12 @@
     
     // change background of game
     glClearColor(249/255.0, 185/255.0, 56/255.0, 1);
+    
+    // preload sfx
+    [[GameManager sharedGameManager] preloadSoundEffects];
 
 	// and add the scene to the stack. The director will run it when it automatically when the view is displayed.
-    [[GameManager sharedGameManager] runSceneWithID:kSceneTypeDanceMoveSelection];
+    [[GameManager sharedGameManager] runSceneWithID:kSceneTypeMainMenu];
 
 	return YES;
 }

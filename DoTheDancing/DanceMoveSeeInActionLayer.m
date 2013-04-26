@@ -100,7 +100,11 @@
 -(void)displayMovesCompletedBar {
     // moves completed bg
     CCSprite *movesCompletedBg = [CCSprite spriteWithSpriteFrameName:@"inaction_creambg.png"];
-    movesCompletedBg.position = ccp(self.screenSize.width * 0.5, self.screenSize.height * 0.87);
+    if (IS_IPHONE_4) {
+        movesCompletedBg.position = ccp(self.screenSize.width * 0.5, self.screenSize.height * 0.85);
+    } else {
+        movesCompletedBg.position = ccp(self.screenSize.width * 0.5, self.screenSize.height * 0.87);
+    }
     [self addChild:movesCompletedBg];
     
     // moves completed label
@@ -184,13 +188,17 @@
 -(void)displayIllustration {
     // init illustration with sign
     self.illustration = [CCSprite spriteWithSpriteFrameName:@"countdown_illustration.png"];
-    self.illustration.position = ccp(self.screenSize.width * 0.5, self.screenSize.height * 0.5);
+    if (IS_IPHONE_4) {
+        self.illustration.position = ccp(self.screenSize.width * 0.5, self.screenSize.height * 0.45);
+    } else {
+        self.illustration.position = ccp(self.screenSize.width * 0.5, self.screenSize.height * 0.5);
+    }
     [self.batchNode addChild:self.illustration];
     
     // display Ready? label
     self.countdownLabel = [CCLabelBMFont labelWithString:@"Watch &\nLearn" fntFile:@"economica-bold_102.fnt" width:self.illustration.contentSize.width * 0.7 alignment:kCCTextAlignmentCenter];
     self.countdownLabel.color = ccc3(56, 56, 56);
-    self.countdownLabel.position = ccp(self.screenSize.width * 0.5, self.screenSize.height * 0.5);
+    self.countdownLabel.position = self.illustration.position;
     [self addChild:self.countdownLabel];
 }
 
@@ -198,7 +206,11 @@
     // add invisible step count label
     self.stepCountLabel = [CCLabelBMFont labelWithString:@"Step 1" fntFile:@"economica-bold_62.fnt"];
     self.stepCountLabel.color = ccc3(56, 56, 56);
-    self.stepCountLabel.position = ccp(self.screenSize.width * 0.4, self.screenSize.height * 0.14);
+    if (IS_IPHONE_4) {
+        self.stepCountLabel.position = ccp(self.screenSize.width * 0.4, self.screenSize.height * 0.06);
+    } else {
+        self.stepCountLabel.position = ccp(self.screenSize.width * 0.4, self.screenSize.height * 0.14);
+    }
     self.stepCountLabel.visible = NO;
     [self addChild:self.stepCountLabel];
     
@@ -209,6 +221,9 @@
     self.stepTimer.type = kCCProgressTimerTypeRadial;
     self.stepTimer.percentage = 100;
     self.stepTimer.visible = NO;
+    if (IS_IPHONE_4) {
+        self.stepTimer.scale = 0.7;
+    }
     [self addChild:self.stepTimer];
 }
 

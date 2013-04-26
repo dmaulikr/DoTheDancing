@@ -28,6 +28,9 @@ typedef enum {
 
 #define kDanceMoveBernieName @"Bernie"
 
+#define kStep1_SFX @"step1_alice.caf"
+#define kStep2_SFX @"step2_alice.caf"
+
 #define kYawMin -400.0
 #define kYawMax 400.0
 #define kPitchMin -400.0
@@ -61,6 +64,11 @@ typedef enum {
 
 #define SFX_NOTLOADED NO
 #define SFX_LOADED YES
+
+#define IS_IPAD (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad)
+#define IS_IPHONE (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone)
+#define IS_IPHONE_5 (IS_IPHONE && [[UIScreen mainScreen] bounds].size.height == 568.0f)
+#define IS_IPHONE_4 (IS_IPHONE && [[UIScreen mainScreen] bounds].size.height == 480.0f)
 
 #define PLAYSOUNDEFFECT(...) \
 [[GameManager sharedGameManager] playSoundEffect:@#__VA_ARGS__]

@@ -26,7 +26,9 @@
 +(GameManager*)sharedGameManager;
 -(void)runSceneWithID:(SceneTypes)sceneID;
 -(void)setupAudioEngine;
--(ALuint)playSoundEffect:(NSString*)soundEffectKey;
+-(void)preloadSoundEffects;
+//-(ALuint)playSoundEffect:(NSString*)soundEffectKey;
+-(void)playSoundEffect:(NSString*)sfxFileName;
 -(void)stopSoundEffect:(ALuint)soundEffectID;
 -(void)playBackgroundTrack:(NSString*)trackFileName;
 -(void)stopBackgroundTrack;

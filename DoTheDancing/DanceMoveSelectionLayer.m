@@ -75,6 +75,12 @@
     bernieImage.position = ccp(bernieButton.contentSize.width * 0.5, bernieButton.contentSize.height * 0.35);
     [bernieButton addChild:bernieImage];
     
+    if (IS_IPHONE_4) {
+        bernieButton.scaleY = 0.87;
+//        bernieImage.scaleY = 1.1;
+//        bernieImage.scale = 0.9;
+    }
+    
     /* peter griffin */
     CCMenuItemSprite *peterGriffinButton = [CCMenuItemSprite itemWithNormalSprite:[CCSprite spriteWithSpriteFrameName:@"instructions_bg.png"] selectedSprite:nil block:^(id sender) {
 //        [self showInstructionsForDanceMove:kDanceMovePeterGriffin];
@@ -89,6 +95,10 @@
 //    CCSprite *peterGriffinImage = [CCSprite spriteWithSpriteFrameName:@"select_dance_bernie.png"];
 //    peterGriffinImage.position = ccp(bernieButton.contentSize.width * 0.5, bernieButton.contentSize.height * 0.35);
 //    [peterGriffinButton addChild:peterGriffinImage];
+    
+    if (IS_IPHONE_4) {
+        peterGriffinButton.scaleY = 0.87;
+    }
     
     /* cat daddy */
     CCMenuItemSprite *catDaddyButton = [CCMenuItemSprite itemWithNormalSprite:[CCSprite spriteWithSpriteFrameName:@"instructions_bg.png"] selectedSprite:nil block:^(id sender) {
@@ -105,6 +115,9 @@
 //    catDaddyImage.position = ccp(bernieButton.contentSize.width * 0.5, bernieButton.contentSize.height * 0.35);
 //    [catDaddyButton addChild:catDaddyImage];
     
+    if (IS_IPHONE_4) {
+        catDaddyButton.scaleY = 0.87;
+    }
     
     // temporarily disable Peter Griffin & Cat Daddy
     peterGriffinButton.opacity = 100;
