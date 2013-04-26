@@ -14,6 +14,8 @@
 #import "DanceMoveSeeInActionScene.h"
 #import "DanceMoveDanceScene.h"
 #import "DanceMoveResultsScene.h"
+#import "MultiplayerHostOrJoinScene.h"
+#import "MultiplayerWaitingRoomScene.h"
 
 @interface GameManager()
 
@@ -62,6 +64,9 @@ static GameManager *_sharedGameManager = nil;   // singleton
         // individual dance moves practice
         _individualDanceMove = nil;
         _danceMoveIterationResults = nil;
+        
+        // multiplayer
+        _isHost = NO;
     }
     
     return self;
@@ -178,6 +183,12 @@ static GameManager *_sharedGameManager = nil;   // singleton
             break;
         case kSceneTypeDanceMoveResults:
             result = @"kSceneTypeDanceMoveResults";
+            break;
+        case kSceneTypeMultiplayerHostOrJoin:
+            result = @"kSceneTypeMultiplayerHostOrJoin";
+            break;
+        case kSceneTypeMultiplayerWaitingRoom:
+            result = @"kSceneTypeMultiplayerWaitingRoom";
             break;
         default:
             [NSException raise:NSGenericException format:@"Unexpected SceneType."];
@@ -369,6 +380,12 @@ static GameManager *_sharedGameManager = nil;   // singleton
             break;
         case kSceneTypeDanceMoveResults:
             sceneToRun = [DanceMoveResultsScene node];
+            break;
+        case kSceneTypeMultiplayerHostOrJoin:
+            sceneToRun = [MultiplayerHostOrJoinScene node];
+            break;
+        case kSceneTypeMultiplayerWaitingRoom:
+            sceneToRun = [MultiplayerWaitingRoomScene node];
             break;
         default:
             CCLOG(@"Unknown sceneID, cannot run scene");

@@ -66,15 +66,14 @@
     // dance move name
     CCLabelBMFont *danceNameLabel = [CCLabelBMFont labelWithString:self.danceMove.name fntFile:@"economica-bold_64.fnt"];
     danceNameLabel.color = ccc3(249, 185, 56);
-    danceNameLabel.anchorPoint = ccp(1, 0.5);
     danceNameLabel.position = ccp(self.screenSize.width * 0.5, self.topBannerBg.contentSize.height * 0.5);
     [self.topBannerBg addChild:danceNameLabel];
     
     // instructions label
     CCLabelBMFont *instructionsLabel = [CCLabelBMFont labelWithString:@"INSTRUCTIONS" fntFile:@"economica-italic_33.fnt"];
     instructionsLabel.color = ccc3(249, 185, 56);
-    instructionsLabel.anchorPoint = ccp(0, 0.5);
-    instructionsLabel.position = ccp(self.screenSize.width * 0.57, self.topBannerBg.contentSize.height * 0.45);
+    instructionsLabel.anchorPoint = ccp(1, 0.5);
+    instructionsLabel.position = ccp(self.screenSize.width * 0.97, self.topBannerBg.contentSize.height * 0.45);
     [self.topBannerBg addChild:instructionsLabel];
 }
 
@@ -181,24 +180,24 @@
         [[GameManager sharedGameManager] stopBackgroundTrack];
         [[GameManager sharedGameManager] runSceneWithID:kSceneTypeDanceMoveSelection];
     }];
-    backButton.anchorPoint = ccp(0, 0);
-    backButton.position = ccp(self.screenSize.width * 0.09, self.screenSize.height * 0.02);
+    backButton.anchorPoint = ccp(0, 1);
+    backButton.position = ccp(0, self.screenSize.height * 0.992);
     
     CCMenuItemSprite *seeInActionButton = [CCMenuItemSprite itemWithNormalSprite:[CCSprite spriteWithSpriteFrameName:@"instructions_button_action1.png"] selectedSprite:[CCSprite spriteWithSpriteFrameName:@"instructions_button_action2.png"] block:^(id sender) {
         [[GameManager sharedGameManager] stopBackgroundTrack];
         [[GameManager sharedGameManager] runSceneWithID:kSceneTypeDanceMoveSeeInAction];
     }];
-    seeInActionButton.anchorPoint = ccp(0.5, 0);
-    seeInActionButton.position = ccp(self.screenSize.width * 0.445, backButton.position.y);
+    seeInActionButton.anchorPoint = ccp(1, 0);
+    seeInActionButton.position = ccp(self.screenSize.width * 0.57, self.screenSize.height * 0.03);
     
     CCMenuItemSprite *tryItOutButton = [CCMenuItemSprite itemWithNormalSprite:[CCSprite spriteWithSpriteFrameName:@"instructions_button_try1.png"] selectedSprite:[CCSprite spriteWithSpriteFrameName:@"instructions_button_try2.png"] block:^(id sender) {
         [[GameManager sharedGameManager] stopBackgroundTrack];
         [[GameManager sharedGameManager] runSceneWithID:kSceneTypeDanceMoveDance];
     }];
-    tryItOutButton.anchorPoint= ccp(1, 0);
-    tryItOutButton.position = ccp(self.screenSize.width * 0.91, seeInActionButton.position.y);
+    tryItOutButton.anchorPoint= ccp(0, 0);
+    tryItOutButton.position = ccp(self.screenSize.width * 0.53, seeInActionButton.position.y);
     
-    CCMenu *menu = [CCMenu menuWithItems:backButton, seeInActionButton, tryItOutButton ,nil];
+    CCMenu *menu = [CCMenu menuWithItems:backButton, seeInActionButton, tryItOutButton, nil];
     menu.position = ccp(0, 0);
     [self addChild:menu];
 }

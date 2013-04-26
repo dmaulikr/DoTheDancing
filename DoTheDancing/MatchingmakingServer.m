@@ -1,14 +1,23 @@
 //
-//  MatchmakingServer.m
+//  MatchingmakingServer.m
 //  DoTheDancing
 //
 //  Created by Michael Gao on 4/25/13.
 //
 //
 
-#import "MatchmakingServer.h"
+#import "MatchingmakingServer.h"
 
-@implementation MatchmakingServer
+@implementation MatchingmakingServer
+
+-(id)init {
+    self = [super init];
+    if (self != nil) {
+        self.maxClients = 8;
+    }
+    
+    return self;
+}
 
 - (void)startAcceptingConnectionsForSessionID:(NSString *)sessionID
 {
@@ -23,17 +32,17 @@
 
 - (void)session:(GKSession *)session peer:(NSString *)peerID didChangeState:(GKPeerConnectionState)state
 {
-	CCLOG(@"MatchmakingServer: peer %@ changed state %d", peerID, state);
+	CCLOG(@"MatchmakingServer: peer %@ changed state %d", [session displayNameForPeer:peerID], state);
 }
 
 - (void)session:(GKSession *)session didReceiveConnectionRequestFromPeer:(NSString *)peerID
 {
-	CCLOG(@"MatchmakingServer: connection request from peer %@", peerID);
+	CCLOG(@"MatchmakingServer: connection request from peer %@", [session displayNameForPeer:peerID]);
 }
 
 - (void)session:(GKSession *)session connectionWithPeerFailed:(NSString *)peerID withError:(NSError *)error
 {
-	CCLOG(@"MatchmakingServer: connection with peer %@ failed %@", peerID, error);
+	CCLOG(@"MatchmakingServer: connection with peer %@ failed %@", [session displayNameForPeer:peerID], error);
 }
 
 - (void)session:(GKSession *)session didFailWithError:(NSError *)error

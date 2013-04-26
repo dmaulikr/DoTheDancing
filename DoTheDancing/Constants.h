@@ -9,6 +9,8 @@
 #ifndef chinAndCheeksTemplate_Constants_h
 #define chinAndCheeksTemplate_Constants_h
 
+#define SESSION_ID @"Do the Dancing!"
+
 typedef enum {
     kSceneTypeNone = -1,
     kSceneTypeTestMotion,
@@ -17,7 +19,9 @@ typedef enum {
     kSceneTypeDanceMoveInstructions,
     kSceneTypeDanceMoveSeeInAction,
     kSceneTypeDanceMoveDance,
-    kSceneTypeDanceMoveResults
+    kSceneTypeDanceMoveResults,
+    kSceneTypeMultiplayerHostOrJoin,
+    kSceneTypeMultiplayerWaitingRoom
 } SceneTypes;
 
 typedef enum {

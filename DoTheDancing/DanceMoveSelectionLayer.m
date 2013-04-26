@@ -77,8 +77,6 @@
     
     if (IS_IPHONE_4) {
         bernieButton.scaleY = 0.87;
-//        bernieImage.scaleY = 1.1;
-//        bernieImage.scale = 0.9;
     }
     
     /* peter griffin */
@@ -92,9 +90,9 @@
     peterGriffinLabel.position = ccp(bernieButton.contentSize.width * 0.5, bernieButton.contentSize.height * 0.82);
     [peterGriffinButton addChild:peterGriffinLabel];
     
-//    CCSprite *peterGriffinImage = [CCSprite spriteWithSpriteFrameName:@"select_dance_bernie.png"];
-//    peterGriffinImage.position = ccp(bernieButton.contentSize.width * 0.5, bernieButton.contentSize.height * 0.35);
-//    [peterGriffinButton addChild:peterGriffinImage];
+    CCSprite *peterGriffinImage = [CCSprite spriteWithSpriteFrameName:@"select_dance_soon.png"];
+    peterGriffinImage.position = ccp(bernieButton.contentSize.width * 0.5, bernieButton.contentSize.height * 0.35);
+    [peterGriffinButton addChild:peterGriffinImage];
     
     if (IS_IPHONE_4) {
         peterGriffinButton.scaleY = 0.87;
@@ -111,9 +109,9 @@
     catDaddyLabel.position = ccp(bernieButton.contentSize.width * 0.5, bernieButton.contentSize.height * 0.82);
     [catDaddyButton addChild:catDaddyLabel];
     
-//    CCSprite *catDaddyImage = [CCSprite spriteWithSpriteFrameName:@"select_dance_bernie.png"];
-//    catDaddyImage.position = ccp(bernieButton.contentSize.width * 0.5, bernieButton.contentSize.height * 0.35);
-//    [catDaddyButton addChild:catDaddyImage];
+    CCSprite *catDaddyImage = [CCSprite spriteWithSpriteFrameName:@"select_dance_soon.png"];
+    catDaddyImage.position = ccp(bernieButton.contentSize.width * 0.5, bernieButton.contentSize.height * 0.35);
+    [catDaddyButton addChild:catDaddyImage];
     
     if (IS_IPHONE_4) {
         catDaddyButton.scaleY = 0.87;
@@ -121,8 +119,10 @@
     
     // temporarily disable Peter Griffin & Cat Daddy
     peterGriffinButton.opacity = 100;
+    peterGriffinImage.opacity = 100;
     peterGriffinLabel.opacity = 100;
     catDaddyButton.opacity = 100;
+    catDaddyImage.opacity = 100;
     catDaddyLabel.opacity = 100;
     
     CCMenu *danceMovesMenu = [CCTouchDownMenu menuWithItems:bernieButton, peterGriffinButton, catDaddyButton, nil];
@@ -167,22 +167,30 @@
 }
 
 -(void)displayMenu {
+    CCMenuItemSprite *backButton = [CCMenuItemSprite itemWithNormalSprite:[CCSprite spriteWithSpriteFrameName:@"instructions_button_back1.png"] selectedSprite:[CCSprite spriteWithSpriteFrameName:@"instructions_button_back2.png"] block:^(id sender) {
+        [[GameManager sharedGameManager] runSceneWithID:kSceneTypeMainMenu];
+    }];
+    backButton.anchorPoint = ccp(0, 1);
+    backButton.position = ccp(0, self.screenSize.height * 0.992);
+    
     CCMenuItemSprite *prevButton = [CCMenuItemSprite itemWithNormalSprite:[CCSprite spriteWithSpriteFrameName:@"select_dance_button_prev1.png"] selectedSprite:[CCSprite spriteWithSpriteFrameName:@"select_dance_button_prev2.png"] block:^(id sender) {
         
     }];
     prevButton.position = ccp(self.screenSize.width * 0.185, self.screenSize.height * 0.08);
+    prevButton.isEnabled = NO;
     
     CCMenuItemSprite *nextButton = [CCMenuItemSprite itemWithNormalSprite:[CCSprite spriteWithSpriteFrameName:@"select_dance_button_next1.png"] selectedSprite:[CCSprite spriteWithSpriteFrameName:@"select_dance_button_next2.png"] block:^(id sender) {
         
     }];
     nextButton.position = ccp(self.screenSize.width * 0.815, prevButton.position.y);
+    nextButton.isEnabled = NO;
     
     
     // temporarily disable both buttons
     prevButton.opacity = 100;
     nextButton.opacity = 100;
     
-    CCMenu *menu = [CCMenu menuWithItems:prevButton, nextButton, nil];
+    CCMenu *menu = [CCMenu menuWithItems:backButton, prevButton, nextButton, nil];
     menu.position = ccp(0, 0);
     
     [self addChild:menu];

@@ -20,7 +20,12 @@
 		C425AC3E17221E24008FE344 /* DanceMoveDanceLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = C425AC3D17221E24008FE344 /* DanceMoveDanceLayer.m */; };
 		C425AC4217223E93008FE344 /* DanceMoveResultsScene.m in Sources */ = {isa = PBXBuildFile; fileRef = C425AC4117223E93008FE344 /* DanceMoveResultsScene.m */; };
 		C425AC4517223E9C008FE344 /* DanceMoveResultsLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = C425AC4417223E9C008FE344 /* DanceMoveResultsLayer.m */; };
-		C42FEB84172A00D400B5DE03 /* MatchmakingServer.m in Sources */ = {isa = PBXBuildFile; fileRef = C42FEB83172A00D400B5DE03 /* MatchmakingServer.m */; };
+		C42FEB88172A058800B5DE03 /* MultiplayerWaitingRoomScene.m in Sources */ = {isa = PBXBuildFile; fileRef = C42FEB87172A058800B5DE03 /* MultiplayerWaitingRoomScene.m */; };
+		C42FEB8B172A059500B5DE03 /* MultiplayerWaitingRoomLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = C42FEB8A172A059500B5DE03 /* MultiplayerWaitingRoomLayer.m */; };
+		C42FEB94172A39B200B5DE03 /* MatchingmakingServer.m in Sources */ = {isa = PBXBuildFile; fileRef = C42FEB93172A39B200B5DE03 /* MatchingmakingServer.m */; };
+		C42FEB97172A39B800B5DE03 /* MatchmakingClient.m in Sources */ = {isa = PBXBuildFile; fileRef = C42FEB96172A39B800B5DE03 /* MatchmakingClient.m */; };
+		C42FEB9C172A3AD800B5DE03 /* MultiplayerHostOrJoinScene.m in Sources */ = {isa = PBXBuildFile; fileRef = C42FEB9B172A3AD800B5DE03 /* MultiplayerHostOrJoinScene.m */; };
+		C42FEB9F172A3ADE00B5DE03 /* MultiplayerHostOrJoinLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = C42FEB9E172A3ADE00B5DE03 /* MultiplayerHostOrJoinLayer.m */; };
 		C447906716D520BD00A64CC7 /* TestMotionScene.m in Sources */ = {isa = PBXBuildFile; fileRef = C447906616D520BD00A64CC7 /* TestMotionScene.m */; };
 		C447906A16D520C400A64CC7 /* TestMotionLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = C447906916D520C400A64CC7 /* TestMotionLayer.m */; };
 		C4514FB1165882960073A119 /* GameManager.m in Sources */ = {isa = PBXBuildFile; fileRef = C4514FB0165882960073A119 /* GameManager.m */; };
@@ -339,8 +344,18 @@
 		C425AC4117223E93008FE344 /* DanceMoveResultsScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DanceMoveResultsScene.m; sourceTree = "<group>"; };
 		C425AC4317223E9C008FE344 /* DanceMoveResultsLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DanceMoveResultsLayer.h; sourceTree = "<group>"; };
 		C425AC4417223E9C008FE344 /* DanceMoveResultsLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DanceMoveResultsLayer.m; sourceTree = "<group>"; };
-		C42FEB82172A00D400B5DE03 /* MatchmakingServer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MatchmakingServer.h; sourceTree = "<group>"; };
-		C42FEB83172A00D400B5DE03 /* MatchmakingServer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MatchmakingServer.m; sourceTree = "<group>"; };
+		C42FEB86172A058800B5DE03 /* MultiplayerWaitingRoomScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MultiplayerWaitingRoomScene.h; sourceTree = "<group>"; };
+		C42FEB87172A058800B5DE03 /* MultiplayerWaitingRoomScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MultiplayerWaitingRoomScene.m; sourceTree = "<group>"; };
+		C42FEB89172A059500B5DE03 /* MultiplayerWaitingRoomLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MultiplayerWaitingRoomLayer.h; sourceTree = "<group>"; };
+		C42FEB8A172A059500B5DE03 /* MultiplayerWaitingRoomLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MultiplayerWaitingRoomLayer.m; sourceTree = "<group>"; };
+		C42FEB92172A39B200B5DE03 /* MatchingmakingServer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MatchingmakingServer.h; sourceTree = "<group>"; };
+		C42FEB93172A39B200B5DE03 /* MatchingmakingServer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MatchingmakingServer.m; sourceTree = "<group>"; };
+		C42FEB95172A39B800B5DE03 /* MatchmakingClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MatchmakingClient.h; sourceTree = "<group>"; };
+		C42FEB96172A39B800B5DE03 /* MatchmakingClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MatchmakingClient.m; sourceTree = "<group>"; };
+		C42FEB9A172A3AD800B5DE03 /* MultiplayerHostOrJoinScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MultiplayerHostOrJoinScene.h; sourceTree = "<group>"; };
+		C42FEB9B172A3AD800B5DE03 /* MultiplayerHostOrJoinScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MultiplayerHostOrJoinScene.m; sourceTree = "<group>"; };
+		C42FEB9D172A3ADE00B5DE03 /* MultiplayerHostOrJoinLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MultiplayerHostOrJoinLayer.h; sourceTree = "<group>"; };
+		C42FEB9E172A3ADE00B5DE03 /* MultiplayerHostOrJoinLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MultiplayerHostOrJoinLayer.m; sourceTree = "<group>"; };
 		C447906516D520BD00A64CC7 /* TestMotionScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestMotionScene.h; sourceTree = "<group>"; };
 		C447906616D520BD00A64CC7 /* TestMotionScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestMotionScene.m; sourceTree = "<group>"; };
 		C447906816D520C300A64CC7 /* TestMotionLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestMotionLayer.h; sourceTree = "<group>"; };
@@ -751,10 +766,43 @@
 		C42FEB81172A00BB00B5DE03 /* Networking */ = {
 			isa = PBXGroup;
 			children = (
-				C42FEB82172A00D400B5DE03 /* MatchmakingServer.h */,
-				C42FEB83172A00D400B5DE03 /* MatchmakingServer.m */,
+				C42FEB92172A39B200B5DE03 /* MatchingmakingServer.h */,
+				C42FEB93172A39B200B5DE03 /* MatchingmakingServer.m */,
+				C42FEB95172A39B800B5DE03 /* MatchmakingClient.h */,
+				C42FEB96172A39B800B5DE03 /* MatchmakingClient.m */,
 			);
 			name = Networking;
+			sourceTree = "<group>";
+		};
+		C42FEB85172A056A00B5DE03 /* MultiplayerWaitingRoom */ = {
+			isa = PBXGroup;
+			children = (
+				C42FEB86172A058800B5DE03 /* MultiplayerWaitingRoomScene.h */,
+				C42FEB87172A058800B5DE03 /* MultiplayerWaitingRoomScene.m */,
+				C42FEB89172A059500B5DE03 /* MultiplayerWaitingRoomLayer.h */,
+				C42FEB8A172A059500B5DE03 /* MultiplayerWaitingRoomLayer.m */,
+			);
+			name = MultiplayerWaitingRoom;
+			sourceTree = "<group>";
+		};
+		C42FEB98172A3A8800B5DE03 /* Multiplayer */ = {
+			isa = PBXGroup;
+			children = (
+				C42FEB99172A3A8F00B5DE03 /* MultiplayerHostOrJoin */,
+				C42FEB85172A056A00B5DE03 /* MultiplayerWaitingRoom */,
+			);
+			name = Multiplayer;
+			sourceTree = "<group>";
+		};
+		C42FEB99172A3A8F00B5DE03 /* MultiplayerHostOrJoin */ = {
+			isa = PBXGroup;
+			children = (
+				C42FEB9A172A3AD800B5DE03 /* MultiplayerHostOrJoinScene.h */,
+				C42FEB9B172A3AD800B5DE03 /* MultiplayerHostOrJoinScene.m */,
+				C42FEB9D172A3ADE00B5DE03 /* MultiplayerHostOrJoinLayer.h */,
+				C42FEB9E172A3ADE00B5DE03 /* MultiplayerHostOrJoinLayer.m */,
+			);
+			name = MultiplayerHostOrJoin;
 			sourceTree = "<group>";
 		};
 		C447906416D520B000A64CC7 /* TestMotion */ = {
@@ -863,6 +911,7 @@
 				C498CCF21727394F00A2A0A8 /* DanceMoveSeeInAction */,
 				C425AC2F17221DCE008FE344 /* DanceMoveDance */,
 				C425AC3F17223C33008FE344 /* DanceMoveResults */,
+				C42FEB98172A3A8800B5DE03 /* Multiplayer */,
 			);
 			name = Scenes;
 			sourceTree = "<group>";
@@ -1653,7 +1702,12 @@
 				C4853D3C1725CA8500E958D2 /* MotionRequirements.m in Sources */,
 				C498CCF51727396B00A2A0A8 /* DanceMoveSeeInActionScene.m in Sources */,
 				C498CCF81727397300A2A0A8 /* DanceMoveSeeInActionLayer.m in Sources */,
-				C42FEB84172A00D400B5DE03 /* MatchmakingServer.m in Sources */,
+				C42FEB88172A058800B5DE03 /* MultiplayerWaitingRoomScene.m in Sources */,
+				C42FEB8B172A059500B5DE03 /* MultiplayerWaitingRoomLayer.m in Sources */,
+				C42FEB94172A39B200B5DE03 /* MatchingmakingServer.m in Sources */,
+				C42FEB97172A39B800B5DE03 /* MatchmakingClient.m in Sources */,
+				C42FEB9C172A3AD800B5DE03 /* MultiplayerHostOrJoinScene.m in Sources */,
+				C42FEB9F172A3ADE00B5DE03 /* MultiplayerHostOrJoinLayer.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

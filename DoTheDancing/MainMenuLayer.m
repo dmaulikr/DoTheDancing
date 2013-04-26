@@ -36,7 +36,7 @@
     singlePlayerLabel.position = ccp(self.screenSize.width * 0.5, self.screenSize.height * 0.6);
     
     CCMenuItemLabel *multiplayerLabel = [CCMenuItemLabel itemWithLabel:[CCLabelTTF labelWithString:@"Multiplayer" fontName:@"Helvetica" fontSize:32] block:^(id sender) {
-        
+        [[GameManager sharedGameManager] runSceneWithID:kSceneTypeMultiplayerHostOrJoin];
     }];
     multiplayerLabel.position = ccp(self.screenSize.width * 0.5, self.screenSize.height * 0.4);
     

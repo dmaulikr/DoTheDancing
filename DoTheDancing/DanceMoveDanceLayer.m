@@ -111,16 +111,15 @@
     // dance move name
     CCLabelBMFont *danceNameLabel = [CCLabelBMFont labelWithString:self.danceMove.name fntFile:@"economica-bold_64.fnt"];
     danceNameLabel.color = ccc3(249, 185, 56);
-    danceNameLabel.anchorPoint = ccp(1, 0.5);
     danceNameLabel.position = ccp(self.screenSize.width * 0.5, self.topBannerBg.contentSize.height * 0.5);
     [self.topBannerBg addChild:danceNameLabel];
     
-    // instructions label
-    CCLabelBMFont *inActionLabel = [CCLabelBMFont labelWithString:@"DANCE MODE" fntFile:@"economica-italic_33.fnt"];
-    inActionLabel.color = ccc3(249, 185, 56);
-    inActionLabel.anchorPoint = ccp(0, 0.5);
-    inActionLabel.position = ccp(self.screenSize.width * 0.57, self.topBannerBg.contentSize.height * 0.45);
-    [self.topBannerBg addChild:inActionLabel];
+    // dance mode label
+    CCLabelBMFont *danceModeLabel = [CCLabelBMFont labelWithString:@"DANCE MODE" fntFile:@"economica-italic_33.fnt"];
+    danceModeLabel.color = ccc3(249, 185, 56);
+    danceModeLabel.anchorPoint = ccp(1, 0.5);
+    danceModeLabel.position = ccp(self.screenSize.width * 0.97, self.topBannerBg.contentSize.height * 0.45);
+    [self.topBannerBg addChild:danceModeLabel];
 }
 
 -(void)displayMovesCompletedBar {

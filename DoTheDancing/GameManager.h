@@ -23,6 +23,9 @@
 @property (nonatomic, strong) DanceMove *individualDanceMove;
 @property (nonatomic, strong) NSMutableArray *danceMoveIterationResults;
 
+// multiplayer
+@property (nonatomic) BOOL isHost;
+
 +(GameManager*)sharedGameManager;
 -(void)runSceneWithID:(SceneTypes)sceneID;
 -(void)setupAudioEngine;
