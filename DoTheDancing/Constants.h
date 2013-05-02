@@ -30,6 +30,16 @@ typedef enum {
     kDanceMoveNum
 } DanceMoves;
 
+typedef enum
+{
+    QuitReasonNone,
+	QuitReasonNoNetwork,          // no Wi-Fi or Bluetooth
+	QuitReasonConnectionDropped,  // communication failure with server
+	QuitReasonUserQuit,           // the user terminated the connection
+	QuitReasonHostQuit,           // the host quit the game (on purpose)
+}
+QuitReason;
+
 #define kDanceMoveBernieName @"Bernie"
 
 #define kStep1_SFX @"step1_alice.caf"

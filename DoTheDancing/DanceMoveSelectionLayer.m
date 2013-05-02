@@ -16,9 +16,6 @@
 @property (nonatomic) CGSize screenSize;
 @property (nonatomic, strong) CCSpriteBatchNode *batchNode;
 
-// sprite management
-@property (nonatomic, strong) CCSprite *topBannerBg;
-
 @end
 
 @implementation DanceMoveSelectionLayer
@@ -26,9 +23,6 @@
 -(id)init {
     self = [super init];
     if (self != nil) {
-        // load texture atlas
-        [[CCSpriteFrameCache sharedSpriteFrameCache] addSpriteFramesWithFile:@"spritesheet.plist"];
-        
         self.screenSize = [CCDirector sharedDirector].winSize;
         self.batchNode = [CCSpriteBatchNode batchNodeWithFile:@"spritesheet.pvr.ccz"];
         [self addChild:self.batchNode];
@@ -47,16 +41,16 @@
 
 -(void)displayTopBar {
     // top banner bg
-    self.topBannerBg = [CCSprite spriteWithSpriteFrameName:@"instructions_top_banner.png"];
-    self.topBannerBg.anchorPoint = ccp(0, 1);
-    self.topBannerBg.position = ccp(0, self.screenSize.height);
-    [self addChild:self.topBannerBg];
+    CCSprite *topBannerBg = [CCSprite spriteWithSpriteFrameName:@"instructions_top_banner.png"];
+    topBannerBg.anchorPoint = ccp(0, 1);
+    topBannerBg.position = ccp(0, self.screenSize.height);
+    [self addChild:topBannerBg];
     
     // dance move name
     CCLabelBMFont *selectDanceLabel = [CCLabelBMFont labelWithString:@"Select Dance" fntFile:@"economica-bold_64.fnt"];
     selectDanceLabel.color = ccc3(249, 185, 56);
-    selectDanceLabel.position = ccp(self.screenSize.width * 0.5, self.topBannerBg.contentSize.height * 0.5);
-    [self.topBannerBg addChild:selectDanceLabel];
+    selectDanceLabel.position = ccp(self.screenSize.width * 0.5, topBannerBg.contentSize.height * 0.5);
+    [topBannerBg addChild:selectDanceLabel];
 }
 
 -(void)displayDanceMoves {

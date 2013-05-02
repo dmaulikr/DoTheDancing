@@ -22,16 +22,22 @@
 		C425AC4517223E9C008FE344 /* DanceMoveResultsLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = C425AC4417223E9C008FE344 /* DanceMoveResultsLayer.m */; };
 		C42FEB88172A058800B5DE03 /* MultiplayerWaitingRoomScene.m in Sources */ = {isa = PBXBuildFile; fileRef = C42FEB87172A058800B5DE03 /* MultiplayerWaitingRoomScene.m */; };
 		C42FEB8B172A059500B5DE03 /* MultiplayerWaitingRoomLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = C42FEB8A172A059500B5DE03 /* MultiplayerWaitingRoomLayer.m */; };
-		C42FEB94172A39B200B5DE03 /* MatchingmakingServer.m in Sources */ = {isa = PBXBuildFile; fileRef = C42FEB93172A39B200B5DE03 /* MatchingmakingServer.m */; };
+		C42FEB94172A39B200B5DE03 /* MatchmakingServer.m in Sources */ = {isa = PBXBuildFile; fileRef = C42FEB93172A39B200B5DE03 /* MatchmakingServer.m */; };
 		C42FEB97172A39B800B5DE03 /* MatchmakingClient.m in Sources */ = {isa = PBXBuildFile; fileRef = C42FEB96172A39B800B5DE03 /* MatchmakingClient.m */; };
 		C42FEB9C172A3AD800B5DE03 /* MultiplayerHostOrJoinScene.m in Sources */ = {isa = PBXBuildFile; fileRef = C42FEB9B172A3AD800B5DE03 /* MultiplayerHostOrJoinScene.m */; };
 		C42FEB9F172A3ADE00B5DE03 /* MultiplayerHostOrJoinLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = C42FEB9E172A3ADE00B5DE03 /* MultiplayerHostOrJoinLayer.m */; };
+		C439C415172B5E0B00367A4B /* economica-bold_36-hd.fnt in Resources */ = {isa = PBXBuildFile; fileRef = C439C413172B5E0B00367A4B /* economica-bold_36-hd.fnt */; };
+		C439C416172B5E0B00367A4B /* economica-bold_36-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = C439C414172B5E0B00367A4B /* economica-bold_36-hd.png */; };
 		C447906716D520BD00A64CC7 /* TestMotionScene.m in Sources */ = {isa = PBXBuildFile; fileRef = C447906616D520BD00A64CC7 /* TestMotionScene.m */; };
 		C447906A16D520C400A64CC7 /* TestMotionLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = C447906916D520C400A64CC7 /* TestMotionLayer.m */; };
 		C4514FB1165882960073A119 /* GameManager.m in Sources */ = {isa = PBXBuildFile; fileRef = C4514FB0165882960073A119 /* GameManager.m */; };
 		C4514FB6165889C00073A119 /* SoundEffects.plist in Resources */ = {isa = PBXBuildFile; fileRef = C4514FB5165889C00073A119 /* SoundEffects.plist */; };
 		C4514FB916588A150073A119 /* MainMenuScene.m in Sources */ = {isa = PBXBuildFile; fileRef = C4514FB816588A150073A119 /* MainMenuScene.m */; };
 		C4514FBC16588A350073A119 /* MainMenuLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = C4514FBB16588A350073A119 /* MainMenuLayer.m */; };
+		C45A072B172E28A1002ED7B7 /* Packet.m in Sources */ = {isa = PBXBuildFile; fileRef = C45A072A172E28A1002ED7B7 /* Packet.m */; };
+		C45A072E172E2A84002ED7B7 /* NSData+DTDAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = C45A072D172E2A84002ED7B7 /* NSData+DTDAdditions.m */; };
+		C45A0731172E3AC1002ED7B7 /* PacketAddPlayerWaitingRoom.m in Sources */ = {isa = PBXBuildFile; fileRef = C45A0730172E3AC0002ED7B7 /* PacketAddPlayerWaitingRoom.m */; };
+		C45A0733172E54E4002ED7B7 /* mainmenu_bg.png in Resources */ = {isa = PBXBuildFile; fileRef = C45A0732172E54E4002ED7B7 /* mainmenu_bg.png */; };
 		C46322451720F6C4007E39D5 /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C46322441720F6C4007E39D5 /* CoreMotion.framework */; };
 		C46D83F61667001000C6529A /* libFlurry.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C46D83F51667001000C6529A /* libFlurry.a */; };
 		C46D83F91667007800C6529A /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C46D83F81667007800C6529A /* SystemConfiguration.framework */; };
@@ -348,14 +354,16 @@
 		C42FEB87172A058800B5DE03 /* MultiplayerWaitingRoomScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MultiplayerWaitingRoomScene.m; sourceTree = "<group>"; };
 		C42FEB89172A059500B5DE03 /* MultiplayerWaitingRoomLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MultiplayerWaitingRoomLayer.h; sourceTree = "<group>"; };
 		C42FEB8A172A059500B5DE03 /* MultiplayerWaitingRoomLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MultiplayerWaitingRoomLayer.m; sourceTree = "<group>"; };
-		C42FEB92172A39B200B5DE03 /* MatchingmakingServer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MatchingmakingServer.h; sourceTree = "<group>"; };
-		C42FEB93172A39B200B5DE03 /* MatchingmakingServer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MatchingmakingServer.m; sourceTree = "<group>"; };
+		C42FEB92172A39B200B5DE03 /* MatchmakingServer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MatchmakingServer.h; sourceTree = "<group>"; };
+		C42FEB93172A39B200B5DE03 /* MatchmakingServer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MatchmakingServer.m; sourceTree = "<group>"; };
 		C42FEB95172A39B800B5DE03 /* MatchmakingClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MatchmakingClient.h; sourceTree = "<group>"; };
 		C42FEB96172A39B800B5DE03 /* MatchmakingClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MatchmakingClient.m; sourceTree = "<group>"; };
 		C42FEB9A172A3AD800B5DE03 /* MultiplayerHostOrJoinScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MultiplayerHostOrJoinScene.h; sourceTree = "<group>"; };
 		C42FEB9B172A3AD800B5DE03 /* MultiplayerHostOrJoinScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MultiplayerHostOrJoinScene.m; sourceTree = "<group>"; };
 		C42FEB9D172A3ADE00B5DE03 /* MultiplayerHostOrJoinLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MultiplayerHostOrJoinLayer.h; sourceTree = "<group>"; };
 		C42FEB9E172A3ADE00B5DE03 /* MultiplayerHostOrJoinLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MultiplayerHostOrJoinLayer.m; sourceTree = "<group>"; };
+		C439C413172B5E0B00367A4B /* economica-bold_36-hd.fnt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "economica-bold_36-hd.fnt"; sourceTree = "<group>"; };
+		C439C414172B5E0B00367A4B /* economica-bold_36-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "economica-bold_36-hd.png"; sourceTree = "<group>"; };
 		C447906516D520BD00A64CC7 /* TestMotionScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestMotionScene.h; sourceTree = "<group>"; };
 		C447906616D520BD00A64CC7 /* TestMotionScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestMotionScene.m; sourceTree = "<group>"; };
 		C447906816D520C300A64CC7 /* TestMotionLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestMotionLayer.h; sourceTree = "<group>"; };
@@ -369,6 +377,13 @@
 		C4514FB816588A150073A119 /* MainMenuScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainMenuScene.m; sourceTree = "<group>"; };
 		C4514FBA16588A350073A119 /* MainMenuLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainMenuLayer.h; sourceTree = "<group>"; };
 		C4514FBB16588A350073A119 /* MainMenuLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainMenuLayer.m; sourceTree = "<group>"; };
+		C45A0729172E28A1002ED7B7 /* Packet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Packet.h; sourceTree = "<group>"; };
+		C45A072A172E28A1002ED7B7 /* Packet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Packet.m; sourceTree = "<group>"; };
+		C45A072C172E2A84002ED7B7 /* NSData+DTDAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+DTDAdditions.h"; sourceTree = "<group>"; };
+		C45A072D172E2A84002ED7B7 /* NSData+DTDAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+DTDAdditions.m"; sourceTree = "<group>"; };
+		C45A072F172E3AC0002ED7B7 /* PacketAddPlayerWaitingRoom.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PacketAddPlayerWaitingRoom.h; sourceTree = "<group>"; };
+		C45A0730172E3AC0002ED7B7 /* PacketAddPlayerWaitingRoom.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PacketAddPlayerWaitingRoom.m; sourceTree = "<group>"; };
+		C45A0732172E54E4002ED7B7 /* mainmenu_bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mainmenu_bg.png; sourceTree = "<group>"; };
 		C46322441720F6C4007E39D5 /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = System/Library/Frameworks/CoreMotion.framework; sourceTree = SDKROOT; };
 		C46D83F41667001000C6529A /* Flurry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Flurry.h; sourceTree = "<group>"; };
 		C46D83F51667001000C6529A /* libFlurry.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libFlurry.a; sourceTree = "<group>"; };
@@ -766,10 +781,16 @@
 		C42FEB81172A00BB00B5DE03 /* Networking */ = {
 			isa = PBXGroup;
 			children = (
-				C42FEB92172A39B200B5DE03 /* MatchingmakingServer.h */,
-				C42FEB93172A39B200B5DE03 /* MatchingmakingServer.m */,
+				C42FEB92172A39B200B5DE03 /* MatchmakingServer.h */,
+				C42FEB93172A39B200B5DE03 /* MatchmakingServer.m */,
 				C42FEB95172A39B800B5DE03 /* MatchmakingClient.h */,
 				C42FEB96172A39B800B5DE03 /* MatchmakingClient.m */,
+				C45A0729172E28A1002ED7B7 /* Packet.h */,
+				C45A072A172E28A1002ED7B7 /* Packet.m */,
+				C45A072F172E3AC0002ED7B7 /* PacketAddPlayerWaitingRoom.h */,
+				C45A0730172E3AC0002ED7B7 /* PacketAddPlayerWaitingRoom.m */,
+				C45A072C172E2A84002ED7B7 /* NSData+DTDAdditions.h */,
+				C45A072D172E2A84002ED7B7 /* NSData+DTDAdditions.m */,
 			);
 			name = Networking;
 			sourceTree = "<group>";
@@ -867,6 +888,7 @@
 		C4993D1F16576C28008187A8 /* Assets */ = {
 			isa = PBXGroup;
 			children = (
+				C45A0732172E54E4002ED7B7 /* mainmenu_bg.png */,
 			);
 			path = Assets;
 			sourceTree = "<group>";
@@ -996,6 +1018,8 @@
 				C4853D661726644000E958D2 /* economica_41-hd.png */,
 				C4853D511726341000E958D2 /* economica-italic_33-hd.fnt */,
 				C4853D521726341000E958D2 /* economica-italic_33-hd.png */,
+				C439C413172B5E0B00367A4B /* economica-bold_36-hd.fnt */,
+				C439C414172B5E0B00367A4B /* economica-bold_36-hd.png */,
 				C498CD00172744E300A2A0A8 /* economica-bold_40-hd.fnt */,
 				C498CD01172744E300A2A0A8 /* economica-bold_40-hd.png */,
 				C4853D5517263B3200E958D2 /* economica-bold_52-hd.fnt */,
@@ -1671,6 +1695,9 @@
 				C4966F6017285D06002491F1 /* the_bernie.caf in Resources */,
 				C40E43431729001C0017672A /* step1_alice.caf in Resources */,
 				C40E43441729001C0017672A /* step2_alice.caf in Resources */,
+				C439C415172B5E0B00367A4B /* economica-bold_36-hd.fnt in Resources */,
+				C439C416172B5E0B00367A4B /* economica-bold_36-hd.png in Resources */,
+				C45A0733172E54E4002ED7B7 /* mainmenu_bg.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1704,10 +1731,13 @@
 				C498CCF81727397300A2A0A8 /* DanceMoveSeeInActionLayer.m in Sources */,
 				C42FEB88172A058800B5DE03 /* MultiplayerWaitingRoomScene.m in Sources */,
 				C42FEB8B172A059500B5DE03 /* MultiplayerWaitingRoomLayer.m in Sources */,
-				C42FEB94172A39B200B5DE03 /* MatchingmakingServer.m in Sources */,
+				C42FEB94172A39B200B5DE03 /* MatchmakingServer.m in Sources */,
 				C42FEB97172A39B800B5DE03 /* MatchmakingClient.m in Sources */,
 				C42FEB9C172A3AD800B5DE03 /* MultiplayerHostOrJoinScene.m in Sources */,
 				C42FEB9F172A3ADE00B5DE03 /* MultiplayerHostOrJoinLayer.m in Sources */,
+				C45A072B172E28A1002ED7B7 /* Packet.m in Sources */,
+				C45A072E172E2A84002ED7B7 /* NSData+DTDAdditions.m in Sources */,
+				C45A0731172E3AC1002ED7B7 /* PacketAddPlayerWaitingRoom.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

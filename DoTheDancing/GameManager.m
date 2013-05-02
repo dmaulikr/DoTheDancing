@@ -67,6 +67,8 @@ static GameManager *_sharedGameManager = nil;   // singleton
         
         // multiplayer
         _isHost = NO;
+        _client = nil;
+        _server = nil;
     }
     
     return self;
@@ -222,9 +224,9 @@ static GameManager *_sharedGameManager = nil;   // singleton
     // 4. If the list of soundEffectFiles is empty, load it
     if ((self.listOfSoundEffectFiles == nil) ||
         ([self.listOfSoundEffectFiles count] < 1)) {
-//        NSLog(@"Before");
+//        CCLOG(@"Before");
         [self setListOfSoundEffectFiles:[[NSMutableDictionary alloc] init]];
-//        NSLog(@"after");
+//        CCLOG(@"after");
         for (NSString *sceneSoundDictionary in plistDictionary) {
             [self.listOfSoundEffectFiles addEntriesFromDictionary:[plistDictionary objectForKey:sceneSoundDictionary]];
         }

@@ -7,7 +7,9 @@
 //
 
 #import "CCLayer.h"
+#import "MatchmakingClient.h"
+#import "MatchmakingServer.h"
 
-@interface MultiplayerWaitingRoomLayer : CCLayer
+@interface MultiplayerWaitingRoomLayer : CCLayer <MatchmakingClientDelegate, MatchmakingServerDelegate>
 
 @end

@@ -19,7 +19,6 @@
 @property (nonatomic) NSInteger currentShownStep;
 
 // sprite management
-@property (nonatomic, strong) CCSprite *topBannerBg;
 @property (nonatomic, strong) CCSprite *illustration;
 @property (nonatomic, strong) CCLabelBMFont *stepCountLabel;
 @property (nonatomic, strong) CCLabelBMFont *instructionsLabel;
@@ -58,23 +57,23 @@
 
 -(void)displayTopBar {
     // top banner bg
-    self.topBannerBg = [CCSprite spriteWithSpriteFrameName:@"instructions_top_banner.png"];
-    self.topBannerBg.anchorPoint = ccp(0, 1);
-    self.topBannerBg.position = ccp(0, self.screenSize.height);
-    [self addChild:self.topBannerBg];
+    CCSprite *topBannerBg = [CCSprite spriteWithSpriteFrameName:@"instructions_top_banner.png"];
+    topBannerBg.anchorPoint = ccp(0, 1);
+    topBannerBg.position = ccp(0, self.screenSize.height);
+    [self addChild:topBannerBg];
     
     // dance move name
     CCLabelBMFont *danceNameLabel = [CCLabelBMFont labelWithString:self.danceMove.name fntFile:@"economica-bold_64.fnt"];
     danceNameLabel.color = ccc3(249, 185, 56);
-    danceNameLabel.position = ccp(self.screenSize.width * 0.5, self.topBannerBg.contentSize.height * 0.5);
-    [self.topBannerBg addChild:danceNameLabel];
+    danceNameLabel.position = ccp(self.screenSize.width * 0.5, topBannerBg.contentSize.height * 0.5);
+    [topBannerBg addChild:danceNameLabel];
     
     // instructions label
     CCLabelBMFont *instructionsLabel = [CCLabelBMFont labelWithString:@"INSTRUCTIONS" fntFile:@"economica-italic_33.fnt"];
     instructionsLabel.color = ccc3(249, 185, 56);
     instructionsLabel.anchorPoint = ccp(1, 0.5);
-    instructionsLabel.position = ccp(self.screenSize.width * 0.97, self.topBannerBg.contentSize.height * 0.45);
-    [self.topBannerBg addChild:instructionsLabel];
+    instructionsLabel.position = ccp(self.screenSize.width * 0.97, topBannerBg.contentSize.height * 0.45);
+    [topBannerBg addChild:instructionsLabel];
 }
 
 -(void)displayInitIllustration {

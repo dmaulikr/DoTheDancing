@@ -10,6 +10,8 @@
 #import "Constants.h"
 #import "SimpleAudioEngine.h"
 #import "DanceMove.h"
+#import "MatchmakingServer.h"
+#import "MatchmakingClient.h"
 
 @interface GameManager : NSObject
 
@@ -25,6 +27,8 @@
 
 // multiplayer
 @property (nonatomic) BOOL isHost;
+@property (nonatomic, strong) MatchmakingClient *client;
+@property (nonatomic, strong) MatchmakingServer *server;
 
 +(GameManager*)sharedGameManager;
 -(void)runSceneWithID:(SceneTypes)sceneID;

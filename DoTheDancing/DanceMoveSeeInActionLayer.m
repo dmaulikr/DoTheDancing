@@ -17,7 +17,6 @@
 @property (nonatomic, strong) DanceMove *danceMove;
 
 // sprite management
-@property (nonatomic, strong) CCSprite *topBannerBg;
 @property (nonatomic, strong) CCLabelBMFont *movesCompletedCountLabel;
 //@property (nonatomic, strong) NSMutableArray *moveTimers;
 @property (nonatomic, strong) CCSprite *illustration;
@@ -77,23 +76,23 @@
 
 -(void)displayTopBar {
     // top banner bg
-    self.topBannerBg = [CCSprite spriteWithSpriteFrameName:@"instructions_top_banner.png"];
-    self.topBannerBg.anchorPoint = ccp(0, 1);
-    self.topBannerBg.position = ccp(0, self.screenSize.height);
-    [self addChild:self.topBannerBg];
+    CCSprite *topBannerBg = [CCSprite spriteWithSpriteFrameName:@"instructions_top_banner.png"];
+    topBannerBg.anchorPoint = ccp(0, 1);
+    topBannerBg.position = ccp(0, self.screenSize.height);
+    [self addChild:topBannerBg];
     
     // dance move name
     CCLabelBMFont *danceNameLabel = [CCLabelBMFont labelWithString:self.danceMove.name fntFile:@"economica-bold_64.fnt"];
     danceNameLabel.color = ccc3(249, 185, 56);
-    danceNameLabel.position = ccp(self.screenSize.width * 0.5, self.topBannerBg.contentSize.height * 0.5);
-    [self.topBannerBg addChild:danceNameLabel];
+    danceNameLabel.position = ccp(self.screenSize.width * 0.5, topBannerBg.contentSize.height * 0.5);
+    [topBannerBg addChild:danceNameLabel];
     
     // in action label
     CCLabelBMFont *inActionLabel = [CCLabelBMFont labelWithString:@"IN ACTION" fntFile:@"economica-italic_33.fnt"];
     inActionLabel.color = ccc3(249, 185, 56);
     inActionLabel.anchorPoint = ccp(1, 0.5);
-    inActionLabel.position = ccp(self.screenSize.width * 0.97, self.topBannerBg.contentSize.height * 0.45);
-    [self.topBannerBg addChild:inActionLabel];
+    inActionLabel.position = ccp(self.screenSize.width * 0.97, topBannerBg.contentSize.height * 0.45);
+    [topBannerBg addChild:inActionLabel];
 }
 
 -(void)displayMovesCompletedBar {
