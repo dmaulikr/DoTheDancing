@@ -20,10 +20,13 @@
 
 // sprite management
 @property (nonatomic, strong) CCSprite *loadingDots;
+@property (nonatomic, strong) CCSprite *promptBg;
+@property (nonatomic, strong) CCLabelBMFont *promptLabel;
+@property (nonatomic, strong) CCMenu *startMenu;
 
 // matchmaking
-@property (nonatomic, strong) NSMutableArray *connectedClientAvatars;
-@property (nonatomic, strong) CCLabelTTF *hostAvatar;
+@property (nonatomic, strong) NSMutableArray *connectedPlayers;
+@property (nonatomic, strong) NSMutableArray *playerAvatars;
 
 @end
 
@@ -37,6 +40,9 @@
         [self addChild:self.batchNode z:5];
         self.gm = [GameManager sharedGameManager];
         
+        self.connectedPlayers = [NSMutableArray array];
+        self.playerAvatars = [NSMutableArray array];
+        
         /* for both host and client */
         [self displayBackground];
         [self displayTopBar];
@@ -47,8 +53,10 @@
             [self displayWaitingPrompt];
         } else {
         /* clients only */
-            
+            [self displayConnectingPrompt];
         }
+        
+        [self setupMatchmaking];
 
 //        if (self.gm.isHost == NO) {
 //            [self displayClientTemp];
@@ -96,16 +104,16 @@
 
 -(void)displayWaitingPrompt {
     // background
-    CCSprite *waitingBg = [CCSprite spriteWithSpriteFrameName:@"waitingroom_cream_box.png"];
-    waitingBg.position = ccp(self.screenSize.width * 0.5, self.screenSize.height * 0.7);
-    [self addChild:waitingBg];
+    self.promptBg = [CCSprite spriteWithSpriteFrameName:@"waitingroom_cream_box.png"];
+    self.promptBg.position = ccp(self.screenSize.width * 0.5, self.screenSize.height * 0.7);
+    [self addChild:self.promptBg];
     
     // label
-    CCLabelBMFont *waitingLabel = [CCLabelBMFont labelWithString:@"Waiting for other dancers..." fntFile:@"economica-bold_40.fnt"];
-    waitingLabel.color = ccc3(56, 56, 56);
-    waitingLabel.anchorPoint = ccp(0.5, 1);
-    waitingLabel.position = ccp(waitingBg.contentSize.width * 0.5, waitingBg.contentSize.height * 0.9);
-    [waitingBg addChild:waitingLabel];
+    self.promptLabel = [CCLabelBMFont labelWithString:@"Waiting for other dancers..." fntFile:@"economica-bold_40.fnt"];
+    self.promptLabel.color = ccc3(56, 56, 56);
+    self.promptLabel.anchorPoint = ccp(0.5, 1);
+    self.promptLabel.position = ccp(self.promptBg.contentSize.width * 0.5, self.promptBg.contentSize.height * 0.9);
+    [self.promptBg addChild:self.promptLabel];
     
     // loading dots
     self.loadingDots = [CCSprite spriteWithSpriteFrameName:@"waitingroom_loader1.png"];
@@ -124,63 +132,16 @@
     [self.loadingDots runAction:action];
 }
 
--(void)displayHostTemp {
-    CCLabelTTF *multiplayerLabel = [CCLabelTTF labelWithString:@"Multiplayer Waiting Room" fontName:@"Helvetica" fontSize:24];
-    multiplayerLabel.position = ccp(self.screenSize.width * 0.5, self.screenSize.height * 0.80);
-    [self addChild:multiplayerLabel];
-    
-    CCMenuItemLabel *backButton = [CCMenuItemLabel itemWithLabel:[CCLabelTTF labelWithString:@"Back" fontName:@"Helvetica" fontSize:20] block:^(id sender) {
-        // set appropriate quit reason
-        if (self.gm.isHost) {
-            self.gm.server.quitReason = QuitReasonUserQuit;
-        } else {
-            self.gm.client.quitReason = QuitReasonUserQuit;
-        }
-        [self.gm runSceneWithID:kSceneTypeMultiplayerHostOrJoin];
-    }];
-    backButton.anchorPoint = ccp(0, 1);
-    backButton.position = ccp(self.screenSize.width * 0.03, self.screenSize.height * 0.97);
-    
-    CCMenu *menu = [CCMenu menuWithItems:backButton, nil];
-    menu.position = ccp(0, 0);
-    [self addChild:menu];
-}
-
--(void)displayClientTemp {
-    CCLabelTTF *multiplayerLabel = [CCLabelTTF labelWithString:@"Connecting..." fontName:@"Helvetica" fontSize:28];
-    multiplayerLabel.position = ccp(self.screenSize.width * 0.5, self.screenSize.height * 0.5);
-    [self addChild:multiplayerLabel];
-    
-    CCMenuItemLabel *backButton = [CCMenuItemLabel itemWithLabel:[CCLabelTTF labelWithString:@"Back" fontName:@"Helvetica" fontSize:20] block:^(id sender) {
-        // set appropriate quit reason
-        if (self.gm.isHost) {
-            self.gm.server.quitReason = QuitReasonUserQuit;
-        } else {
-            self.gm.client.quitReason = QuitReasonUserQuit;
-        }
-        [self.gm runSceneWithID:kSceneTypeMultiplayerHostOrJoin];
-    }];
-    backButton.anchorPoint = ccp(0, 1);
-    backButton.position = ccp(self.screenSize.width * 0.03, self.screenSize.height * 0.97);
-    
-    CCMenu *menu = [CCMenu menuWithItems:backButton, nil];
-    menu.position = ccp(0, 0);
-    [self addChild:menu];
-}
-
 -(void)setupMatchmaking {
     if (self.gm.isHost) {
         CCLOG(@"host: start accepting connections");
-        self.connectedClientAvatars = [NSMutableArray array];
         self.gm.server = [[MatchmakingServer alloc] init];
         self.gm.server.delegate = self;
         self.gm.server.quitReason = QuitReasonConnectionDropped;       // set up default quit reason
         [self.gm.server startAcceptingConnectionsForSessionID:SESSION_ID];
         
-        // add host label
-        self.hostAvatar = [CCLabelTTF labelWithString:@"1" fontName:@"Helvetica" fontSize:24];
-        self.hostAvatar.position = ccp(self.screenSize.width * 0.2, self.screenSize.height * 0.75);
-        [self addChild:self.hostAvatar];
+        [self.connectedPlayers addObject:self.gm.server.session.peerID];
+        [self updateAvatars];
     } else {
         CCLOG(@"client: start searching for host");
         self.gm.client = [[MatchmakingClient alloc] init];
@@ -190,12 +151,57 @@
     }
 }
 
-#pragma mark - Server networking
+-(void)updateAvatars {
+    while (self.playerAvatars.count < self.connectedPlayers.count) {
+        CCSprite *avatar = [CCSprite spriteWithSpriteFrameName:@"waitingroom_avatar1.png"];
+        avatar.position = ccp(self.screenSize.width * 0.15 * (self.playerAvatars.count+1), self.screenSize.height * 0.4);
+        [self.playerAvatars addObject:avatar];
+        [self.batchNode addChild:avatar];
+    }
+}
+
+-(void)displayConnectingPrompt {
+    CCSprite *connectingSprite = [CCSprite spriteWithSpriteFrameName:@"waitingroom_connecting1.png"];
+    connectingSprite.position = ccp(self.screenSize.width * 0.5, self.screenSize.height * 0.7);
+    [self.batchNode addChild:connectingSprite];
+    
+    // animate logo
+    CCAnimation *animation = [CCAnimation animation];
+    animation.restoreOriginalFrame = YES;
+    animation.delayPerUnit = 0.25;
+    [animation addSpriteFrame:[[CCSpriteFrameCache sharedSpriteFrameCache] spriteFrameByName:@"waitingroom_connecting2.png"]];
+    [animation addSpriteFrame:[[CCSpriteFrameCache sharedSpriteFrameCache] spriteFrameByName:@"waitingroom_connecting1.png"]];
+    id action = [CCRepeatForever actionWithAction:[CCAnimate actionWithAnimation:animation]];
+    [connectingSprite runAction:action];
+}
+
+#pragma mark - Server methods
 
 - (void)sendPacketToAllClients:(Packet *)packet
 {    
     [self.gm.server sendPacketToAllClients:packet];
 }
+
+-(void)hostRemoveWaitingAndDisplayStartPrompt {
+    // remove loading dots
+    [self.loadingDots removeFromParentAndCleanup:YES];
+    
+    // update label
+    self.promptLabel.string = @"Ready to start the party when you are!";
+    
+    // add start button
+    CCMenuItemSprite *startButton = [CCMenuItemSprite itemWithNormalSprite:[CCSprite spriteWithSpriteFrameName:@"waitingroom_button_start1.png"] selectedSprite:[CCSprite spriteWithSpriteFrameName:@"waitingroom_button_start2.png"] block:^(id sender) {
+        // placeholder
+    }];
+    startButton.anchorPoint = ccp(0.5, 0);
+    startButton.position = ccp(self.promptBg.contentSize.width * 0.5, self.promptBg.contentSize.height * 0.1);
+    
+    self.startMenu = [CCMenu menuWithItems:startButton, nil];
+    self.startMenu.position = ccp(0, 0);
+    [self.promptBg addChild:self.startMenu];
+}
+
+#pragma mark - Client methods
 
 #pragma mark - MatchmakingClientDelegate
 
@@ -225,34 +231,41 @@
     self.gm.client.quitReason = QuitReasonNoNetwork;
 }
 
+- (void)matchmakingClientDidReceiveNewConnectedPeersList:(NSString*)peerString {
+    // check if client just joined
+    if (self.connectedPlayers.count == 0) {
+        // player just joined -- remove connecting prompt
+        [self.batchNode removeAllChildrenWithCleanup:YES];
+        
+        // add waiting for dancers prompt
+        [self displayWaitingPrompt];
+        
+        // store new peers list in connectedPlayers array
+        self.connectedPlayers = [[peerString componentsSeparatedByString:@","] mutableCopy];
+        
+        [self updateAvatars];
+    }
+}
+
 #pragma mark - MatchmakingServerDelegate
 
 - (void)matchmakingServerClientDidConnect:(NSString *)peerID
 {
     [self.gm.server.connectedClients addObject:peerID];
+    [self.connectedPlayers addObject:peerID];
     
     // update displayed avatars for host
+    [self updateAvatars];
     
-    NSInteger peerAvatarNum = 2;
-    for (NSString *currentPeerId in self.gm.server.connectedClients) {
-        if ([currentPeerId isEqualToString:peerID]) {
-            break;
-        }
+    // if >= 1 client is connected, remove "waiting" prompt for host
+    if (self.loadingDots != nil && self.connectedPlayers.count > 1) {
         
-        peerAvatarNum++;
     }
     
-    // add temp label
-    CCLabelTTF *tempClientNumLabel = [CCLabelTTF labelWithString:[NSString stringWithFormat:@"%i", peerAvatarNum] fontName:@"Helvetica" fontSize:24];
-    tempClientNumLabel.position = ccp(self.screenSize.width * 0.2 * peerAvatarNum, self.screenSize.height * 0.75);
-    [self addChild:tempClientNumLabel];
-    
-    [self.connectedClientAvatars addObject:tempClientNumLabel];
-    
     /* update displayed avatars for all clients */
+    NSString *connectedPlayersString = [self.connectedPlayers componentsJoinedByString:@","];
+    Packet *packet = [PacketAddPlayerWaitingRoom packetWithPeerIDs:connectedPlayersString];
 //    Packet *packet = [Packet packetWithType:PacketTypeAddPlayerWaitingRoom];
-    NSMutableString *hostAndPeerIDsString = [NSMutableString stringWithString:self.gm.server.session.peerID];
-    Packet *packet = [PacketAddPlayerWaitingRoom packetWithPeerIDs:hostAndPeerIDsString];
     [self sendPacketToAllClients:packet];
 }
 
@@ -264,11 +277,11 @@
     /* update displayed avatars for host */
     // remove temp label
     NSInteger peerAvatarIndex = 0;
-    for (NSString *currentPeerId in self.gm.server.connectedClients) {
+    for (NSString *currentPeerId in self.connectedPlayers) {
         if ([currentPeerId isEqualToString:peerID]) {
-            CCLabelTTF *clientAvatar = self.connectedClientAvatars[peerAvatarIndex];
-            [clientAvatar removeFromParentAndCleanup:YES];
-            [self.connectedClientAvatars removeObjectAtIndex:peerAvatarIndex];
+//            CCLabelTTF *clientAvatar = self.connectedClientAvatars[peerAvatarIndex];
+//            [clientAvatar removeFromParentAndCleanup:YES];
+//            [self.connectedClientAvatars removeObjectAtIndex:peerAvatarIndex];
             
             break;
         }
@@ -276,6 +289,7 @@
         peerAvatarIndex++;
     }
     
+    [self.connectedPlayers removeObjectAtIndex:peerAvatarIndex];
     [self.gm.server.connectedClients removeObjectAtIndex:peerAvatarIndex];
 }
 

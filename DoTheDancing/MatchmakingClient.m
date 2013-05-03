@@ -181,6 +181,7 @@ ClientState;
             
             PacketAddPlayerWaitingRoom *newPacket = (PacketAddPlayerWaitingRoom*)packet;
             CCLOG(@"Received peerIDs: %@", newPacket.peerIDsString);
+            [self.delegate matchmakingClientDidReceiveNewConnectedPeersList:newPacket.peerIDsString];
 			break;
         }
             

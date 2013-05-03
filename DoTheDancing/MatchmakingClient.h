@@ -19,6 +19,7 @@
 - (void)matchmakingClientDidConnectToServer:(NSString *)peerID;
 - (void)matchmakingClientDidDisconnectFromServer:(NSString *)peerID;
 - (void)matchmakingClientNoNetwork;
+- (void)matchmakingClientDidReceiveNewConnectedPeersList:(NSString*)peerString;
 
 
 @end
