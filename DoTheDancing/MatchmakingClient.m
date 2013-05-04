@@ -89,10 +89,6 @@ ClientState;
             
             // The client sees that a server goes away.
 		case GKPeerStateUnavailable:
-            if (self.clientState == ClientStateSearchingForServers) {
-                [self.delegate matchmakingClientServerBecameUnavailable:peerID];
-            }
-            
             if (self.clientState == ClientStateConnecting && [peerID isEqualToString:self.serverPeerID]) {
                 [self disconnectFromServer];
             }
@@ -146,7 +142,7 @@ ClientState;
 	{
 		if ([error code] == GKSessionCannotEnableError)
 		{
-			[self.delegate matchmakingClientNoNetwork];
+            self.quitReason = QuitReasonNoNetwork;
 			[self disconnectFromServer];
 		}
 	}

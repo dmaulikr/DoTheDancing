@@ -13,12 +13,11 @@
 
 @protocol MatchmakingClientDelegate <NSObject>
 
-@optional
-- (void)matchmakingClientServerBecameAvailable:(NSString *)peerID;
-- (void)matchmakingClientServerBecameUnavailable:(NSString *)peerID;
 - (void)matchmakingClientDidConnectToServer:(NSString *)peerID;
 - (void)matchmakingClientDidDisconnectFromServer:(NSString *)peerID;
-- (void)matchmakingClientNoNetwork;
+
+
+@optional
 - (void)matchmakingClientDidReceiveNewConnectedPeersList:(NSString*)peerString;
 - (void)matchmakingClientDidReceiveIndexOfRemovedClient:(NSInteger)peerIndex;
 
@@ -40,5 +39,6 @@
 
 - (void)startSearchingForServersWithSessionID:(NSString *)sessionID;
 - (void)connectToServerWithPeerID:(NSString *)peerID;
+- (void)disconnectFromServer;
 
 @end

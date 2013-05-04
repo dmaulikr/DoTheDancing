@@ -43,9 +43,10 @@
 		C46D83F61667001000C6529A /* libFlurry.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C46D83F51667001000C6529A /* libFlurry.a */; };
 		C46D83F91667007800C6529A /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C46D83F81667007800C6529A /* SystemConfiguration.framework */; };
 		C46FF33E173397E10072259B /* PacketRemovePlayerWaitingRoom.m in Sources */ = {isa = PBXBuildFile; fileRef = C46FF33D173397E10072259B /* PacketRemovePlayerWaitingRoom.m */; };
-		C47EBB291735B32F003D8372 /* MatchmakingPeer.m in Sources */ = {isa = PBXBuildFile; fileRef = C47EBB281735B32F003D8372 /* MatchmakingPeer.m */; };
 		C47EBB2D1735B49D003D8372 /* SearchingForIpadScene.m in Sources */ = {isa = PBXBuildFile; fileRef = C47EBB2C1735B49D003D8372 /* SearchingForIpadScene.m */; };
 		C47EBB301735B4A6003D8372 /* SearchingForIpadLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = C47EBB2F1735B4A6003D8372 /* SearchingForIpadLayer.m */; };
+		C47EBB351735BE68003D8372 /* ConnectedToIpadScene.m in Sources */ = {isa = PBXBuildFile; fileRef = C47EBB341735BE68003D8372 /* ConnectedToIpadScene.m */; };
+		C47EBB381735BE70003D8372 /* ConnectedToIpadLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = C47EBB371735BE70003D8372 /* ConnectedToIpadLayer.m */; };
 		C47F729D16DF8DAA0006EEFB /* Icon-72.png in Resources */ = {isa = PBXBuildFile; fileRef = C47F729316DF8DAA0006EEFB /* Icon-72.png */; };
 		C47F729E16DF8DAA0006EEFB /* Icon-72@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C47F729416DF8DAA0006EEFB /* Icon-72@2x.png */; };
 		C47F729F16DF8DAA0006EEFB /* Icon-Small-50.png in Resources */ = {isa = PBXBuildFile; fileRef = C47F729516DF8DAA0006EEFB /* Icon-Small-50.png */; };
@@ -397,12 +398,14 @@
 		C46D83F81667007800C6529A /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		C46FF33C173397E10072259B /* PacketRemovePlayerWaitingRoom.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PacketRemovePlayerWaitingRoom.h; sourceTree = "<group>"; };
 		C46FF33D173397E10072259B /* PacketRemovePlayerWaitingRoom.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PacketRemovePlayerWaitingRoom.m; sourceTree = "<group>"; };
-		C47EBB271735B32F003D8372 /* MatchmakingPeer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MatchmakingPeer.h; sourceTree = "<group>"; };
-		C47EBB281735B32F003D8372 /* MatchmakingPeer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MatchmakingPeer.m; sourceTree = "<group>"; };
 		C47EBB2B1735B49D003D8372 /* SearchingForIpadScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchingForIpadScene.h; sourceTree = "<group>"; };
 		C47EBB2C1735B49D003D8372 /* SearchingForIpadScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchingForIpadScene.m; sourceTree = "<group>"; };
 		C47EBB2E1735B4A6003D8372 /* SearchingForIpadLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchingForIpadLayer.h; sourceTree = "<group>"; };
 		C47EBB2F1735B4A6003D8372 /* SearchingForIpadLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchingForIpadLayer.m; sourceTree = "<group>"; };
+		C47EBB331735BE68003D8372 /* ConnectedToIpadScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConnectedToIpadScene.h; sourceTree = "<group>"; };
+		C47EBB341735BE68003D8372 /* ConnectedToIpadScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConnectedToIpadScene.m; sourceTree = "<group>"; };
+		C47EBB361735BE70003D8372 /* ConnectedToIpadLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConnectedToIpadLayer.h; sourceTree = "<group>"; };
+		C47EBB371735BE70003D8372 /* ConnectedToIpadLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConnectedToIpadLayer.m; sourceTree = "<group>"; };
 		C47F729316DF8DAA0006EEFB /* Icon-72.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-72.png"; sourceTree = "<group>"; };
 		C47F729416DF8DAA0006EEFB /* Icon-72@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-72@2x.png"; sourceTree = "<group>"; };
 		C47F729516DF8DAA0006EEFB /* Icon-Small-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-Small-50.png"; sourceTree = "<group>"; };
@@ -796,8 +799,6 @@
 		C42FEB81172A00BB00B5DE03 /* Networking */ = {
 			isa = PBXGroup;
 			children = (
-				C47EBB271735B32F003D8372 /* MatchmakingPeer.h */,
-				C47EBB281735B32F003D8372 /* MatchmakingPeer.m */,
 				C42FEB92172A39B200B5DE03 /* MatchmakingServer.h */,
 				C42FEB93172A39B200B5DE03 /* MatchmakingServer.m */,
 				C42FEB95172A39B800B5DE03 /* MatchmakingClient.h */,
@@ -870,12 +871,32 @@
 		C47EBB2A1735B477003D8372 /* iPad */ = {
 			isa = PBXGroup;
 			children = (
+				C47EBB311735BE4A003D8372 /* SearchingForIpad */,
+				C47EBB321735BE56003D8372 /* ConnectedToIpad */,
+			);
+			name = iPad;
+			sourceTree = "<group>";
+		};
+		C47EBB311735BE4A003D8372 /* SearchingForIpad */ = {
+			isa = PBXGroup;
+			children = (
 				C47EBB2B1735B49D003D8372 /* SearchingForIpadScene.h */,
 				C47EBB2C1735B49D003D8372 /* SearchingForIpadScene.m */,
 				C47EBB2E1735B4A6003D8372 /* SearchingForIpadLayer.h */,
 				C47EBB2F1735B4A6003D8372 /* SearchingForIpadLayer.m */,
 			);
-			name = iPad;
+			name = SearchingForIpad;
+			sourceTree = "<group>";
+		};
+		C47EBB321735BE56003D8372 /* ConnectedToIpad */ = {
+			isa = PBXGroup;
+			children = (
+				C47EBB331735BE68003D8372 /* ConnectedToIpadScene.h */,
+				C47EBB341735BE68003D8372 /* ConnectedToIpadScene.m */,
+				C47EBB361735BE70003D8372 /* ConnectedToIpadLayer.h */,
+				C47EBB371735BE70003D8372 /* ConnectedToIpadLayer.m */,
+			);
+			name = ConnectedToIpad;
 			sourceTree = "<group>";
 		};
 		C47F729216DF8D840006EEFB /* Icons */ = {
@@ -1773,9 +1794,10 @@
 				C45A0731172E3AC1002ED7B7 /* PacketAddPlayerWaitingRoom.m in Sources */,
 				C46FF33E173397E10072259B /* PacketRemovePlayerWaitingRoom.m in Sources */,
 				C43AD61917348B3000ED1282 /* PacketSegueToDanceMoveInstructions.m in Sources */,
-				C47EBB291735B32F003D8372 /* MatchmakingPeer.m in Sources */,
 				C47EBB2D1735B49D003D8372 /* SearchingForIpadScene.m in Sources */,
 				C47EBB301735B4A6003D8372 /* SearchingForIpadLayer.m in Sources */,
+				C47EBB351735BE68003D8372 /* ConnectedToIpadScene.m in Sources */,
+				C47EBB381735BE70003D8372 /* ConnectedToIpadLayer.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

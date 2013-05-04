@@ -16,6 +16,8 @@
 #import "DanceMoveResultsScene.h"
 #import "MultiplayerHostOrJoinScene.h"
 #import "MultiplayerWaitingRoomScene.h"
+#import "SearchingForIpadScene.h"
+#import "ConnectedToIpadScene.h"
 
 @interface GameManager()
 
@@ -70,7 +72,6 @@ static GameManager *_sharedGameManager = nil;   // singleton
         _isHost = NO;
         _client = nil;
         _server = nil;
-        _matchmakingPeer = nil;
     }
     
     return self;
@@ -193,6 +194,12 @@ static GameManager *_sharedGameManager = nil;   // singleton
             break;
         case kSceneTypeMultiplayerWaitingRoom:
             result = @"kSceneTypeMultiplayerWaitingRoom";
+            break;
+        case kSceneTypeSearchingForIpad:
+            result = @"kSceneTypeSearchingForIpad";
+            break;
+        case kSceneTypeConnectedToIpad:
+            result = @"kSceneTypeConnectedToIpad";
             break;
         default:
             [NSException raise:NSGenericException format:@"Unexpected SceneType."];
@@ -390,6 +397,12 @@ static GameManager *_sharedGameManager = nil;   // singleton
             break;
         case kSceneTypeMultiplayerWaitingRoom:
             sceneToRun = [MultiplayerWaitingRoomScene node];
+            break;
+        case kSceneTypeSearchingForIpad:
+            sceneToRun = [SearchingForIpadScene node];
+            break;
+        case kSceneTypeConnectedToIpad:
+            sceneToRun = [ConnectedToIpadScene node];
             break;
         default:
             CCLOG(@"Unknown sceneID, cannot run scene");

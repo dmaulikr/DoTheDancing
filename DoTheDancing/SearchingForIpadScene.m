@@ -7,7 +7,18 @@
 //
 
 #import "SearchingForIpadScene.h"
+#import "SearchingForIpadLayer.h"
 
 @implementation SearchingForIpadScene
+
+-(id)init {
+    self = [super init];
+    if (self != nil) {
+        SearchingForIpadLayer *layer = [SearchingForIpadLayer node];
+        [self addChild:layer];
+    }
+    
+    return self;
+}
 
 @end

@@ -90,7 +90,7 @@
     
     // temp menu
     CCMenuItemLabel *connectToIpadLabel = [CCMenuItemLabel itemWithLabel:[CCLabelTTF labelWithString:@"Connect to iPad" fontName:@"Helvetica" fontSize:28] block:^(id sender) {
-        
+        [[GameManager sharedGameManager] runSceneWithID:kSceneTypeSearchingForIpad];
     }];
     connectToIpadLabel.position = ccp(self.screenSize.width * 0.5, self.screenSize.height * 0.1);
     
