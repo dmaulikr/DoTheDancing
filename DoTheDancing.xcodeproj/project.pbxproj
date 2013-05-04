@@ -28,6 +28,7 @@
 		C42FEB9F172A3ADE00B5DE03 /* MultiplayerHostOrJoinLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = C42FEB9E172A3ADE00B5DE03 /* MultiplayerHostOrJoinLayer.m */; };
 		C439C415172B5E0B00367A4B /* economica-bold_36-hd.fnt in Resources */ = {isa = PBXBuildFile; fileRef = C439C413172B5E0B00367A4B /* economica-bold_36-hd.fnt */; };
 		C439C416172B5E0B00367A4B /* economica-bold_36-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = C439C414172B5E0B00367A4B /* economica-bold_36-hd.png */; };
+		C43AD61917348B3000ED1282 /* PacketSegueToDanceMoveInstructions.m in Sources */ = {isa = PBXBuildFile; fileRef = C43AD61817348B3000ED1282 /* PacketSegueToDanceMoveInstructions.m */; };
 		C447906716D520BD00A64CC7 /* TestMotionScene.m in Sources */ = {isa = PBXBuildFile; fileRef = C447906616D520BD00A64CC7 /* TestMotionScene.m */; };
 		C447906A16D520C400A64CC7 /* TestMotionLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = C447906916D520C400A64CC7 /* TestMotionLayer.m */; };
 		C4514FB1165882960073A119 /* GameManager.m in Sources */ = {isa = PBXBuildFile; fileRef = C4514FB0165882960073A119 /* GameManager.m */; };
@@ -41,6 +42,7 @@
 		C46322451720F6C4007E39D5 /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C46322441720F6C4007E39D5 /* CoreMotion.framework */; };
 		C46D83F61667001000C6529A /* libFlurry.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C46D83F51667001000C6529A /* libFlurry.a */; };
 		C46D83F91667007800C6529A /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C46D83F81667007800C6529A /* SystemConfiguration.framework */; };
+		C46FF33E173397E10072259B /* PacketRemovePlayerWaitingRoom.m in Sources */ = {isa = PBXBuildFile; fileRef = C46FF33D173397E10072259B /* PacketRemovePlayerWaitingRoom.m */; };
 		C47F729D16DF8DAA0006EEFB /* Icon-72.png in Resources */ = {isa = PBXBuildFile; fileRef = C47F729316DF8DAA0006EEFB /* Icon-72.png */; };
 		C47F729E16DF8DAA0006EEFB /* Icon-72@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C47F729416DF8DAA0006EEFB /* Icon-72@2x.png */; };
 		C47F729F16DF8DAA0006EEFB /* Icon-Small-50.png in Resources */ = {isa = PBXBuildFile; fileRef = C47F729516DF8DAA0006EEFB /* Icon-Small-50.png */; };
@@ -364,6 +366,8 @@
 		C42FEB9E172A3ADE00B5DE03 /* MultiplayerHostOrJoinLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MultiplayerHostOrJoinLayer.m; sourceTree = "<group>"; };
 		C439C413172B5E0B00367A4B /* economica-bold_36-hd.fnt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "economica-bold_36-hd.fnt"; sourceTree = "<group>"; };
 		C439C414172B5E0B00367A4B /* economica-bold_36-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "economica-bold_36-hd.png"; sourceTree = "<group>"; };
+		C43AD61717348B3000ED1282 /* PacketSegueToDanceMoveInstructions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PacketSegueToDanceMoveInstructions.h; sourceTree = "<group>"; };
+		C43AD61817348B3000ED1282 /* PacketSegueToDanceMoveInstructions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PacketSegueToDanceMoveInstructions.m; sourceTree = "<group>"; };
 		C447906516D520BD00A64CC7 /* TestMotionScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestMotionScene.h; sourceTree = "<group>"; };
 		C447906616D520BD00A64CC7 /* TestMotionScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestMotionScene.m; sourceTree = "<group>"; };
 		C447906816D520C300A64CC7 /* TestMotionLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestMotionLayer.h; sourceTree = "<group>"; };
@@ -388,6 +392,8 @@
 		C46D83F41667001000C6529A /* Flurry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Flurry.h; sourceTree = "<group>"; };
 		C46D83F51667001000C6529A /* libFlurry.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libFlurry.a; sourceTree = "<group>"; };
 		C46D83F81667007800C6529A /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		C46FF33C173397E10072259B /* PacketRemovePlayerWaitingRoom.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PacketRemovePlayerWaitingRoom.h; sourceTree = "<group>"; };
+		C46FF33D173397E10072259B /* PacketRemovePlayerWaitingRoom.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PacketRemovePlayerWaitingRoom.m; sourceTree = "<group>"; };
 		C47F729316DF8DAA0006EEFB /* Icon-72.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-72.png"; sourceTree = "<group>"; };
 		C47F729416DF8DAA0006EEFB /* Icon-72@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-72@2x.png"; sourceTree = "<group>"; };
 		C47F729516DF8DAA0006EEFB /* Icon-Small-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-Small-50.png"; sourceTree = "<group>"; };
@@ -789,6 +795,10 @@
 				C45A072A172E28A1002ED7B7 /* Packet.m */,
 				C45A072F172E3AC0002ED7B7 /* PacketAddPlayerWaitingRoom.h */,
 				C45A0730172E3AC0002ED7B7 /* PacketAddPlayerWaitingRoom.m */,
+				C46FF33C173397E10072259B /* PacketRemovePlayerWaitingRoom.h */,
+				C46FF33D173397E10072259B /* PacketRemovePlayerWaitingRoom.m */,
+				C43AD61717348B3000ED1282 /* PacketSegueToDanceMoveInstructions.h */,
+				C43AD61817348B3000ED1282 /* PacketSegueToDanceMoveInstructions.m */,
 				C45A072C172E2A84002ED7B7 /* NSData+DTDAdditions.h */,
 				C45A072D172E2A84002ED7B7 /* NSData+DTDAdditions.m */,
 			);
@@ -1738,6 +1748,8 @@
 				C45A072B172E28A1002ED7B7 /* Packet.m in Sources */,
 				C45A072E172E2A84002ED7B7 /* NSData+DTDAdditions.m in Sources */,
 				C45A0731172E3AC1002ED7B7 /* PacketAddPlayerWaitingRoom.m in Sources */,
+				C46FF33E173397E10072259B /* PacketRemovePlayerWaitingRoom.m in Sources */,
+				C43AD61917348B3000ED1282 /* PacketSegueToDanceMoveInstructions.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -8,6 +8,8 @@
 
 #import "Packet.h"
 #import "PacketAddPlayerWaitingRoom.h"
+#import "PacketRemovePlayerWaitingRoom.h"
+#import "PacketSegueToDanceMoveInstructions.h"
 
 const size_t PACKET_HEADER_SIZE = 10;
 
@@ -51,6 +53,18 @@ const size_t PACKET_HEADER_SIZE = 10;
 		case PacketTypeAddPlayerWaitingRoom:
 			packet = [PacketAddPlayerWaitingRoom packetWithData:data];
 			break;
+            
+        case PacketTypeRemovePlayerWaitingRoom:
+            packet = [PacketRemovePlayerWaitingRoom packetWithData:data];
+            break;
+            
+        case PacketTypeSegueToDanceMoveSelection:
+            packet = [Packet packetWithType:packetType];
+            break;
+            
+        case PacketTypeSegueToDanceMoveInstructions:
+            packet = [PacketSegueToDanceMoveInstructions packetWithData:data];
+            break;
             
 		default:
 			CCLOG(@"Error: Packet has invalid type");

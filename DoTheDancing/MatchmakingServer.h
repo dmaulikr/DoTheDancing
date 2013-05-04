@@ -31,6 +31,7 @@
 @property (nonatomic, weak) id<MatchmakingServerDelegate> delegate;
 
 - (void)startAcceptingConnectionsForSessionID:(NSString *)sessionID;
+- (void)stopAcceptingConnections;
 - (void)sendPacketToAllClients:(Packet *)packet;
 
 @end

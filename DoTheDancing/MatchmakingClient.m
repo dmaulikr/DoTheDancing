@@ -9,6 +9,8 @@
 #import "MatchmakingClient.h"
 #import "Packet.h"
 #import "PacketAddPlayerWaitingRoom.h"
+#import "PacketRemovePlayerWaitingRoom.h"
+#import "PacketSegueToDanceMoveInstructions.h"
 
 typedef enum
 {
@@ -111,7 +113,7 @@ ClientState;
             
             // You're now no longer connected to the server.
 		case GKPeerStateDisconnected:
-			if (self.clientState == ClientStateConnected)
+			if (self.clientState == ClientStateConnected && [peerID isEqualToString:self.serverPeerID])
 			{
 				[self disconnectFromServer];
 			}
@@ -171,23 +173,40 @@ ClientState;
 	switch (packet.packetType)
 	{
 		case PacketTypeAddPlayerWaitingRoom: {
-//			if (_state == GameStateWaitingForSignIn)
-//			{
-//				_state = GameStateWaitingForReady;
-//            
-//				Packet *packet = [PacketSignInResponse packetWithPlayerName:_localPlayerName];
-//				[self sendPacketToServer:packet];
-//			}
-            
             PacketAddPlayerWaitingRoom *newPacket = (PacketAddPlayerWaitingRoom*)packet;
             CCLOG(@"Received peerIDs: %@", newPacket.peerIDsString);
-            [self.delegate matchmakingClientDidReceiveNewConnectedPeersList:newPacket.peerIDsString];
+            if ([self.delegate respondsToSelector:@selector(matchmakingClientDidReceiveNewConnectedPeersList:)]) {
+                [self.delegate matchmakingClientDidReceiveNewConnectedPeersList:newPacket.peerIDsString];
+            }
+            
 			break;
         }
             
-        case PacketTypeRemovePlayerWaitingRoom:
+        case PacketTypeRemovePlayerWaitingRoom: {
+            PacketRemovePlayerWaitingRoom *newPacket = (PacketRemovePlayerWaitingRoom*)packet;
+            CCLOG(@"Received peerIndex: %i", newPacket.peerIndex);
+            if ([self.delegate respondsToSelector:@selector(matchmakingClientDidReceiveIndexOfRemovedClient:)]) {
+                [self.delegate matchmakingClientDidReceiveIndexOfRemovedClient:newPacket.peerIndex];
+            }
             
             break;
+        }
+            
+        case PacketTypeSegueToDanceMoveSelection: {
+            if ([self.delegate respondsToSelector:@selector(matchmakingClientSegueToSelectDanceMove)]) {
+                [self.delegate matchmakingClientSegueToSelectDanceMove];
+            }
+            
+            break;
+        }
+            
+        case PacketTypeSegueToDanceMoveInstructions: {
+            PacketSegueToDanceMoveInstructions *newPacket = (PacketSegueToDanceMoveInstructions*)packet;
+            
+            if ([self.delegate respondsToSelector:@selector(matchmakingClientSegueToInstructionsWithDanceMoveType:)]) {
+                [self.delegate matchmakingClientSegueToInstructionsWithDanceMoveType:newPacket.danceMoveType];
+            }
+        }
             
 		default:
 			CCLOG(@"Client received unexpected packet: %@", packet);

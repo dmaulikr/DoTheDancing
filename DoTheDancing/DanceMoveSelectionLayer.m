@@ -10,6 +10,7 @@
 #import "GameManager.h"
 #import "DanceMoveBernie.h"
 #import "CCTouchDownMenu.h"
+#import "PacketSegueToDanceMoveInstructions.h"
 
 @interface DanceMoveSelectionLayer()
 
@@ -21,6 +22,7 @@
 @implementation DanceMoveSelectionLayer
 
 -(id)init {
+    CCLOG(@"DanceMoveSelectionLayer->init");
     self = [super init];
     if (self != nil) {
         self.screenSize = [CCDirector sharedDirector].winSize;
@@ -31,9 +33,18 @@
         [GameManager sharedGameManager].individualDanceMove = nil;
         
         [self displayTopBar];
-        [self displayDanceMoves];
-        [self displayPageLabels];
-        [self displayMenu];
+        
+        // if single player or host, display menu
+        GameManager *gm = [GameManager sharedGameManager];
+        if ((!gm.isMultiplayer) || (gm.isMultiplayer && gm.isHost)) {
+            [self displayDanceMoves];
+            [self displayPageLabels];
+            [self displayMenu];
+        } else {
+            // set new delegate for client
+            gm.client.delegate = self;
+            // display waiting prompt
+        }
     }
     
     return self;
@@ -138,8 +149,16 @@
                 break;
         }
         
-        [GameManager sharedGameManager].individualDanceMove = danceMove;
-        [[GameManager sharedGameManager] runSceneWithID:kSceneTypeDanceMoveInstructions];
+        // if multiplayer and host, send packet to clients
+        GameManager *gm = [GameManager sharedGameManager];
+        if (gm.isMultiplayer && gm.isHost) {
+            Packet *packet = [PacketSegueToDanceMoveInstructions packetWithDanceMoveType:danceMoveType];
+            [gm.server sendPacketToAllClients:packet];
+        }
+        
+        // set selected dance move and display instructions
+        gm.individualDanceMove = danceMove;
+        [gm runSceneWithID:kSceneTypeDanceMoveInstructions];
     }
 }
 
@@ -188,6 +207,11 @@
     menu.position = ccp(0, 0);
     
     [self addChild:menu];
+}
+
+# pragma mark - MatchmakingClient delegate methods
+- (void)matchmakingClientSegueToInstructionsWithDanceMoveType:(DanceMoves)danceMoveType {
+    [self showInstructionsForDanceMove:danceMoveType];
 }
 
 @end

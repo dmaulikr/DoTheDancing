@@ -68,12 +68,14 @@
     }
     
     CCMenuItemSprite *singlePlayerButton = [CCMenuItemSprite itemWithNormalSprite:[CCSprite spriteWithSpriteFrameName:@"mainmenu_button_single1.png"] selectedSprite:[CCSprite spriteWithSpriteFrameName:@"mainmenu_button_single2.png"] block:^(id sender) {
+        [GameManager sharedGameManager].isMultiplayer = NO;
         [[GameManager sharedGameManager] runSceneWithID:kSceneTypeDanceMoveSelection];
     }];
     singlePlayerButton.anchorPoint = ccp(0.5, 1);
     singlePlayerButton.position = ccp(menuBg.contentSize.width * 0.5, menuBg.contentSize.height * 0.9);
     
     CCMenuItemSprite *multiplayerButton = [CCMenuItemSprite itemWithNormalSprite:[CCSprite spriteWithSpriteFrameName:@"mainmenu_button_multi1.png"] selectedSprite:[CCSprite spriteWithSpriteFrameName:@"mainmenu_button_multi2.png"] block:^(id sender) {
+        [GameManager sharedGameManager].isMultiplayer = YES;
         [[GameManager sharedGameManager] runSceneWithID:kSceneTypeMultiplayerHostOrJoin];
     }];
     multiplayerButton.anchorPoint = ccp(0.5, 0);

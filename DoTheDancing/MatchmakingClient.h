@@ -20,6 +20,13 @@
 - (void)matchmakingClientDidDisconnectFromServer:(NSString *)peerID;
 - (void)matchmakingClientNoNetwork;
 - (void)matchmakingClientDidReceiveNewConnectedPeersList:(NSString*)peerString;
+- (void)matchmakingClientDidReceiveIndexOfRemovedClient:(NSInteger)peerIndex;
+
+// PacketTypeSegueToDanceMoveSelection
+- (void)matchmakingClientSegueToSelectDanceMove;
+
+// PacketTypeSegueToDanceMoveInstructions
+- (void)matchmakingClientSegueToInstructionsWithDanceMoveType:(DanceMoves)danceMoveType;
 
 
 @end

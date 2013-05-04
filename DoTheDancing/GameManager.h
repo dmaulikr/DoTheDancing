@@ -26,6 +26,7 @@
 @property (nonatomic, strong) NSMutableArray *danceMoveIterationResults;
 
 // multiplayer
+@property (nonatomic) BOOL isMultiplayer;
 @property (nonatomic) BOOL isHost;
 @property (nonatomic, strong) MatchmakingClient *client;
 @property (nonatomic, strong) MatchmakingServer *server;

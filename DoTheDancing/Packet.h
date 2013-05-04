@@ -34,8 +34,10 @@
 
 typedef enum
 {
-	PacketTypeAddPlayerWaitingRoom = 0x64,    // server to client
-    PacketTypeRemovePlayerWaitingRoom,        // server to client
+	PacketTypeAddPlayerWaitingRoom = 0x64,      // server to client
+    PacketTypeRemovePlayerWaitingRoom,          // server to client
+    PacketTypeSegueToDanceMoveSelection,        // server to client
+    PacketTypeSegueToDanceMoveInstructions,     // server to client
 }
 PacketType;
 

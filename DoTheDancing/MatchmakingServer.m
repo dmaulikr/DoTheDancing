@@ -91,6 +91,7 @@ ServerState;
 			{
 				if (![self.connectedClients containsObject:peerID])
 				{
+                    [self.connectedClients addObject:peerID];
                     [self.delegate matchmakingServerClientDidConnect:peerID];
 				}
 			}
@@ -102,6 +103,7 @@ ServerState;
 			{
 				if ([self.connectedClients containsObject:peerID])
 				{
+                    [self.connectedClients removeObject:peerID];
 					[self.delegate matchmakingServerClientDidDisconnect:peerID];
 				}
 			}
