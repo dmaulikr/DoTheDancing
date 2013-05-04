@@ -87,6 +87,16 @@
     [menuBg addChild:menu];
     
     [self addChild:menuBg];
+    
+    // temp menu
+    CCMenuItemLabel *connectToIpadLabel = [CCMenuItemLabel itemWithLabel:[CCLabelTTF labelWithString:@"Connect to iPad" fontName:@"Helvetica" fontSize:28] block:^(id sender) {
+        
+    }];
+    connectToIpadLabel.position = ccp(self.screenSize.width * 0.5, self.screenSize.height * 0.1);
+    
+    CCMenu *tempMenu = [CCMenu menuWithItems:connectToIpadLabel, nil];
+    tempMenu.position = ccp(0, 0);
+    [self addChild:tempMenu];
 }
 
 @end

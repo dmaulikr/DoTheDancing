@@ -12,6 +12,7 @@
 #import "DanceMove.h"
 #import "MatchmakingServer.h"
 #import "MatchmakingClient.h"
+#import "MatchmakingPeer.h"
 
 @interface GameManager : NSObject
 
@@ -30,6 +31,7 @@
 @property (nonatomic) BOOL isHost;
 @property (nonatomic, strong) MatchmakingClient *client;
 @property (nonatomic, strong) MatchmakingServer *server;
+@property (nonatomic, strong) MatchmakingPeer *matchmakingPeer;
 
 +(GameManager*)sharedGameManager;
 -(void)runSceneWithID:(SceneTypes)sceneID;

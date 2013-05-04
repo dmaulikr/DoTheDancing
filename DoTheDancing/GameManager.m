@@ -70,6 +70,7 @@ static GameManager *_sharedGameManager = nil;   // singleton
         _isHost = NO;
         _client = nil;
         _server = nil;
+        _matchmakingPeer = nil;
     }
     
     return self;
