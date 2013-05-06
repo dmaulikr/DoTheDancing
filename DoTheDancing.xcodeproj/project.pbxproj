@@ -40,6 +40,7 @@
 		C45A0731172E3AC1002ED7B7 /* PacketAddPlayerWaitingRoom.m in Sources */ = {isa = PBXBuildFile; fileRef = C45A0730172E3AC0002ED7B7 /* PacketAddPlayerWaitingRoom.m */; };
 		C45A0733172E54E4002ED7B7 /* mainmenu_bg-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = C45A0732172E54E4002ED7B7 /* mainmenu_bg-hd.png */; };
 		C46322451720F6C4007E39D5 /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C46322441720F6C4007E39D5 /* CoreMotion.framework */; };
+		C4688D311737536F00EB027E /* PacketStartDanceMoveDance.m in Sources */ = {isa = PBXBuildFile; fileRef = C4688D301737536F00EB027E /* PacketStartDanceMoveDance.m */; };
 		C46D83F61667001000C6529A /* libFlurry.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C46D83F51667001000C6529A /* libFlurry.a */; };
 		C46D83F91667007800C6529A /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C46D83F81667007800C6529A /* SystemConfiguration.framework */; };
 		C46FF33E173397E10072259B /* PacketRemovePlayerWaitingRoom.m in Sources */ = {isa = PBXBuildFile; fileRef = C46FF33D173397E10072259B /* PacketRemovePlayerWaitingRoom.m */; };
@@ -393,6 +394,8 @@
 		C45A0730172E3AC0002ED7B7 /* PacketAddPlayerWaitingRoom.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PacketAddPlayerWaitingRoom.m; sourceTree = "<group>"; };
 		C45A0732172E54E4002ED7B7 /* mainmenu_bg-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "mainmenu_bg-hd.png"; sourceTree = "<group>"; };
 		C46322441720F6C4007E39D5 /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = System/Library/Frameworks/CoreMotion.framework; sourceTree = SDKROOT; };
+		C4688D2F1737536F00EB027E /* PacketStartDanceMoveDance.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PacketStartDanceMoveDance.h; sourceTree = "<group>"; };
+		C4688D301737536F00EB027E /* PacketStartDanceMoveDance.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PacketStartDanceMoveDance.m; sourceTree = "<group>"; };
 		C46D83F41667001000C6529A /* Flurry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Flurry.h; sourceTree = "<group>"; };
 		C46D83F51667001000C6529A /* libFlurry.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libFlurry.a; sourceTree = "<group>"; };
 		C46D83F81667007800C6529A /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
@@ -805,6 +808,8 @@
 				C42FEB96172A39B800B5DE03 /* MatchmakingClient.m */,
 				C45A0729172E28A1002ED7B7 /* Packet.h */,
 				C45A072A172E28A1002ED7B7 /* Packet.m */,
+				C4688D2F1737536F00EB027E /* PacketStartDanceMoveDance.h */,
+				C4688D301737536F00EB027E /* PacketStartDanceMoveDance.m */,
 				C45A072F172E3AC0002ED7B7 /* PacketAddPlayerWaitingRoom.h */,
 				C45A0730172E3AC0002ED7B7 /* PacketAddPlayerWaitingRoom.m */,
 				C46FF33C173397E10072259B /* PacketRemovePlayerWaitingRoom.h */,
@@ -1798,6 +1803,7 @@
 				C47EBB301735B4A6003D8372 /* SearchingForIpadLayer.m in Sources */,
 				C47EBB351735BE68003D8372 /* ConnectedToIpadScene.m in Sources */,
 				C47EBB381735BE70003D8372 /* ConnectedToIpadLayer.m in Sources */,
+				C4688D311737536F00EB027E /* PacketStartDanceMoveDance.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

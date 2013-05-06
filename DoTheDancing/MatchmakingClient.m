@@ -8,6 +8,7 @@
 
 #import "MatchmakingClient.h"
 #import "Packet.h"
+#import "PacketStartDanceMoveDance.h"
 #import "PacketAddPlayerWaitingRoom.h"
 #import "PacketRemovePlayerWaitingRoom.h"
 #import "PacketSegueToDanceMoveInstructions.h"
@@ -168,6 +169,15 @@ ClientState;
 {
 	switch (packet.packetType)
 	{
+        case PacketTypeStartDanceMoveDance: {
+            PacketStartDanceMoveDance *newPacket = (PacketStartDanceMoveDance*)packet;
+            CCLOG(@"Received danceMoveType: %i", newPacket.danceMoveType);
+            if ([self.delegate respondsToSelector:@selector(matchmakingClientStartDanceMoveDance:)]) {
+                [self.delegate matchmakingClientStartDanceMoveDanceWithDanceMoveType:newPacket.danceMoveType];
+            }
+            
+            break;
+        }
 		case PacketTypeAddPlayerWaitingRoom: {
             PacketAddPlayerWaitingRoom *newPacket = (PacketAddPlayerWaitingRoom*)packet;
             CCLOG(@"Received peerIDs: %@", newPacket.peerIDsString);

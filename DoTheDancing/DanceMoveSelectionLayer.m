@@ -210,6 +210,14 @@
 }
 
 # pragma mark - MatchmakingClient delegate methods
+- (void)matchmakingClientDidConnectToServer:(NSString *)peerID {
+    
+}
+
+- (void)matchmakingClientDidDisconnectFromServer:(NSString *)peerID {
+    
+}
+
 - (void)matchmakingClientSegueToInstructionsWithDanceMoveType:(DanceMoves)danceMoveType {
     [self showInstructionsForDanceMove:danceMoveType];
 }

@@ -21,6 +21,9 @@
 - (void)matchmakingClientDidReceiveNewConnectedPeersList:(NSString*)peerString;
 - (void)matchmakingClientDidReceiveIndexOfRemovedClient:(NSInteger)peerIndex;
 
+// PacketTypeStartDanceMoveDance
+- (void)matchmakingClientStartDanceMoveDanceWithDanceMoveType:(DanceMoves)danceMoveType;
+
 // PacketTypeSegueToDanceMoveSelection
 - (void)matchmakingClientSegueToSelectDanceMove;
 

@@ -7,6 +7,7 @@
 //
 
 #import "Packet.h"
+#import "PacketStartDanceMoveDance.h"
 #import "PacketAddPlayerWaitingRoom.h"
 #import "PacketRemovePlayerWaitingRoom.h"
 #import "PacketSegueToDanceMoveInstructions.h"
@@ -50,6 +51,10 @@ const size_t PACKET_HEADER_SIZE = 10;
     
 	switch (packetType)
 	{
+        case PacketTypeStartDanceMoveDance:
+            packet = [PacketStartDanceMoveDance packetWithData:data];
+            break;
+            
 		case PacketTypeAddPlayerWaitingRoom:
 			packet = [PacketAddPlayerWaitingRoom packetWithData:data];
 			break;

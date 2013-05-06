@@ -58,5 +58,9 @@
     
 }
 
+- (void)matchmakingClientStartDanceMoveDanceWithDanceMoveType:(DanceMoves)danceMoveType {
+    
+}
+
 
 @end

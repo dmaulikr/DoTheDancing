@@ -54,7 +54,7 @@
     GameManager *gm = [GameManager sharedGameManager];
     gm.client = [[MatchmakingClient alloc] init];
     gm.client.delegate = self;
-    [gm.client startSearchingForServersWithSessionID:SESSION_ID];
+    [gm.client startSearchingForServersWithSessionID:SESSION_ID_IPAD];
 }
 
 #pragma mark - MatchmakingClientDelegate methods

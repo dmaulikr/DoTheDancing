@@ -10,6 +10,7 @@
 #define chinAndCheeksTemplate_Constants_h
 
 #define SESSION_ID @"Do the Dancing!"
+#define SESSION_ID_IPAD @"Do the Dancing!-iPad"
 
 typedef enum {
     kSceneTypeNone = -1,
