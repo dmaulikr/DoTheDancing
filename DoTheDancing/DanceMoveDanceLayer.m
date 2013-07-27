@@ -388,10 +388,11 @@
 }
 
 -(void)segueToResults {
+    [self unscheduleUpdate];
+    
     // add last step results
     [self.danceIterationStepsDetected addObject:self.currentIterationStepsDetected];
     [self updateIterationCountWithNum:self.currentIteration];
-    [self unscheduleUpdate];
     
     // pass results to game manager
     [GameManager sharedGameManager].danceMoveIterationResults = self.danceIterationStepsDetected;

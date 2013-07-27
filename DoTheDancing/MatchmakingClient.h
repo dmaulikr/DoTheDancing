@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "Constants.h"
+#import "Packet.h"
 
 @class MatchmakingClient;
 
@@ -42,6 +43,7 @@
 
 - (void)startSearchingForServersWithSessionID:(NSString *)sessionID;
 - (void)connectToServerWithPeerID:(NSString *)peerID;
+- (void)sendPacketToServer:(Packet *)packet;
 - (void)disconnectFromServer;
 
 @end

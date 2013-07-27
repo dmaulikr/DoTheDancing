@@ -172,7 +172,7 @@ ClientState;
         case PacketTypeStartDanceMoveDance: {
             PacketStartDanceMoveDance *newPacket = (PacketStartDanceMoveDance*)packet;
             CCLOG(@"Received danceMoveType: %i", newPacket.danceMoveType);
-            if ([self.delegate respondsToSelector:@selector(matchmakingClientStartDanceMoveDance:)]) {
+            if ([self.delegate respondsToSelector:@selector(matchmakingClientStartDanceMoveDanceWithDanceMoveType:)]) {
                 [self.delegate matchmakingClientStartDanceMoveDanceWithDanceMoveType:newPacket.danceMoveType];
             }
             

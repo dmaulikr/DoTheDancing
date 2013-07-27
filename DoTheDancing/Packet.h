@@ -39,6 +39,7 @@ typedef enum
     PacketTypeRemovePlayerWaitingRoom,          // server to client
     PacketTypeSegueToDanceMoveSelection,        // server to client
     PacketTypeSegueToDanceMoveInstructions,     // server to client
+    PacketTypeSendResults,                      // client to server (phone to ipad)
 }
 PacketType;
 

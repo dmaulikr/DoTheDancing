@@ -89,6 +89,7 @@
 		C498CD1117277C5B00A2A0A8 /* economica-bold_126-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = C498CD0F17277C5B00A2A0A8 /* economica-bold_126-hd.png */; };
 		C498CD1417277D0B00A2A0A8 /* economica-bold_102-hd.fnt in Resources */ = {isa = PBXBuildFile; fileRef = C498CD1217277D0B00A2A0A8 /* economica-bold_102-hd.fnt */; };
 		C498CD1517277D0B00A2A0A8 /* economica-bold_102-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = C498CD1317277D0B00A2A0A8 /* economica-bold_102-hd.png */; };
+		C4E978FE17402D940060C658 /* PacketSendResults.m in Sources */ = {isa = PBXBuildFile; fileRef = C4E978FD17402D940060C658 /* PacketSendResults.m */; };
 		DC0864B815BD8CE60044A820 /* CCNode+Debug.h in Headers */ = {isa = PBXBuildFile; fileRef = DC0864B515BD8CE60044A820 /* CCNode+Debug.h */; };
 		DC0864B915BD8CE60044A820 /* CCNode+Debug.m in Sources */ = {isa = PBXBuildFile; fileRef = DC0864B615BD8CE60044A820 /* CCNode+Debug.m */; };
 		DC0864BA15BD8CE60044A820 /* ccCArray.m in Sources */ = {isa = PBXBuildFile; fileRef = DC0864B715BD8CE60044A820 /* ccCArray.m */; };
@@ -454,6 +455,8 @@
 		C498CD0F17277C5B00A2A0A8 /* economica-bold_126-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "economica-bold_126-hd.png"; sourceTree = "<group>"; };
 		C498CD1217277D0B00A2A0A8 /* economica-bold_102-hd.fnt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "economica-bold_102-hd.fnt"; sourceTree = "<group>"; };
 		C498CD1317277D0B00A2A0A8 /* economica-bold_102-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "economica-bold_102-hd.png"; sourceTree = "<group>"; };
+		C4E978FC17402D940060C658 /* PacketSendResults.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PacketSendResults.h; sourceTree = "<group>"; };
+		C4E978FD17402D940060C658 /* PacketSendResults.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PacketSendResults.m; sourceTree = "<group>"; };
 		DC0864B515BD8CE60044A820 /* CCNode+Debug.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CCNode+Debug.h"; sourceTree = "<group>"; };
 		DC0864B615BD8CE60044A820 /* CCNode+Debug.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CCNode+Debug.m"; sourceTree = "<group>"; };
 		DC0864B715BD8CE60044A820 /* ccCArray.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ccCArray.m; sourceTree = "<group>"; };
@@ -816,6 +819,8 @@
 				C46FF33D173397E10072259B /* PacketRemovePlayerWaitingRoom.m */,
 				C43AD61717348B3000ED1282 /* PacketSegueToDanceMoveInstructions.h */,
 				C43AD61817348B3000ED1282 /* PacketSegueToDanceMoveInstructions.m */,
+				C4E978FC17402D940060C658 /* PacketSendResults.h */,
+				C4E978FD17402D940060C658 /* PacketSendResults.m */,
 				C45A072C172E2A84002ED7B7 /* NSData+DTDAdditions.h */,
 				C45A072D172E2A84002ED7B7 /* NSData+DTDAdditions.m */,
 			);
@@ -1685,7 +1690,7 @@
 		DC0C49E8154AB4DD00B4B727 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0460;
+				LastUpgradeCheck = 0500;
 			};
 			buildConfigurationList = DC0C49EB154AB4DD00B4B727 /* Build configuration list for PBXProject "DoTheDancing" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -1804,6 +1809,7 @@
 				C47EBB351735BE68003D8372 /* ConnectedToIpadScene.m in Sources */,
 				C47EBB381735BE70003D8372 /* ConnectedToIpadLayer.m in Sources */,
 				C4688D311737536F00EB027E /* PacketStartDanceMoveDance.m in Sources */,
+				C4E978FE17402D940060C658 /* PacketSendResults.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1920,8 +1926,9 @@
 		DC0C4B7E154AB4DF00B4B727 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -1935,9 +1942,12 @@
 				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 4.0;
+				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -1946,8 +1956,9 @@
 		DC0C4B7F154AB4DF00B4B727 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -1959,7 +1970,9 @@
 				);
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 4.0;
 				SDKROOT = iphoneos;
